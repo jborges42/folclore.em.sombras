@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acompanhar produção — Curupira</title>
+<link rel="stylesheet" href="../fontes/fontes.css">
+<style>
+  :root { --papel: #f2dcae; --tinta: #2a1a10; --urucum: #b8361e; --fundo: #17100b; --linha: #4a3424; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fundo); color: var(--papel); font: 16px/1.5 Alegreya, Georgia, serif; }
+  header { padding: 24px 16px 8px; max-width: 1100px; margin: auto; }
+  h1 { font-family: Piedra, Georgia, serif; font-weight: 400; margin: 0; font-size: 2.2rem; color: #f6c86a; }
+  header p { margin: 4px 0 0; opacity: .7; }
+  main { max-width: 1100px; margin: auto; padding: 0 16px 48px; }
+  section { border-top: 1px solid var(--linha); padding: 16px 0; }
+  h2 { font-family: Piedra, Georgia, serif; font-weight: 400; color: #f6c86a; margin: 0 0 8px; font-size: 1.4rem; }
+  a { color: #f6a85a; }
+  .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+  .item { background: #241811; border: 1px solid var(--linha); border-radius: 6px; padding: 8px; font-size: .9rem; overflow-wrap: anywhere; }
+  .item audio { width: 100%; height: 32px; margin-top: 4px; }
+  .item img { width: 100%; border-radius: 4px; }
+  .vazio { opacity: .5; font-style: italic; }
+  .lic { opacity: .6; font-size: .8rem; }
+  iframe { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--linha); border-radius: 6px; background: #000; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Curupira — acompanhamento</h1>
+  <p>Atualiza sozinho a cada 30 s. <a href="../index.html">Abrir a página final</a> · <span id="hora"></span></p>
+</header>
+<main id="main"></main>
+<script>
+// Lê as listagens de diretório do servidor (python -m http.server) e mostra o que já foi produzido.
+const SECOES = [
+  { titulo: 'Protótipo do palco', tipo: 'iframe', url: 'prototipo/quadro.html' },
+  { titulo: 'Documentos', dir: 'pesquisa/', filtro: /\.(md|json)$/ },
+  { titulo: 'Roteiro final', arquivos: ['../roteiro.json'] },
+  { titulo: 'Vozes — escuta comparativa dos finalistas', dir: 'vozes/escuta/', filtro: /\.(wav|mp3)$/ },
+  { titulo: 'Vozes — amostras', dir: 'vozes/amostras/', filtro: /\.(wav|mp3)$/ },
+  { titulo: 'Vozes — relatório', arquivos: ['vozes/RELATORIO.md'] },
+  { titulo: 'Falas geradas', dir: 'vozes/falas/', filtro: /\.(wav|mp3)$/ },
+  { titulo: 'Temas musicais', dir: 'trilha/temas_demo/', filtro: /\.(wav|mp3|png)$/ },
+  { titulo: 'Síntese sonora', dir: 'trilha/sintese_demo/', filtro: /\.(wav|mp3|png)$/ },
+  { titulo: 'Prévias da trilha', dir: 'trilha/previas/', filtro: /\.(mp3|png)$/ },
+  { titulo: 'Stems de música por cena', dir: 'trilha/stems/', filtro: /\.(wav|mp3)$/ },
+  { titulo: 'Trilha final', arquivos: ['../audio/curupira.mp3'] },
+  { titulo: 'Sons — natureza', dir: 'sons/natureza/', filtro: /\.(wav|mp3|ogg|flac)$/, fontes: 'sons/natureza/fontes.json' },
+  { titulo: 'Sons — música', dir: 'sons/musica/', filtro: /\.(wav|mp3|ogg|flac)$/, fontes: 'sons/musica/fontes.json' },
+  { titulo: 'Sons — ação', dir: 'sons/acao/', filtro: /\.(wav|mp3|ogg|flac)$/, fontes: 'sons/acao/fontes.json' },
+  { titulo: 'Inventário de sons', arquivos: ['sons/INVENTARIO.md'] },
+];
+
+async function listar(dir) {
+  try {
+    const r = await fetch(dir, { cache: 'no-store' });
+    if (!r.ok) return [];
+    const doc = new DOMParser().parseFromString(await r.text(), 'text/html');
+    return [...doc.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(h => h && !h.startsWith('?') && !h.startsWith('/') && h !== '../');
+  } catch { return []; }
+}
+async function existe(url) {
+  try { return (await fetch(url, { method: 'HEAD', cache: 'no-store' })).ok; } catch { return false; }
+}
+async function licencas(url) {
+  try {
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) return {};
+    const d = await r.json();
+    return Object.fromEntries((Array.isArray(d) ? d : d.itens || []).map(x => [String(x.arquivo).split('/').pop(), x]));
+  } catch { return {}; }
+}
+function cartao(url, nome, extra = '') {
+  const n = decodeURIComponent(nome);
+  if (/\.(wav|mp3|ogg|flac)$/i.test(n)) return `<div class="item">${n}${extra}<audio controls preload="none" src="${url}"></audio></div>`;
+  if (/\.png$/i.test(n)) return `<div class="item">${n}<a href="${url}" target="_blank"><img loading="lazy" src="${url}"></a></div>`;
+  return `<div class="item"><a href="${url}" target="_blank">${n}</a></div>`;
+}
+
+async function render() {
+  // Guarda o que está tocando para não interromper a escuta.
+  if ([...document.querySelectorAll('audio')].some(a => !a.paused)) return;
+  const partes = [];
+  for (const s of SECOES) {
+    let corpo = '';
+    if (s.tipo === 'iframe') {
+      corpo = (await existe(s.url)) ? `<iframe src="${s.url}" loading="lazy"></iframe>` : '';
+    } else if (s.arquivos) {
+      const ok = (await Promise.all(s.arquivos.map(async u => (await existe(u)) ? cartao(u, u.split('/').pop()) : ''))).join('');
+      corpo = ok ? `<div class="grade">${ok}</div>` : '';
+    } else {
+      const nomes = (await listar(s.dir)).filter(n => s.filtro.test(decodeURIComponent(n)));
+      const lic = s.fontes ? await licencas(s.fontes) : {};
+      corpo = nomes.length ? `<div class="grade">${nomes.map(n => {
+        const f = lic[decodeURIComponent(n)];
+        return cartao(s.dir + n, n, f ? `<div class="lic">${f.licenca || ''} — ${f.autor || ''}</div>` : '');
+      }).join('')}</div>` : '';
+    }
+    partes.push(`<section><h2>${s.titulo}</h2>${corpo || '<p class="vazio">Ainda não produzido.</p>'}</section>`);
+  }
+  const html = partes.join('');
+  if (html !== render.anterior) document.getElementById('main').innerHTML = render.anterior = html;
+  document.getElementById('hora').textContent = 'atualizado às ' + new Date().toLocaleTimeString('pt-BR');
+}
+render();
+setInterval(render, 30000);
+</script>
+</body>
+</html>

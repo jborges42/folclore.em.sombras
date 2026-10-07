@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elenco de bichos</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0D0906; overflow: hidden; }
+  #escala { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+</style>
+</head>
+<body>
+<div id="escala"></div>
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/grafismos.js"></script>
+<script src="../../js/palco.js"></script>
+<script src="../../js/cenario.js"></script>
+<script src="../../js/bonecos.js"></script>
+<script src="../../js/elenco-bichos.js"></script>
+<script>
+/* Vitrine do elenco de bichos (js/elenco-bichos.js). Parâmetros:
+   ?t=SEG&pausa=1                         congela num instante (capturas)
+   ?cena=galeria                          todos os bichos com os gestos em laço (padrão)
+   ?cena=elenco                           o elenco inteiro, parado (respirando), em duas fileiras
+   ?cena=marcha&bicho=cachorro&marcha=galope&n=8   n cópias em fases sucessivas da passada
+   ?cena=poses&bicho=cachorro             o bicho nas poses e estados principais, lado a lado
+   ?cena=bicho&bicho=cachorro&escala=2.4  um bicho só, grande, no centro
+   ?zoom=2.5&cx=960&cy=720                amplia em torno de (cx, cy)
+   ?pose=fareja:1,boca:.5                 campos da pose (cena=bicho e poses: somados a cada cópia)
+   ?luz=dia  ?mata=0  ?moldura=0          estado de luz; sem cenário (carrega bem mais rápido); sem biombo */
+(function () {
+  const q = new URLSearchParams(location.search);
+  const t0 = parseFloat(q.get('t')) || 0, pausa = q.get('pausa') === '1';
+  const el = document.getElementById('escala');
+  const zoom = +q.get('zoom') || 1, cx = +q.get('cx') || 960, cy = +q.get('cy') || 540;
+  function ajustar() {
+    const k = Math.min(innerWidth / 1920, innerHeight / 1080), kz = k * zoom;
+    el.style.transform = `translate(${innerWidth / 2 - cx * kz}px,${innerHeight / 2 - cy * kz}px) scale(${kz})`;
+  }
+  ajustar();
+  addEventListener('resize', ajustar);
+
+  const Bi = Sombras.bichos, CHAO = 802; // = Sombras.kit.CHAO
+  const palco = Sombras.palco.criar(el, { luz: q.get('luz') || 'lamparina' });
+  if (q.get('mata') !== '0') Sombras.cenario.montar(palco, Sombras.cenario.mata({ semente: 7 }));
+  if (q.get('moldura') === '0') palco.raiz.querySelector('.sb-moldura').style.display = 'none';
+  const extra = {};
+  for (const kv of (q.get('pose') || '').split(',').filter(Boolean)) { const [k, v] = kv.split(':'); extra[k] = +v; }
+  const tl = gsap.timeline({ paused: true });
+  const cena = q.get('cena') || 'galeria', bicho = q.get('bicho') || 'cachorro';
+  const novo = (nome, op) => palco.adicionar(Bi[nome](Object.assign({ y: CHAO }, extra, op)));
+  const de = (alvo, a, b, t, dur, ease) => tl.fromTo(alvo, a, Object.assign({}, b, { duration: dur, ease: ease || 'sine.inOut', immediateRender: false }), t);
+  // o mesmo que Sombras.kit.caminhar faz com um bicho: x linear e a fase dos passos pela distância andada
+  function caminhar(b, x0, x1, t1, t2, nome) {
+    const m = Object.assign({}, b.def.marcha, nome ? Bi.andadura(b, nome) : {}), passo = m.passo * b.def.H * b.pose.escala;
+    de(b.pose, { x: x0 }, { x: x1 }, t1, t2 - t1, 'none');
+    b.motores.push((b, t) => {
+      t = t % dur;
+      if (t <= t1 || t >= t2) return;
+      const u = Math.min(1, (t - t1) / .2, (t2 - t) / .2), e = u * u * (3 - 2 * u);
+      m.ciclo(b, Math.abs(b.pose.x - x0) / (2 * passo), { pernas: m.pernas * e, bob: m.bob * e });
+    });
+  }
+  const POSES = {
+    cachorro: [{}, { fareja: 1 }, { alerta: 1 }, { latido: 1 }, { medo: 1 }, { abana: 1 }],
+    onca: [{}, { espreita: 1 }, { esturro: 1 }],
+    veada: [{}, { bebe: 1 }, { alerta: 1 }, { olharTras: 1 }],
+    filhote: [{}, { bambo: 1 }, { bambo: 1 }],
+    arara: [{ y: 700 }, { y: 640, semente: 2 }, { y: 700, pouso: 1 }, { y: 640, queda: 1 }],
+    bugio: [{ y: 760 }, { y: 760, ronco: 1 }],
+    tatu: [{}, { toca: .3 }, { toca: .7 }],
+    urutau: [{}, { olhos: 1 }, { olhos: 1, canto: 1 }],
+    curupiraMontado: [{}, { pena: 1, colar: 1, fumo: 1, furia: 1, boca: 1 }],
+    queixada: [{}, { semente: 2 }, { semente: 3, erica: 1, grunhido: .6 }, { semente: 4 }, { semente: 5, caititu: true }, { semente: 6 }],
+  };
+  let dur = 1;
+
+  if (cena === 'marcha') {
+    const n = +q.get('n') || 8, nome = q.get('marcha') || 'passo', esc = +q.get('escala') || 1;
+    for (let k = 0; k < n; k++) {
+      const b = novo(bicho, { x: 230 + k * (1460 / Math.max(1, n - 1)), escala: esc, y: k % 2 ? CHAO - 30 : CHAO + 20 });
+      b.pose.respiro = 0;
+      b.motores.push(b => Bi[nome](b, k / n));
+    }
+  } else if (cena === 'poses') {
+    const L = POSES[bicho] || [{}], esc = +q.get('escala') || 1;
+    L.forEach((p, k) => novo(bicho, Object.assign({ x: 260 + k * (1400 / Math.max(1, L.length - 1)), escala: esc, y: k % 2 ? CHAO - 40 : CHAO + 10 }, p)));
+  } else if (cena === 'elenco') {
+    const k = +q.get('escala') || 1;
+    [['onca', 260, 470], ['veada', 660, 470], ['filhote', 860, 470], ['curupiraMontado', 1150, 470, { pena: 1, colar: 1 }], ['bugio', 1480, 430], ['urutau', 1720, 470],
+     ['cachorro', 250, 802], ['queixada', 560, 802], ['caititu', 820, 802], ['tatu', 1060, 802], ['arara', 1330, 700], ['arara', 1640, 740, { pouso: 1 }]]
+      .forEach(([n, x, y, o]) => novo(n, Object.assign({ x: 960 + (x - 960) * k, y, escala: k }, o)));
+  } else if (cena === 'bicho') {
+    novo(bicho, { x: 960, escala: +q.get('escala') || 2.2 });
+  } else {
+    // galeria em 4 atos (?ato=1..4 mostra só um): como as cenas vão usar a API
+    const ato = +q.get('ato') || 0, A = n => !ato || ato === n, T0 = n => ato ? 0 : (n - 1) * 7;
+    const sumir = (b, t0, t1) => { b.pose.opacidade = 0; de(b.pose, { opacidade: 0 }, { opacidade: 1 }, t0, .01); de(b.pose, { opacidade: 1 }, { opacidade: 0 }, t1, .01); };
+    if (A(1)) { // cachorro fareja, late e dispara; tatu trota e entra na toca
+      const t = T0(1), c = novo('cachorro', { x: 200 }), ta = novo('tatu', { x: 1500, dir: -1 });
+      sumir(c, t, t + 7); sumir(ta, t, t + 7);
+      caminhar(c, 200, 640, t, t + 3.2);
+      de(c.pose, { fareja: 0 }, { fareja: 1 }, t + .4, .5); de(c.pose, { fareja: 1 }, { fareja: 0 }, t + 2.8, .4);
+      de(c.pose, { alerta: 0 }, { alerta: 1 }, t + 3.3, .25); Bi.latir(tl, c, t + 3.6, 2); de(c.pose, { alerta: 1 }, { alerta: 0 }, t + 4.3, .3);
+      caminhar(c, 640, 1500, t + 4.6, t + 6.6, 'galope');
+      caminhar(ta, 1500, 1100, t + .3, t + 3.4, 'trote');
+      de(ta.pose, { toca: 0, x: 1100 }, { toca: 1, x: 1040 }, t + 3.6, 1.2, 'power1.in');
+    }
+    if (A(2)) { // veada bebe, ergue a cabeça, olha para trás e foge em saltos; filhote de pernas bambas; onça à espreita no fundo
+      const t = T0(2), o = novo('onca', { x: 300, escala: .62, z: .35, y: CHAO - 30, espreita: 1 });
+      const v = novo('veada', { x: 1150 }), f = novo('filhote', { x: 1380, dir: -1, bambo: 1 });
+      sumir(o, t, t + 7); sumir(v, t, t + 7); sumir(f, t, t + 7);
+      caminhar(o, 300, 900, t, t + 7);
+      de(v.pose, { bebe: 0 }, { bebe: 1 }, t + .2, .9); de(v.pose, { bebe: 1, alerta: 0 }, { bebe: 0, alerta: 1 }, t + 2.4, .35, 'power2.out');
+      de(v.pose, { olharTras: 0 }, { olharTras: 1 }, t + 3.2, .3); de(v.pose, { olharTras: 1 }, { olharTras: 0 }, t + 4.1, .3);
+      caminhar(v, 1150, 2100, t + 4.6, t + 6.8, 'salto');
+      caminhar(f, 1380, 1260, t + .5, t + 2.5);
+    }
+    if (A(3)) { // vara de queixadas atravessando, com o Curupira montado no meio, batendo os dentes
+      const t = T0(3), L = Bi.vara(7, { y: CHAO, escala: 1, semente: 3 });
+      L.forEach((b, i) => {
+        palco.adicionar(b); b.pose.dir = -1; sumir(b, t, t + 7);
+        const x0 = 2050 + i * 150, x1 = -300 + i * 150;
+        caminhar(b, x0, x1, t + b.atraso, t + 5.6 + b.atraso, 'galope');
+        Bi.dentes(tl, b, t + 2 + b.atraso, 1.2);
+      });
+      const m = novo('curupiraMontado', { x: 2050 + 3.5 * 150, dir: -1, pena: 1, colar: 1, furia: .6 });
+      sumir(m, t, t + 7);
+      caminhar(m, 2050 + 3.5 * 150, -300 + 3.5 * 150, t + .5, t + 6.1, 'galope');
+    }
+    if (A(4)) { // araras em arco (uma cai), bugio ronca no galho, urutau abre os olhos e canta
+      const t = T0(4), L = Bi.bando(6, { semente: 4 }), bu = novo('bugio', { x: 330, y: 470, escala: 1.1 }), u = novo('urutau', { x: 1560 });
+      sumir(bu, t, t + 7); sumir(u, t, t + 7);
+      L.forEach((b, i) => {
+        palco.adicionar(b); sumir(b, t, t + 7);
+        const x0 = -150 + b.dx, x1 = 2100 + b.dx;
+        de(b.pose, { x: x0 }, { x: x1 }, t + b.atraso, 6, 'none');
+        de(b.pose, { y: 330 + b.dy }, { y: 170 + b.dy }, t + b.atraso, 3, 'sine.out'); de(b.pose, { y: 170 + b.dy }, { y: 300 + b.dy }, t + 3 + b.atraso, 3, 'sine.in');
+        if (i === 2) { de(b.pose, { queda: 0, rot: 0 }, { queda: 1, rot: 540 }, t + 2.4, 1.6, 'power1.in'); de(b.pose, { y: 190 + b.dy }, { y: 860 }, t + 2.4, 1.6, 'power2.in'); }
+      });
+      Bi.roncar(tl, bu, t + 1, 2.6);
+      de(u.pose, { olhos: 0 }, { olhos: 1 }, t + 2, .5); de(u.pose, { canto: 0 }, { canto: 1 }, t + 3, .6); de(u.pose, { canto: 1, olhos: 1 }, { canto: 0, olhos: 0 }, t + 6, .6);
+    }
+    tl.set({}, {}, ato ? 7 : 28);
+  }
+
+  dur = tl.duration() || 1;
+  const quadro = t => { tl.time(t % dur); palco.quadro(t); };
+  if (pausa) { quadro(t0); return; }
+  const ini = performance.now();
+  (function loop() { quadro(t0 + (performance.now() - ini) / 1000); requestAnimationFrame(loop); })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curupira · Folclore em Sombras</title>
+<meta name="description" content="A lenda do Curupira, o guardião da mata, contada em teatro de sombras.">
+<link rel="stylesheet" href="fontes/fontes.css">
+<script>
+  /* Registro de cenas: precisa existir antes de js/cenas/*.js. Contrato completo no topo de js/player.js. */
+  window.Sombras = window.Sombras || {};
+  Sombras.cenas = Sombras.cenas || { construtores: {}, registrar(id, construtor) { this.construtores[id] = construtor; } };
+</script>
+<style>
+  /* Tokens base: producao/pesquisa/estilo.md §3.1 */
+  :root {
+    /* sala e moldura (iluminadas pela frente, opacas) */
+    --sala: #0D0906;           /* fundo da sala */
+    --sala-chao: #140D08;      /* faixa das legendas */
+    --madeira-escura: #24160D;
+    --madeira: #4A2E1A;
+    --madeira-luz: #8A5A32;    /* arestas pegando a luz da lamparina */
+    --palha: #C9A15A;
+    --palha-sombra: #7E5E2C;
+    --barro: #9A4E2A;          /* lamparina */
+
+    /* papel (o estado de luz sobrescreve) */
+    --papel-centro: #F6E4B8;
+    --papel-meio:   #D9B57A;
+    --papel-borda:  #8E6232;
+    --papel-canto:  #3B2614;
+
+    /* tinta das sombras do cenário (o estado de luz sobrescreve) */
+    --sombra-tinta: #24140A;
+
+    /* couros tingidos */
+    --couro-cru:   #C99A5E;
+    --urucum:      #C2401F;  --urucum-claro:  #E8693A;
+    --jenipapo:    #1E2A30;
+    --acafrao:     #E0A21C;  --acafrao-claro: #F2C14E;
+    --argila:      #A65F38;  --argila-clara:  #C98454;
+    --verde-mata:  #3E6A34;  --verde-claro:   #7FA35E;
+    --anil:        #2D4B8E;  --anil-claro:    #6F8FD0;
+    --contorno:    #170C05;
+    --rebite:      #2A1A0E;  --rebite-brilho: #A8814B;
+
+    /* fogo */
+    --chama-nucleo: #FFF4D2;
+    --chama-corpo:  #FFC046;
+    --chama-borda:  #F27A1A;
+    --chama-ponta:  #B5360F;
+    --halo:         rgba(255, 168, 64, .32);
+    --cabelo-1: #FFD75E;  --cabelo-2: #F59A1F;  --cabelo-3: #D2401A;
+    --vagalume: #E9FF8C;  --vagalume-halo: rgba(182, 242, 74, .35);
+
+    /* texto (sobre a sala escura) */
+    --texto: #F3E6C8;
+    --texto-suave: #BFA98A;
+    --nome-tiao: #F2C14E;  --nome-ze: #9CC17F;  --nome-vo: #9DB4E8;  --nome-curupira: #F08A5D;
+
+    /* luz: estado padrão = lamparina */
+    --hotspot-x: 50%;  --hotspot-y: 44%;  --hotspot-rx: 62%;  --hotspot-ry: 78%;
+    --vinheta: .55;
+    --gel: #FFB86B;  --gel-opacidade: .10;
+    --brilho: 1;  --saturacao: 1;  --matiz: 0deg;
+    --poeira: 1;
+    --chama: 1;
+
+    /* só da moldura do player */
+    --papel-folheto: #EDE0C2;  /* cartela de cordel (§10.3) */
+    --fio: rgba(243, 230, 200, .22);
+    --painel: rgba(16, 11, 7, .95);
+    --fonte-display: 'Piedra', Georgia, serif;
+    --fonte-texto: 'Alegreya', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--sala); color: var(--texto); font-family: var(--fonte-texto);
+    overflow: hidden; -webkit-font-smoothing: antialiased; touch-action: manipulation;
+  }
+  button { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+  :focus-visible { outline: 1px dotted var(--texto-suave); outline-offset: 4px; }
+
+  /* Sala escura em volta do palco */
+  #sala { position: fixed; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 45%, #1A110A 0%, var(--sala) 75%); }
+  body.ocultar { cursor: none; }
+
+  /* Palco: 1920×1080 lógicos, escalado pelo player (letterbox) */
+  #moldura { position: absolute; background: var(--sala-chao); }
+  #escala { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; }
+  #palco { position: absolute; inset: 0; }
+  /* Provisório enquanto js/palco.js não existe: só o papel iluminado (área de §9.1) */
+  #palco.provisorio {
+    background: radial-gradient(ellipse var(--hotspot-rx) var(--hotspot-ry) at var(--hotspot-x) var(--hotspot-y),
+      var(--papel-centro) 0%, var(--papel-meio) 42%, var(--papel-borda) 78%, var(--papel-canto) 100%) 72px 52px / 1776px 800px no-repeat;
+  }
+  #escuro { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+  #apagador { position: absolute; inset: -1px; background: #000; opacity: .9; pointer-events: none; transition: opacity 2.8s cubic-bezier(.4, 0, .2, 1); }
+  body.acesa #apagador { opacity: 0; }
+  body.fim #apagador { opacity: .97; transition-duration: 1.6s; }
+  body.congelado #apagador, body.congelado .tela { transition: none; }
+  /* a candeia do palco (apagada até o clique) fica à vista através do escuro: clicar nela acende */
+  #apagador {
+    -webkit-mask: radial-gradient(ellipse 4.6% 12% at 92% 90%, rgba(0, 0, 0, .45) 45%, #000 100%);
+    mask: radial-gradient(ellipse 4.6% 12% at 92% 90%, rgba(0, 0, 0, .45) 45%, #000 100%);
+  }
+
+  /* Cartela de capítulo: capa de folheto de cordel em xilogravura (§10.3) */
+  #cartelas, .cartela { position: absolute; inset: 0; pointer-events: none; }
+  /* opacidade 0 também: o Chrome pinta a textura (feTurbulence) mesmo com visibility: hidden */
+  .cartela { visibility: hidden; opacity: 0; }
+  .cartela .veu { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 42%, rgba(13, 9, 6, .5), rgba(13, 9, 6, .8)); }
+  .folheto {
+    position: absolute; left: 700px; top: 82px; width: 520px; height: 740px; margin: 0;
+    padding: 70px 40px 66px; display: flex; flex-direction: column; align-items: center; gap: 14px;
+    background: var(--papel-folheto); color: var(--contorno); text-align: center;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .25);
+    transform: rotate(-1.2deg);
+  }
+  .folheto > svg.fundo { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .folheto > :not(.fundo) { position: relative; }
+  .folheto .rotulo { margin: 0; font-style: italic; font-size: 30px; }
+  .folheto h2 {
+    flex: 1; display: grid; place-items: center; margin: 0; width: 100%;
+    font-family: var(--fonte-display); font-weight: 400; font-size: 110px; line-height: .95;
+    text-transform: uppercase; text-wrap: balance; overflow-wrap: break-word;
+  }
+  .folheto .xilo { width: 440px; height: 300px; flex: none; }
+  .tinta { fill: var(--contorno); }
+  .goiva { fill: none; stroke: var(--papel-folheto); stroke-linecap: round; }
+  .branco { fill: var(--papel-folheto); }
+
+  /* Créditos finais: rolam de baixo para cima sobre o palco escurecido */
+  #creditos { position: absolute; left: 0; right: 0; top: 1080px; padding: 120px 0 200px; text-align: center; font-size: 36px; line-height: 1.4; }
+  #creditos .titulo { margin: 0; font-family: var(--fonte-display); font-size: 140px; line-height: 1; color: var(--papel-centro); }
+  #creditos .subtitulo { margin: 14px 0 120px; font-style: italic; font-size: 44px; color: var(--texto-suave); }
+  #creditos h3 { margin: 0 0 10px; font-size: 30px; font-weight: 400; font-style: italic; color: var(--texto-suave); }
+  #creditos ul { list-style: none; margin: 0 0 80px; padding: 0; color: var(--texto); }
+  #creditos .assinatura { margin: 40px 0 0; font-size: 36px; color: var(--texto-suave); }
+
+  /* Legendas (§12): zona x 340–1580, y 930–1050 do palco; o player posiciona e escala */
+  #legenda {
+    position: absolute; margin: 0; text-align: center; pointer-events: none;
+    font-size: var(--fs, 20px); font-weight: 500; line-height: 1.25; color: var(--texto);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .85);
+    opacity: 0; transform: translateY(.15em);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  /* sobe acima dos controles enquanto eles estão visíveis */
+  #legenda.visivel { opacity: 1; transform: translateY(calc(-1 * var(--sobe, 0px))); }
+  body.ocultar #legenda.visivel, body.congelado #legenda.visivel, body.inicio #legenda.visivel { transform: none; }
+  body.sem-legendas #legenda { display: none; }
+  #legenda .quem { margin-right: .35em; }
+  #legenda .quem::after { content: ':'; }
+  #legenda .quem:empty { display: none; }
+  #legenda[data-papel="narrador"] .fala { font-style: italic; }
+  #legenda[data-papel="tiao"] .quem { color: var(--nome-tiao); }
+  #legenda[data-papel="ze"] .quem { color: var(--nome-ze); }
+  #legenda[data-papel="vo"] .quem { color: var(--nome-vo); }
+  #legenda[data-papel="curupira"] .quem { color: var(--nome-curupira); }
+
+  /* Controles: somem quando o mouse para */
+  #controles {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 30px max(16px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    background: linear-gradient(to bottom, transparent, rgba(8, 5, 3, .85) 55%);
+    transition: opacity .5s ease, visibility .5s;
+  }
+  body.inicio #controles, body.congelado #controles,
+  body.ocultar #controles:not(:has(:focus-visible)) { opacity: 0; visibility: hidden; }
+  .linha { display: flex; align-items: baseline; gap: 20px; padding: 2px 6px 0; font-size: 17px; }
+  .respiro { flex: 1; }
+  .ctl { flex: none; padding: 6px 0; border: 0; background: none; color: var(--texto); cursor: pointer; text-underline-offset: 4px; }
+  .ctl:hover { text-decoration: underline; }
+  .ctl[aria-pressed="false"] { color: var(--texto-suave); text-decoration: line-through; }
+  body.tocando .i-tocar, body:not(.tocando) .i-pausar,
+  body.mudo .i-som, body:not(.mudo) .i-mudo,
+  body.tela-cheia .i-ampliar, body:not(.tela-cheia) .i-reduzir { display: none; }
+  #tempo { font-variant-numeric: tabular-nums; color: var(--texto-suave); white-space: nowrap; }
+
+  input[type="range"] { -webkit-appearance: none; appearance: none; margin: 0; height: 20px; background: transparent; cursor: pointer; --p: 0%; }
+  input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(to right, var(--texto) var(--p), var(--fio) var(--p)); }
+  input[type="range"]::-moz-range-track { height: 2px; background: linear-gradient(to right, var(--texto) var(--p), var(--fio) var(--p)); }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 10px; height: 10px; margin-top: -4px; border-radius: 50%; background: var(--texto); }
+  input[type="range"]::-moz-range-thumb { width: 10px; height: 10px; border: 0; border-radius: 50%; background: var(--texto); }
+  #volume { width: 80px; align-self: center; }
+
+  .progresso { position: relative; margin: 0 6px; }
+  #barra { display: block; width: 100%; }
+  .marcas { position: absolute; left: 5px; right: 5px; top: 50%; pointer-events: none; }
+  .marcas i { position: absolute; top: -4px; width: 1px; height: 8px; background: var(--texto-suave); }
+  .dica {
+    position: absolute; bottom: 26px; left: 0; padding: 4px 10px; white-space: nowrap;
+    background: var(--painel); font-size: 15px; pointer-events: none; opacity: 0;
+  }
+  .dica.visivel { opacity: 1; }
+  .dica span { margin-left: .5em; color: var(--texto-suave); font-variant-numeric: tabular-nums; }
+
+  #menu-capitulos {
+    position: fixed; inset: auto max(16px, env(safe-area-inset-right)) 76px auto; margin: 0;
+    width: min(340px, calc(100vw - 32px)); max-height: 60vh; overflow: auto; padding: 8px 0;
+    border: 1px solid var(--fio); background: var(--painel); color: var(--texto);
+  }
+  #menu-capitulos ol { list-style: none; margin: 0; padding: 0; }
+  #menu-capitulos button {
+    display: flex; align-items: baseline; gap: 12px; width: 100%; padding: 7px 16px;
+    border: 0; background: none; text-align: left; font-size: 18px; cursor: pointer;
+  }
+  #menu-capitulos button:hover span:nth-child(2) { text-decoration: underline; text-underline-offset: 4px; }
+  #menu-capitulos button[aria-current="true"] { font-style: italic; }
+  #menu-capitulos .num { flex: none; width: 2em; color: var(--texto-suave); }
+  #menu-capitulos .hora { margin-left: auto; font-size: 15px; color: var(--texto-suave); font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 560px), (pointer: coarse) { #volume { display: none; } }
+  @media (max-width: 560px) { .linha { gap: 14px; font-size: 16px; } #tempo { display: none; } }
+
+  /* Tela inicial e fim */
+  .tela {
+    position: absolute; inset: 0; display: grid; place-content: center; justify-items: center;
+    padding: 24px 16px; text-align: center;
+    background: radial-gradient(ellipse at 50% 50%, rgba(13, 9, 6, .3), rgba(13, 9, 6, .88) 80%);
+    transition: opacity 1.4s ease, visibility 1.4s;
+  }
+  body:not(.inicio) #inicio, body:not(.fim) #fim { opacity: 0; visibility: hidden; pointer-events: none; }
+  #inicio { cursor: pointer; background: none; }
+  .tela h1, .fim-titulo { margin: 0; font-family: var(--fonte-display); font-weight: 400; line-height: 1; font-size: clamp(56px, 14vmin, 150px); color: var(--papel-centro); }
+  .subtitulo { margin: .25em 0 1.8em; font-style: italic; font-size: clamp(20px, 3.4vmin, 34px); color: var(--texto-suave); }
+  .entrar {
+    padding: .2em 0; border: 0; background: none; color: var(--texto); cursor: pointer;
+    font-size: clamp(18px, 2.4vmin, 22px); text-decoration: underline; text-decoration-color: rgba(243, 230, 200, .35); text-underline-offset: 6px;
+  }
+  .entrar:hover { text-decoration-color: currentColor; }
+  #carregamento { margin: 1em 0 0; min-height: 1.4em; font-size: 15px; font-style: italic; color: var(--texto-suave); }
+  .serie { position: absolute; left: 0; right: 0; bottom: max(20px, env(safe-area-inset-bottom)); margin: 0; font-size: 15px; color: var(--texto-suave); }
+
+  #aviso {
+    position: absolute; top: 14px; left: 50%; transform: translateX(-50%); margin: 0; padding: 6px 14px; border-radius: 3px;
+    background: var(--painel); font-size: 14px; color: var(--texto-suave); opacity: 0; transition: opacity .6s; pointer-events: none;
+  }
+  #aviso.visivel { opacity: 1; }
+  #debug {
+    position: absolute; top: 8px; left: 8px; z-index: 9; margin: 0; padding: 6px 9px; border-radius: 3px;
+    background: rgba(0, 0, 0, .75); color: #9FE39A; font: 12px/1.4 ui-monospace, Menlo, monospace; pointer-events: none;
+  }
+</style>
+</head>
+<body class="inicio">
+<!-- Grafismos, pegada e filtros: producao/pesquisa/estilo.md §4.1 (copiar de novo se o guia mudar) -->
+<!-- DEFS:INICIO -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <!-- G1 losango: treliça de losangos maciços -->
+  <pattern id="g-losango" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M10 2 17 10 10 18 3 10ZM0-8 7 0 0 8-7 0ZM20-8 27 0 20 8 13 0ZM0 12 7 20 0 28-7 20ZM20 12 27 20 20 28 13 20Z"/>
+  </pattern>
+
+  <!-- G2 cobra: moldura de losango com 4 pontes + furo central (pele de cobra) -->
+  <pattern id="g-cobra" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M12 2 22 12 12 22 2 12Z" fill="none" stroke="#000" stroke-width="2.6"
+          stroke-dasharray="11.14 3" stroke-dashoffset="-1.5"/>
+    <circle cx="12" cy="12" r="2.2"/>
+    <circle cx="0" cy="0" r="1.5"/><circle cx="24" cy="0" r="1.5"/>
+    <circle cx="0" cy="24" r="1.5"/><circle cx="24" cy="24" r="1.5"/>
+  </pattern>
+
+  <!-- G3 grega: gancho quadrado (meandro) -->
+  <pattern id="g-grega" width="18" height="18" patternUnits="userSpaceOnUse">
+    <path d="M3 15V3H15V12H8V8H11" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="square"/>
+  </pattern>
+
+  <!-- G4 degrau: escada diagonal (inspiração marajoara) -->
+  <pattern id="g-degrau" width="16" height="16" patternUnits="userSpaceOnUse">
+    <path d="M1 13H5V9H9V5H13V1" fill="none" stroke="#000" stroke-width="2.2"/>
+  </pattern>
+
+  <!-- G5 espinha de peixe: chevrons soltos -->
+  <pattern id="g-espinha" width="16" height="10" patternUnits="userSpaceOnUse">
+    <path d="M2 2 8 7 14 2" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </pattern>
+
+  <!-- G6 casco de jabuti: hexágonos separados -->
+  <pattern id="g-jabuti" width="14.9" height="25.8" patternUnits="userSpaceOnUse">
+    <path d="M0-6.5l5.63 3.25v6.5L0 6.5l-5.63-3.25v-6.5z
+             M14.9-6.5l5.63 3.25v6.5L14.9 6.5l-5.63-3.25v-6.5z
+             M7.45 6.4l5.63 3.25v6.5L7.45 19.4l-5.63-3.25v-6.5z
+             M0 19.3l5.63 3.25v6.5L0 32.3l-5.63-3.25v-6.5z
+             M14.9 19.3l5.63 3.25v6.5L14.9 32.3l-5.63-3.25v-6.5z"/>
+  </pattern>
+
+  <!-- G7 roseta: pintas de onça (4 manchas em anel, centro de couro) -->
+  <pattern id="g-roseta" width="36" height="32" patternUnits="userSpaceOnUse">
+    <g id="roseta">
+      <ellipse cx="9" cy="3.5" rx="3.4" ry="2"/>
+      <ellipse cx="13.5" cy="8.5" rx="2" ry="3.2"/>
+      <ellipse cx="8.5" cy="12.6" rx="3.2" ry="1.9"/>
+      <ellipse cx="4.6" cy="7.8" rx="1.9" ry="3"/>
+    </g>
+    <use href="#roseta" x="18" y="16"/>
+    <circle cx="27" cy="6" r="2"/><circle cx="9" cy="24" r="2.2"/>
+  </pattern>
+
+  <!-- G8 voluta: curva em gancho (inspiração curvilínea kadiwéu) -->
+  <pattern id="g-voluta" width="32" height="20" patternUnits="userSpaceOnUse">
+    <path d="M3 17C3 8 12 3 18 6C23 9 20 15 15 13" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="27" cy="10" r="1.8"/>
+  </pattern>
+
+  <!-- G9 dente de serra: triângulos (barras e bordas) -->
+  <pattern id="g-serra" width="14" height="12" patternUnits="userSpaceOnUse">
+    <path d="M1.5 11 7 2 12.5 11Z"/>
+  </pattern>
+
+  <!-- G10 ponto: pontilhado de jenipapo -->
+  <pattern id="g-ponto" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="2.5" cy="2.5" r="1.5"/><circle cx="7" cy="7" r="1.5"/>
+  </pattern>
+
+  <!-- G11 trançado: palha em esteira (fendas alternadas) -->
+  <pattern id="g-trancado" width="16" height="16" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1.6" width="6" height="1.6" rx=".8"/><rect x="1" y="4.8" width="6" height="1.6" rx=".8"/>
+    <rect x="9.6" y="1" width="1.6" height="6" rx=".8"/><rect x="12.8" y="1" width="1.6" height="6" rx=".8"/>
+    <rect x="1.6" y="9" width="1.6" height="6" rx=".8"/><rect x="4.8" y="9" width="1.6" height="6" rx=".8"/>
+    <rect x="9" y="9.6" width="6" height="1.6" rx=".8"/><rect x="9" y="12.8" width="6" height="1.6" rx=".8"/>
+  </pattern>
+
+  <!-- G12 água: ondinhas soltas -->
+  <pattern id="g-agua" width="22" height="12" patternUnits="userSpaceOnUse">
+    <path d="M2 7Q6.5 2 11 7T20 7" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+  </pattern>
+
+  <!-- Articulação: 4 setores vazados em volta do rebite (desenhar no pivô, nas DUAS peças) -->
+  <g id="junta-furos">
+    <path id="setor" d="M3.38 1.23L7.52 2.74A8 8 0 0 1 2.74 7.52L1.23 3.38A3.6 3.6 0 0 0 3.38 1.23Z"/>
+    <use href="#setor" transform="rotate(90)"/><use href="#setor" transform="rotate(180)"/>
+    <use href="#setor" transform="rotate(270)"/>
+  </g>
+  <g id="rebite">
+    <circle r="3.2" fill="#2A1A0E"/><circle cx="-.8" cy="-.8" r="1.1" fill="#A8814B"/>
+  </g>
+
+  <!-- Pegada (pé apontando para +x, 34 px). Pegada do Curupira = espelhada (ver 7.1) -->
+  <g id="pegada">
+    <path d="M0 0C3-5 14-6.5 22-5.5C27-5 28-1 25 1.5C21 4.5 12 5 5 4.5C1.5 4.2-1 2.5 0 0Z"/>
+    <circle cx="27.5" cy="-6" r="2.4"/><circle cx="31" cy="-2.8" r="2"/><circle cx="32" cy="1"   r="1.8"/>
+    <circle cx="30.5" cy="4.3" r="1.6"/><circle cx="27.5" cy="6.6" r="1.4"/>
+  </g>
+
+  <!-- Couro: manchas sutis de tingimento (aplicar no <g> do boneco inteiro) -->
+  <filter id="f-couro" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".035 .06" numOctaves="3" seed="7" result="ruido"/>
+    <feColorMatrix in="ruido" type="matrix" result="manchas"
+      values="0 0 0 0 .10  0 0 0 0 .05  0 0 0 0 .02  .9 0 0 0 -.3"/>
+    <feComposite in="manchas" in2="SourceAlpha" operator="in" result="manchas-no-couro"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="manchas-no-couro"/></feMerge>
+  </filter>
+
+  <!-- Papel artesanal de fibra (camada estática, ver 9.2) -->
+  <filter id="f-papel" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".006 .01" numOctaves="4" seed="4" result="nuvens"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".9 .35" numOctaves="2" seed="9" result="fibras"/>
+    <feColorMatrix in="nuvens" type="matrix" result="manchas"
+      values="0 0 0 0 .23  0 0 0 0 .14  0 0 0 0 .06  1.0 0 0 0 -.42"/>
+    <feColorMatrix in="fibras" type="matrix" result="fios"
+      values="0 0 0 0 .30  0 0 0 0 .20  0 0 0 0 .10  1.2 0 0 0 -.72"/>
+    <feMerge><feMergeNode in="manchas"/><feMergeNode in="fios"/></feMerge>
+  </filter>
+
+  <!-- Tinta de xilogravura: borda trêmula + falhas de tinta (cartelas e títulos) -->
+  <filter id="f-xilo" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="2" result="r"/>
+    <feDisplacementMap in="SourceGraphic" in2="r" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="1" seed="5" result="g"/>
+    <feColorMatrix in="g" type="matrix" result="falhas"
+      values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -5 0 0 0 4"/>
+    <feComposite in="d" in2="falhas" operator="in"/>
+  </filter>
+
+  <!-- Brilho de fogo (cabelo do Curupira, chama, brasas) -->
+  <filter id="f-fogo" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+</svg>
+<!-- DEFS:FIM -->
+
+<main id="sala">
+  <div id="moldura">
+    <div id="escala">
+      <div id="palco"></div>
+      <div id="escuro"></div>
+      <div id="cartelas"></div>
+      <div id="creditos"></div>
+    </div>
+    <div id="apagador"></div>
+  </div>
+
+  <p id="legenda" aria-hidden="true"><span class="quem"></span><span class="fala"></span></p>
+
+  <section id="inicio" class="tela" aria-labelledby="titulo">
+    <h1 id="titulo">Curupira</h1>
+    <p class="subtitulo">o guardião da mata</p>
+    <button id="acender" class="entrar" type="button">acender a lamparina</button>
+    <p id="carregamento" role="status"></p>
+    <p class="serie">Folclore em Sombras</p>
+  </section>
+
+  <section id="fim" class="tela" aria-label="Fim do espetáculo">
+    <p class="fim-titulo">Fim</p>
+    <button id="de-novo" class="entrar" type="button">assistir de novo</button>
+  </section>
+
+  <div id="controles">
+    <div class="progresso">
+      <input id="barra" type="range" min="0" max="1" step="0.1" value="0" aria-label="Posição no espetáculo">
+      <div class="marcas" aria-hidden="true"></div>
+      <div class="dica" aria-hidden="true"></div>
+    </div>
+    <div class="linha">
+      <button id="bt-tocar" class="ctl" type="button" aria-label="Tocar"><span class="i-tocar">tocar</span><span class="i-pausar">pausar</span></button>
+      <button id="bt-som" class="ctl" type="button" aria-label="Silenciar"><span class="i-som">silenciar</span><span class="i-mudo">ligar o som</span></button>
+      <input id="volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+      <span id="tempo">0:00 / 0:00</span>
+      <span class="respiro"></span>
+      <button id="bt-capitulos" class="ctl" type="button" popovertarget="menu-capitulos" aria-label="Capítulos">capítulos</button>
+      <button id="bt-legendas" class="ctl" type="button" aria-label="Legendas" aria-pressed="true">legendas</button>
+      <button id="bt-tela" class="ctl" type="button" aria-label="Tela cheia"><span class="i-ampliar">tela cheia</span><span class="i-reduzir">sair da tela cheia</span></button>
+    </div>
+  </div>
+
+  <div id="menu-capitulos" popover aria-label="Capítulos">
+    <ol></ol>
+  </div>
+
+  <p id="aviso" role="status"></p>
+  <pre id="debug" hidden></pre>
+</main>
+
+<audio id="audio" src="audio/curupira.mp3" preload="auto"></audio>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/linha-do-tempo.js"></script>
+<script src="js/creditos.js"></script>
+<script src="js/grafismos.js"></script>
+<script src="js/palco.js"></script>
+<script src="js/cenario.js"></script>
+<script src="js/bonecos.js"></script>
+<script src="js/elenco-gente.js"></script>
+<script src="js/elenco-bichos.js"></script>
+<script src="js/cenarios.js"></script>
+<script src="js/xilogravuras.js"></script>
+<script src="js/cenas/comum.js"></script>
+<script src="js/cenas/abertura-e-mata.js"></script>
+<script src="js/cenas/guardiao-e-cacadores.js"></script>
+<script src="js/cenas/assobio-e-rastros.js"></script>
+<script src="js/cenas/noite-e-cipo.js"></script>
+<script src="js/cenas/amanhecer.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

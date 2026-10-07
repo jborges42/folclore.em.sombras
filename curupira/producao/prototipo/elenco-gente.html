@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elenco de gente</title>
+<link rel="stylesheet" href="../../fontes/fontes.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #0D0906; overflow: hidden; }
+  #escala { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+  .rotulo { position: absolute; top: 918px; width: 260px; margin-left: -130px; text-align: center; font: 500 26px/1.15 Alegreya, Georgia, serif; color: #F3E6C8; }
+  .rotulo small { display: block; font-size: 20px; color: #BFA98A; }
+  #titulo { position: absolute; left: 0; right: 0; top: 990px; text-align: center; font: italic 500 30px Alegreya, Georgia, serif; color: #BFA98A; }
+</style>
+<script>
+  // registro de cenas (como no index.html) para o modo "cena", que monta uma cena curta com o kit
+  window.Sombras = { cenas: { construtores: {}, registrar(id, f) { this.construtores[id] = f; } } };
+  const _b = (id, inicio, fim, sfx) => ({ id, tipo: 'pausa', papel: null, texto: null, inicio, fim, sfx: sfx || [] });
+  window.LINHA_DO_TEMPO = { duracao: 26, creditos: { inicio: 25, fim: 26 }, cenas: [{ id: 'teste', luz: 'dia', inicio: 0, fim: 24, cartela: null, beats: [
+    _b('t01', 0, 3), _b('t02', 3, 7), _b('t03', 7, 10.5, [{ som: 'facao_golpe', t: 7.6 }, { som: 'facao_golpe', t: 8.2 }, { som: 'facao_golpe', t: 8.8 }]),
+    _b('t04', 10.5, 15), _b('t05', 15, 19, [{ som: 'batida_tronco', t: 16.4 }, { som: 'batida_tronco', t: 17 }, { som: 'batida_tronco', t: 17.6 }]), _b('t06', 19, 24)] }] };
+</script>
+</head>
+<body>
+<div id="escala"></div>
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/grafismos.js"></script>
+<script src="../../js/palco.js"></script>
+<script src="../../js/cenario.js"></script>
+<script src="../../js/bonecos.js"></script>
+<script src="../../js/elenco-gente.js"></script>
+<script src="../../js/cenas/comum.js"></script>
+<script>
+/* Página de teste do elenco humano.
+   ?modo=elenco                        os quatro em cena (descanso)
+   ?modo=poses&quem=ze&pag=0           galeria de poses nomeadas (7 por página)
+   ?modo=gesto&quem=ze&g=golpear,medir  cada linha é um gesto, cada boneco um instante dele (k quadros)
+   ?modo=cena                          os gestos tocando juntos numa timeline (laço)
+   ?t=SEG&pausa=1 congela · ?zoom=2&cx=960&cy=600 aproxima · ?cenario=0 só o papel · ?luz=noite */
+(function () {
+  const q = new URLSearchParams(location.search), E = Sombras.elenco;
+  const t0 = parseFloat(q.get('t')) || 0, pausa = q.get('pausa') === '1', modo = q.get('modo') || 'elenco', quem = q.get('quem') || 'ze';
+  const el = document.getElementById('escala');
+  function ajustar() {
+    const k = Math.min(innerWidth / 1920, innerHeight / 1080), z = +q.get('zoom') || 1, cx = +q.get('cx') || 960, cy = +q.get('cy') || 540;
+    const tx = (innerWidth - 1920 * k) / 2, ty = (innerHeight - 1080 * k) / 2;
+    el.style.transform = `translate(${tx}px,${ty}px) scale(${k}) translate(960px,540px) scale(${z}) translate(${-cx}px,${-cy}px)`;
+  }
+  ajustar();
+  addEventListener('resize', ajustar);
+  const palco = Sombras.palco.criar(el, { luz: q.get('luz') || 'lamparina' });
+  if (q.get('cenario') !== '0' && modo !== 'cena') Sombras.cenario.montar(palco, Sombras.cenario.mata({ semente: 7, samauma: false }));
+  const CHAO = +q.get('chao') || 800;
+  const rotulo = (x, texto, sub) => { const d = document.createElement('div'); d.className = 'rotulo'; d.style.left = x + 'px'; d.innerHTML = texto + (sub ? `<small>${sub}</small>` : ''); el.appendChild(d); return d; };
+  const timelines = [];
+
+  if (modo === 'elenco') {
+    const tiao = palco.adicionar(E.tiao({ x: 330, y: CHAO, escala: 1 }));
+    const ze = palco.adicionar(E.ze({ x: 720, y: CHAO }));
+    const vo = palco.adicionar(E.vo({ x: 1130, y: CHAO }));
+    const cur = palco.adicionar(E.curupira({ x: 1560, y: CHAO, escala: 1.3, dir: -1 }));
+    [[tiao, 'Tião'], [ze, 'Zé'], [vo, 'Vó'], [cur, 'Curupira']].forEach(([b, n]) => rotulo(b.pose.x, n));
+  }
+  if (modo === 'poses') {
+    const nomes = Object.keys(E.poses[quem] || {}), pag = +q.get('pag') || 0, por = +q.get('por') || 7, lista = nomes.slice(pag * por, pag * por + por);
+    const esc = +q.get('esc') || (quem === 'curupira' ? 1.3 : 1);
+    lista.forEach((n, i) => {
+      const x = 72 + 1776 * (i + .5) / lista.length, b = palco.adicionar(E[quem]({ x, y: CHAO, escala: esc }));
+      E.set(b, n);
+      rotulo(x, n);
+    });
+    document.title = `poses ${quem} ${pag}`;
+  }
+  // opções de teste dos gestos que precisam de alvo (relativas ao boneco b)
+  const OPCOES = {
+    andar: b => ({ ate: b.pose.x + 120 * b.pose.escala }), correr: b => ({ ate: b.pose.x + 160 * b.pose.escala }),
+    subir: b => ({ ate: [b.pose.x + 40 * b.pose.escala, b.pose.y - 110 * b.pose.escala] }),
+    descer: b => { b.pose.y -= 110 * b.pose.escala; b._ult.y = b.pose.y; return { ate: [b.pose.x + 40 * b.pose.escala, b.pose.y + 110 * b.pose.escala] }; },
+    maoNoOmbro: b => ({ em: alvoFalso(b) }), agarrar: b => ({ em: alvoFalso(b) }),
+    acenar: b => ({ comprido: quem === 'vo' }), cheirar: () => ({ fumo: true, amansa: true }), guardar: () => ({ pena: true }),
+    cravar: () => ({ solta: true }), oferecer: b => ({ objeto: 'fumoMao' }), deixar: () => ({ objeto: quem === 'vo' ? 'arruda' : 'fumoMao' }),
+  };
+  const alvoFalso = b => { const o = palco.adicionar(E[quem === 'tiao' ? 'ze' : 'tiao']({ x: b.pose.x + 70 * b.pose.escala * b.pose.dir, y: b.pose.y, escala: b.pose.escala })); return o; };
+  if (modo === 'gesto') {
+    // cada linha = um gesto; cada boneco = o mesmo gesto num instante diferente (folha de quadros)
+    const gs = (q.get('g') || '').split(',').filter(Boolean), k = +q.get('k') || 7, esc = +q.get('esc') || (gs.length > 1 ? .7 : 1) * (quem === 'curupira' ? 1.3 : 1);
+    gs.forEach((g, li) => {
+      const y = gs.length > 1 ? 80 + (CHAO - 80) * (li + 1) / gs.length : CHAO;
+      let dur = 0;
+      for (let i = 0; i < k; i++) {
+        const x = 72 + 1776 * (i + .3) / k, b = palco.adicionar(E[quem]({ x, y, escala: esc })), tl = gsap.timeline({ paused: true });
+        if (quem === 'vo' && !['andar', 'correr', 'sentar', 'acenar'].includes(g)) { E.set(b, 'sentada'); E.base(b, 'sentada'); palco.adicionar(E.objeto('banquinho', { x: x - 8 * esc, y, escala: esc })); }
+        const o = OPCOES[g] ? OPCOES[g](b) : {};
+        dur = E.gestos[g](tl, b, .2, o) + .4;
+        tl.time(dur * i / (k - 1) * .999);
+        timelines.push(tl);
+        if (q.get('varetas') !== '1') b.camadas.bonecos.querySelector('.sb-varetas').style.display = 'none';
+      }
+      const d = document.createElement('div'); d.className = 'rotulo'; d.style.left = '1830px'; d.style.top = (y - 46) + 'px'; d.style.textAlign = 'right'; d.style.width = '400px'; d.style.marginLeft = '-400px';
+      d.innerHTML = `${g}<small>${dur.toFixed(1)} s</small>`; el.appendChild(d);
+    });
+  }
+  if (modo === 'cena') {
+    // cena curta com o kit + gestos: Tião e Zé entram (kit), Zé golpeia, põe a mão no ombro, Tião dá o tranco, mira
+    // e atira com o cano desviando; o Curupira surge, anda de calcanhar (pegadas invertidas), bate na sapopema e some
+    Sombras.cenas.registrar('teste', (tl, ctx) => {
+      const K = Sombras.kit, c = K.posse(tl, ctx, { saida: 'corte' }), T = ctx.t, G = E.gestos;
+      if (q.get('cenario') !== '0') c.cenario(Sombras.cenario.mata({ semente: 7 }));
+      const tiao = c.boneco(E.tiao({ x: -300, y: K.CHAO, escala: 1.1 })), ze = c.boneco(E.ze({ x: -400, y: K.CHAO, escala: 1.05 }));
+      const cur = c.boneco(E.curupira({ x: 1450, y: K.CHAO, escala: 1.45, dir: -1, z: 1, opacidade: 0 }));
+      K.entrar(tl, tiao, { ate: 760, t0: T('t01'), t1: T('t01') + 2.6 });
+      K.entrar(tl, ze, { ate: 480, t0: T('t01') + .3, t1: T('t01') + 2.9 });
+      G.cocar(tl, tiao, T('t02'), { onde: 'barba' });
+      G.golpear(tl, ze, T('t03'), { impactos: ctx.sfx('facao_golpe') });
+      K.caminhar(tl, ze, { ate: 650, t0: T('t04'), t1: T('t04') + .8 });
+      G.maoNoOmbro(tl, ze, T('t04') + .9, { em: tiao, segura: .8 });
+      const u = G.tranco(tl, tiao, T('t04') + 1.8);
+      G.levantar(tl, ze, T('t04') + 2, { dur: .3 });
+      G.recuar(tl, ze, T('t04') + 2.4, { dur: 1.2 });
+      G.mirar(tl, tiao, u, { agachado: true });
+      G.atirar(tl, tiao, T('t05') + .2, { desvio: true });
+      G.surgir(tl, cur, T('t04'));
+      const v = G.andar(tl, cur, T('t05') + .2, { ate: 1240, modo: 'calcanhar', rastro: c.rastros, dur: 1.1 });
+      const w = G.baterSapopema(tl, cur, v, { batidas: ctx.sfx('batida_tronco') });
+      const w2 = G.rir(tl, cur, w, { dur: 1.2 });
+      G.sumir(tl, cur, w2 + .3);
+      G.olhar(tl, ze, T('t06') + .4, { para: 'cima' });
+      G.encolher(tl, ze, T('t06') + 1, { segura: 2 });
+    });
+    const L = LINHA_DO_TEMPO, mestre = gsap.timeline({ paused: true }), beats = new Map();
+    Sombras.palco.atual = palco;
+    for (const c of L.cenas) for (const b of c.beats) beats.set(b.id, b);
+    const beat = id => beats.get(id);
+    for (const cena of L.cenas) {
+      const ctx = { cena, dur: cena.fim - cena.inicio, beat, t: id => beat(id).inicio - cena.inicio, tf: id => beat(id).fim - cena.inicio,
+        sfx: som => cena.beats.flatMap(b => (b.sfx || []).filter(s => s.som === som).map(s => s.t - cena.inicio)) };
+      const tl = gsap.timeline();
+      try { Sombras.cenas.construtores[cena.id](tl, ctx); mestre.add(tl, cena.inicio); } catch (e) { console.error('cena descartada:', e); }
+    }
+    mestre.set({}, {}, L.duracao);
+    if (q.has('de')) mestre.time(+q.get('de'));
+    mestre.time(t0);
+    if (!pausa) { const ini = performance.now() / 1000 - t0; (function loop() { const t = (performance.now() / 1000 - ini) % L.duracao; mestre.time(t); palco.quadro(t); requestAnimationFrame(loop); })(); return; }
+  }
+  window.PRONTO = Promise.all(palco.atores.map(a => a.pronto).filter(Boolean));
+  if (pausa) { for (let i = 0; i < 3; i++) palco.quadro(t0); requestAnimationFrame(function f() { palco.quadro(t0); requestAnimationFrame(f); }); return; }
+  const ini = performance.now();
+  (function loop() { palco.quadro(t0 + (performance.now() - ini) / 1000); requestAnimationFrame(loop); })();
+})();
+</script>
+</body>
+</html>

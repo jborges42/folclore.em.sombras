@@ -1,0 +1,918 @@
+{
+ "mata_amanhecer": {
+  "arquivos": [
+   "natureza/mata_amanhecer__1.mp3",
+   "natureza/mata_amanhecer__2.mp3",
+   "natureza/mata_amanhecer__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "mata_dia": {
+  "arquivos": [
+   "natureza/mata_dia__1.mp3",
+   "natureza/mata_dia__2.mp3",
+   "natureza/mata_dia__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "mata_noite": {
+  "arquivos": [
+   "natureza/mata_noite__1.mp3",
+   "natureza/mata_noite__2.mp3",
+   "natureza/mata_noite__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "chuva_mata": {
+  "arquivos": [
+   "natureza/chuva_mata__1.mp3",
+   "natureza/chuva_mata__2.mp3",
+   "natureza/chuva_mata__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "tempestade": {
+  "arquivos": [
+   "natureza/tempestade__1.mp3",
+   "natureza/tempestade__2.mp3",
+   "natureza/tempestade__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "vento_folhas": {
+  "arquivos": [
+   "natureza/vento_folhas__1.mp3",
+   "natureza/vento_folhas__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "riacho": {
+  "arquivos": [
+   "natureza/riacho__1.mp3",
+   "natureza/riacho__2.mp3",
+   "natureza/riacho__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "lamparina_chama": {
+  "arquivos": [
+   "acao/lamparina_chama__1.mp3",
+   "acao/lamparina_chama__2.mp3",
+   "acao/lamparina_chama__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "araras": {
+  "arquivos": [
+   "natureza/araras__1.wav",
+   "natureza/araras__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "araras_revoada": {
+  "arquivos": [
+   "natureza/araras_revoada__1.wav",
+   "natureza/araras_revoada__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "tucano": {
+  "arquivos": [
+   "natureza/tucano__1.wav",
+   "natureza/tucano__2.wav",
+   "natureza/tucano__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "sabia": {
+  "arquivos": [
+   "natureza/sabia__1.wav",
+   "natureza/sabia__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "araponga": {
+  "arquivos": [
+   "natureza/araponga__1.wav",
+   "natureza/araponga__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "urutau": {
+  "arquivos": [
+   "natureza/urutau__1.wav",
+   "natureza/urutau__2.wav",
+   "natureza/urutau__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "coruja": {
+  "arquivos": [
+   "natureza/coruja__1.flac",
+   "natureza/coruja__2.wav",
+   "natureza/coruja__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "inhambu": {
+  "arquivos": [],
+  "sintetizar": true,
+  "receita": "sintese.inhambu: o arquivo CC BY-SA foi descartado para manter a trilha livre de share-alike"
+ },
+ "bugio": {
+  "arquivos": [
+   "natureza/bugio__1.wav",
+   "natureza/bugio__2.wav",
+   "natureza/bugio__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "macaco_gritos": {
+  "arquivos": [
+   "natureza/macaco_gritos__1.mp3",
+   "natureza/macaco_gritos__2.mp3",
+   "natureza/macaco_gritos__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "onca_esturro": {
+  "arquivos": [
+   "natureza/onca_esturro__1.flac",
+   "natureza/onca_esturro__2.mp3"
+  ],
+  "sintetizar": false
+ },
+ "onca_rosnado": {
+  "arquivos": [
+   "natureza/onca_rosnado__1.wav",
+   "natureza/onca_rosnado__2.wav",
+   "natureza/onca_rosnado__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "queixada_grunhido": {
+  "arquivos": [
+   "natureza/queixada_grunhido__1.wav",
+   "natureza/queixada_grunhido__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "queixada_dentes": {
+  "arquivos": [
+   "natureza/queixada_dentes__1.mp3",
+   "natureza/queixada_dentes__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "queixada_tropel": {
+  "arquivos": [
+   "natureza/queixada_tropel__1.wav",
+   "natureza/queixada_tropel__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "veado_alarme": {
+  "arquivos": [
+   "natureza/veado_alarme__1.wav",
+   "natureza/veado_alarme__2.wav",
+   "natureza/veado_alarme__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "sapos": {
+  "arquivos": [
+   "natureza/sapos__1.wav",
+   "natureza/sapos__2.wav",
+   "natureza/sapos__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "cigarras": {
+  "arquivos": [
+   "natureza/cigarras__1.wav",
+   "natureza/cigarras__2.wav",
+   "natureza/cigarras__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "grilos": {
+  "arquivos": [
+   "natureza/grilos__1.wav",
+   "natureza/grilos__2.wav",
+   "natureza/grilos__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "passos_folhas": {
+  "arquivos": [
+   "acao/passos_folhas__1.wav",
+   "acao/passos_folhas__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "corrida_folhas": {
+  "arquivos": [
+   "acao/corrida_folhas__1.wav",
+   "acao/corrida_folhas__2.wav",
+   "acao/corrida_folhas__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "galho_quebra": {
+  "arquivos": [
+   "acao/galho_quebra__1.mp3",
+   "acao/galho_quebra__2.mp3",
+   "acao/galho_quebra__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "machado_golpe": {
+  "arquivos": [
+   "acao/machado_golpe__1.wav",
+   "acao/machado_golpe__2.wav",
+   "acao/machado_golpe__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "arvore_rangendo": {
+  "arquivos": [
+   "acao/arvore_rangendo__1.wav",
+   "acao/arvore_rangendo__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "arvore_caindo": {
+  "arquivos": [
+   "acao/arvore_caindo__1.mp3",
+   "acao/arvore_caindo__2.wav",
+   "acao/arvore_caindo__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "tiro_espingarda": {
+  "arquivos": [
+   "acao/tiro_espingarda__1.mp3",
+   "acao/tiro_espingarda__2.mp3",
+   "acao/tiro_espingarda__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "espingarda_engatilhar": {
+  "arquivos": [
+   "acao/espingarda_engatilhar__1.wav",
+   "acao/espingarda_engatilhar__2.wav",
+   "acao/espingarda_engatilhar__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "cachorro_latido": {
+  "arquivos": [
+   "acao/cachorro_latido__1.wav",
+   "acao/cachorro_latido__2.wav",
+   "acao/cachorro_latido__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "cachorro_ganido": {
+  "arquivos": [
+   "acao/cachorro_ganido__1.mp3",
+   "acao/cachorro_ganido__2.wav",
+   "acao/cachorro_ganido__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "grito_homem": {
+  "arquivos": [
+   "acao/grito_homem__1.mp3",
+   "acao/grito_homem__2.mp3",
+   "acao/grito_homem__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "grito_pavor": {
+  "arquivos": [
+   "acao/grito_pavor__1.mp3",
+   "acao/grito_pavor__2.mp3",
+   "acao/grito_pavor__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "chamado_eco": {
+  "arquivos": [
+   "acao/chamado_eco__1.wav",
+   "acao/chamado_eco__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "ofego": {
+  "arquivos": [
+   "acao/ofego__1.wav",
+   "acao/ofego__2.wav",
+   "acao/ofego__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "risada_curupira": {
+  "arquivos": [
+   "acao/risada_curupira__1.mp3",
+   "acao/risada_curupira__2.mp3",
+   "acao/risada_curupira__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "assobio_curupira": {
+  "arquivos": [
+   "acao/assobio_curupira__2.mp3",
+   "acao/assobio_curupira__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "batida_tronco": {
+  "arquivos": [
+   "acao/batida_tronco__1.wav",
+   "acao/batida_tronco__2.mp3",
+   "acao/batida_tronco__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "cipo_torcendo": {
+  "arquivos": [
+   "acao/cipo_torcendo__1.wav",
+   "acao/cipo_torcendo__2.wav",
+   "acao/cipo_torcendo__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "folhagem_mexe": {
+  "arquivos": [
+   "acao/folhagem_mexe__1.mp3",
+   "acao/folhagem_mexe__2.wav",
+   "acao/folhagem_mexe__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "fosforo": {
+  "arquivos": [
+   "acao/fosforo__1.mp3",
+   "acao/fosforo__2.wav",
+   "acao/fosforo__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "sopro_apaga": {
+  "arquivos": [
+   "acao/sopro_apaga__1.wav",
+   "acao/sopro_apaga__2.mp3",
+   "acao/sopro_apaga__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "coracao": {
+  "arquivos": [
+   "acao/coracao__1.mp3",
+   "acao/coracao__2.wav",
+   "acao/coracao__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "trovao": {
+  "arquivos": [
+   "natureza/trovao__1.wav",
+   "natureza/trovao__2.wav",
+   "natureza/trovao__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "relampago_estalo": {
+  "arquivos": [
+   "acao/relampago_estalo__1.wav",
+   "acao/relampago_estalo__2.wav",
+   "acao/relampago_estalo__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "gongo_grave": {
+  "arquivos": [
+   "musica/gongo_grave__1.wav",
+   "musica/gongo_grave__2.wav",
+   "musica/gongo_grave__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "gongo_sobe": {
+  "arquivos": [
+   "musica/gongo_sobe__1.wav",
+   "musica/gongo_sobe__2.ogg",
+   "musica/gongo_sobe__3.wav"
+  ],
+  "sintetizar": true,
+  "receita": "sintese.gongo_sobe(semente) em trilha/sintese.py: gongo modal de 470 Hz cuja altura sobe ~2,5 semitons logo após o golpe (2,8 s). Evita o timbre identificável do xiaoluo da ópera de Pequim (regra 7 da LINGUAGEM_MUSICAL). Os arquivos listados são xiaoluo reais (CC BY 4.0, sobem ~1,5 semitom medidos) e servem só de reserva se a síntese falhar."
+ },
+ "gongo_desce": {
+  "arquivos": [
+   "musica/gongo_desce__1.ogg",
+   "musica/gongo_desce__2.ogg",
+   "musica/gongo_desce__3.ogg"
+  ],
+  "sintetizar": true,
+  "receita": "sintese.gongo_desce(semente) em trilha/sintese.py: gongo modal de 300 Hz cuja altura cai ~3 semitons depois do ataque (4,2 s). Mesmo motivo do gongo_sobe. Os arquivos listados são daluo reais (CC BY 4.0, descem 3 a 4 semitons medidos), reserva."
+ },
+ "bloco_madeira": {
+  "arquivos": [
+   "musica/bloco_madeira__1.wav",
+   "musica/bloco_madeira__2.wav",
+   "musica/bloco_madeira__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "bloco_acelera": {
+  "arquivos": [
+   "musica/bloco_acelera__1.wav"
+  ],
+  "sintetizar": true,
+  "receita": "sintese.bloco_acelera(n=16, dur=2.4, altura=1100) em trilha/sintese.py: golpes de bloco que aceleram em curva exponencial até 45 ms entre golpes e fecham num golpe forte duplo (convenção do bangzi). O único arquivo real (dedos numa caixa de madeira, 8 s, de 1 s a 0,3 s entre golpes) é lento e longo demais para a pontuação; fica de reserva. Para timbre real, dá para sequenciar musica/bloco_madeira__1..3 com os mesmos tempos."
+ },
+ "prato": {
+  "arquivos": [
+   "musica/prato__1.wav",
+   "musica/prato__2.wav",
+   "musica/prato__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "tambor_grave": {
+  "arquivos": [
+   "musica/tambor_grave__1.wav",
+   "musica/tambor_grave__2.wav",
+   "musica/tambor_grave__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "rufar": {
+  "arquivos": [
+   "musica/rufar__1.wav",
+   "musica/rufar__2.wav",
+   "musica/rufar__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "maraca": {
+  "arquivos": [
+   "musica/maraca__1.wav",
+   "musica/maraca__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "caxixi": {
+  "arquivos": [
+   "musica/caxixi__1.ogg",
+   "musica/caxixi__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "agogo": {
+  "arquivos": [
+   "musica/agogo__1.wav",
+   "musica/agogo__2.wav",
+   "musica/agogo__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "berimbau": {
+  "arquivos": [
+   "musica/berimbau__1.wav",
+   "musica/berimbau__2.wav",
+   "musica/berimbau__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "flauta_chamado": {
+  "arquivos": [
+   "musica/flauta_chamado__1.wav",
+   "musica/flauta_chamado__2.wav",
+   "musica/flauta_chamado__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "pau_de_chuva": {
+  "arquivos": [
+   "musica/pau_de_chuva__1.wav",
+   "musica/pau_de_chuva__2.wav",
+   "musica/pau_de_chuva__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "facao_golpe": {
+  "arquivos": [
+   "acao/facao_golpe__1.wav",
+   "acao/facao_golpe__2.wav",
+   "acao/facao_golpe__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "risada_homem": {
+  "arquivos": [
+   "acao/risada_homem__1.wav",
+   "acao/risada_homem__2.wav",
+   "acao/risada_homem__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "cipo_chicote": {
+  "arquivos": [
+   "acao/cipo_chicote__1.wav",
+   "acao/cipo_chicote__2.wav",
+   "acao/cipo_chicote__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "uivo_curupira": {
+  "arquivos": [
+   "acao/uivo_curupira__1.wav",
+   "acao/uivo_curupira__2.wav",
+   "acao/uivo_curupira__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "pilao_batida": {
+  "arquivos": [
+   "acao/pilao_batida__1.wav",
+   "acao/pilao_batida__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "cachimbo_baforada": {
+  "arquivos": [
+   "acao/cachimbo_baforada__1.wav",
+   "acao/cachimbo_baforada__2.wav",
+   "acao/cachimbo_baforada__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "gotejar": {
+  "arquivos": [
+   "natureza/gotejar__1.flac",
+   "natureza/gotejar__2.flac"
+  ],
+  "sintetizar": false
+ },
+ "alfaia": {
+  "arquivos": [
+   "musica/alfaia__1.ogg"
+  ],
+  "sintetizar": false
+ },
+ "apito": {
+  "arquivos": [
+   "musica/apito__1.ogg",
+   "musica/apito__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "atabaque": {
+  "arquivos": [
+   "musica/atabaque__1.wav",
+   "musica/atabaque__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "berimbau_nota": {
+  "arquivos": [
+   "musica/berimbau_nota__1.wav",
+   "musica/berimbau_nota__2.ogg",
+   "musica/berimbau_nota__3.ogg"
+  ],
+  "sintetizar": false
+ },
+ "berimbau_preso": {
+  "arquivos": [
+   "musica/berimbau_preso__1.wav",
+   "musica/berimbau_preso__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "berimbau_solto": {
+  "arquivos": [
+   "musica/berimbau_solto__1.wav",
+   "musica/berimbau_solto__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "bongo": {
+  "arquivos": [
+   "musica/bongo__1.wav",
+   "musica/bongo__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "caixa": {
+  "arquivos": [
+   "musica/caixa__1.wav",
+   "musica/caixa__2.wav",
+   "musica/caixa__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "claves": {
+  "arquivos": [
+   "musica/claves__1.wav",
+   "musica/claves__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "conga": {
+  "arquivos": [
+   "musica/conga__1.wav",
+   "musica/conga__2.wav",
+   "musica/conga__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "djembe": {
+  "arquivos": [
+   "musica/djembe__1.wav",
+   "musica/djembe__2.ogg",
+   "musica/djembe__3.ogg"
+  ],
+  "sintetizar": false
+ },
+ "drone_grave": {
+  "arquivos": [
+   "musica/drone_grave__1.ogg",
+   "musica/drone_grave__2.ogg"
+  ],
+  "sintetizar": false
+ },
+ "flauta": {
+  "arquivos": [
+   "musica/flauta__A#4.wav",
+   "musica/flauta__A#5.wav",
+   "musica/flauta__C5.wav",
+   "musica/flauta__C6.wav",
+   "musica/flauta__D5.wav",
+   "musica/flauta__D6.wav",
+   "musica/flauta__E5.wav",
+   "musica/flauta__E6.wav",
+   "musica/flauta__F#5.wav",
+   "musica/flauta__F4.wav",
+   "musica/flauta__G#4.wav",
+   "musica/flauta__G#5.wav"
+  ],
+  "sintetizar": false
+ },
+ "flauta_bambu": {
+  "arquivos": [
+   "musica/flauta_bambu__G3.ogg"
+  ],
+  "sintetizar": false
+ },
+ "flauta_grave": {
+  "arquivos": [
+   "musica/flauta_grave__A3.wav",
+   "musica/flauta_grave__B3.wav",
+   "musica/flauta_grave__C4.wav",
+   "musica/flauta_grave__D4.wav",
+   "musica/flauta_grave__E4.wav",
+   "musica/flauta_grave__F3.wav",
+   "musica/flauta_grave__F4.wav",
+   "musica/flauta_grave__G3.wav"
+  ],
+  "sintetizar": false
+ },
+ "ganza": {
+  "arquivos": [
+   "musica/ganza__1.ogg",
+   "musica/ganza__2.ogg"
+  ],
+  "sintetizar": false
+ },
+ "gongo_rufo": {
+  "arquivos": [
+   "musica/gongo_rufo__1.wav"
+  ],
+  "sintetizar": false
+ },
+ "kalimba": {
+  "arquivos": [
+   "musica/kalimba__A#4.wav",
+   "musica/kalimba__A#5.wav",
+   "musica/kalimba__B3.wav",
+   "musica/kalimba__B5.wav",
+   "musica/kalimba__C#4.wav",
+   "musica/kalimba__C#5.wav",
+   "musica/kalimba__D#5.wav",
+   "musica/kalimba__D5.wav",
+   "musica/kalimba__F#5.wav",
+   "musica/kalimba__F4.wav",
+   "musica/kalimba__G3.wav",
+   "musica/kalimba__G4.wav",
+   "musica/kalimba__G5.wav"
+  ],
+  "sintetizar": false
+ },
+ "marimba": {
+  "arquivos": [
+   "musica/marimba__C#4.wav",
+   "musica/marimba__C5.wav",
+   "musica/marimba__C6.wav",
+   "musica/marimba__F4.wav",
+   "musica/marimba__F5.wav",
+   "musica/marimba__F6.wav"
+  ],
+  "sintetizar": false
+ },
+ "ocarina": {
+  "arquivos": [
+   "musica/ocarina__A#5.wav",
+   "musica/ocarina__A4.wav",
+   "musica/ocarina__A5.wav",
+   "musica/ocarina__B4.wav",
+   "musica/ocarina__C#5.wav",
+   "musica/ocarina__C#6.wav",
+   "musica/ocarina__C6.wav",
+   "musica/ocarina__D5.wav",
+   "musica/ocarina__E5.wav",
+   "musica/ocarina__F#5.wav",
+   "musica/ocarina__G#5.wav"
+  ],
+  "sintetizar": false
+ },
+ "pandeiro": {
+  "arquivos": [
+   "musica/pandeiro__1.ogg",
+   "musica/pandeiro__2.ogg",
+   "musica/pandeiro__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "pratinhos": {
+  "arquivos": [
+   "musica/pratinhos__1.wav",
+   "musica/pratinhos__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "prato_arco": {
+  "arquivos": [
+   "musica/prato_arco__1.wav",
+   "musica/prato_arco__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "prato_rufo": {
+  "arquivos": [
+   "musica/prato_rufo__1.wav",
+   "musica/prato_rufo__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "prato_suspenso": {
+  "arquivos": [
+   "musica/prato_suspenso__1.wav",
+   "musica/prato_suspenso__2.wav",
+   "musica/prato_suspenso__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "quena": {
+  "arquivos": [
+   "musica/quena__A4.wav",
+   "musica/quena__A5.wav",
+   "musica/quena__B4.wav",
+   "musica/quena__B5.wav",
+   "musica/quena__C5.wav",
+   "musica/quena__D5.wav",
+   "musica/quena__E5.wav",
+   "musica/quena__F#5.wav",
+   "musica/quena__G4.wav",
+   "musica/quena__G5.wav"
+  ],
+  "sintetizar": false
+ },
+ "rabeca": {
+  "arquivos": [
+   "musica/rabeca__A3.wav",
+   "musica/rabeca__A4.wav",
+   "musica/rabeca__A5.wav",
+   "musica/rabeca__C4.wav",
+   "musica/rabeca__C5.wav",
+   "musica/rabeca__C6.wav",
+   "musica/rabeca__E4.wav",
+   "musica/rabeca__E5.wav",
+   "musica/rabeca__G3.wav",
+   "musica/rabeca__G4.wav",
+   "musica/rabeca__G5.wav"
+  ],
+  "sintetizar": false
+ },
+ "rabeca_glissando": {
+  "arquivos": [
+   "musica/rabeca_glissando__1.wav",
+   "musica/rabeca_glissando__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "rabeca_tremolo": {
+  "arquivos": [
+   "musica/rabeca_tremolo__A4.wav",
+   "musica/rabeca_tremolo__C4.wav",
+   "musica/rabeca_tremolo__E4.wav",
+   "musica/rabeca_tremolo__G3.wav",
+   "musica/rabeca_tremolo__G4.wav"
+  ],
+  "sintetizar": false
+ },
+ "reco_reco": {
+  "arquivos": [
+   "musica/reco_reco__1.wav",
+   "musica/reco_reco__2.wav",
+   "musica/reco_reco__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "salterio_arco": {
+  "arquivos": [
+   "musica/salterio_arco__A#4.wav",
+   "musica/salterio_arco__A#5.wav",
+   "musica/salterio_arco__C5.wav",
+   "musica/salterio_arco__C6.wav",
+   "musica/salterio_arco__D5.wav",
+   "musica/salterio_arco__D6.wav",
+   "musica/salterio_arco__E5.wav",
+   "musica/salterio_arco__E6.wav",
+   "musica/salterio_arco__F#5.wav",
+   "musica/salterio_arco__F#6.wav",
+   "musica/salterio_arco__G#5.wav"
+  ],
+  "sintetizar": false
+ },
+ "slapstick": {
+  "arquivos": [
+   "musica/slapstick__1.wav",
+   "musica/slapstick__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "surdo": {
+  "arquivos": [
+   "musica/surdo__1.wav",
+   "musica/surdo__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "tambor_tronco": {
+  "arquivos": [
+   "musica/tambor_tronco__1.wav",
+   "musica/tambor_tronco__2.wav",
+   "musica/tambor_tronco__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "tamborim": {
+  "arquivos": [
+   "musica/tamborim__1.wav",
+   "musica/tamborim__2.wav",
+   "musica/tamborim__3.wav"
+  ],
+  "sintetizar": false
+ },
+ "vento_rajada": {
+  "arquivos": [
+   "acao/vento_rajada__1.wav",
+   "acao/vento_rajada__2.wav"
+  ],
+  "sintetizar": false
+ },
+ "vento_uivando": {
+  "arquivos": [
+   "acao/vento_uivando__1.mp3",
+   "acao/vento_uivando__2.mp3",
+   "acao/vento_uivando__3.mp3"
+  ],
+  "sintetizar": false
+ },
+ "viola": {
+  "arquivos": [
+   "musica/viola__A3.wav",
+   "musica/viola__A4.wav",
+   "musica/viola__A5.wav",
+   "musica/viola__B3.wav",
+   "musica/viola__B4.wav",
+   "musica/viola__C#4.wav",
+   "musica/viola__C#5.wav",
+   "musica/viola__D3.wav",
+   "musica/viola__D4.wav",
+   "musica/viola__D5.wav",
+   "musica/viola__E3.wav",
+   "musica/viola__E4.wav",
+   "musica/viola__E5.wav",
+   "musica/viola__F#3.wav",
+   "musica/viola__F#4.wav",
+   "musica/viola__F#5.wav",
+   "musica/viola__G3.wav",
+   "musica/viola__G4.wav",
+   "musica/viola__G5.wav"
+  ],
+  "sintetizar": false
+ }
+}

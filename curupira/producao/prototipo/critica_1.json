@@ -1,0 +1,139 @@
+{
+ "nota_geral": 5,
+ "elementos_chineses_restantes": [
+  "Travessa superior do biombo com meandro quadrado contínuo (g-grega 2x, palco.js:115 e 148). Lê como a grega chinesa de caixas quadradas, o ornamento mais típico de móvel e janela chinesa. É o elemento chinês mais evidente da tela.",
+  "Montantes com degrau vertical contínuo (g-degrau, palco.js:116). Junto com a travessa, faz o biombo inteiro ler como treliça ou móvel chinês.",
+  "Remates em gota ou cebola no topo dos montantes (palco.js:121). Lembram pináculo de pagode ou de telhado oriental.",
+  "Na cabeça do tacape, a faixa g-grega recortada vira dois 'T' (TT), que parecem letra ou glifo. Letras são proibidas.",
+  "Não é chinês, mas também é clichê proibido: o cabelo do Curupira em coroa radial lê como cocar de fantasia, e o chapéu do Tião (aba enorme e reta, copa em domo) lê como sombrero mexicano."
+ ],
+ "problemas": [
+  {
+   "area": "Curupira: cabelo (bonecos.js:307-325)",
+   "problema": "As 9 mechas abrem em leque ou coroa radial em volta da cabeça, que é exatamente o que a revisão obrigatória da seção 7.1 proíbe. Com contorno preto de 1 px e listras amarelas internas, viram cocar de penas ou juba de sol de desenho animado, e o brilho de f-fogo quase não aparece.",
+   "correcao": "Prender as mechas só no topo e na nuca, com ângulo base entre 150° e 210° (para trás e para cima; 0° = para onde ele olha). Comprimento crescente da testa para a nuca (50 a 120 px), curvatura que pende para trás como chama ao vento, perfil assimétrico. Nenhuma mecha à frente da testa. Usar contorno: 0 nas mechas para o screen e o f-fogo brilharem, e trocar a lâmina interna amarela por um núcleo claro mais curto e difuso.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Curupira: figurino e atributos (bonecos.js:264-301)",
+   "problema": "A revisão obrigatória da seção 7.1 não foi aplicada. Ele ainda tem tacape (com o 'TT' de grega), saiote de 10 tiras verde e açafrão, faixa de roseta na cintura e pintura de jenipapo no rosto e no corpo. Faltam o corpo coberto de pelos, a orelha grande e o machado de casco de jabuti. Do jeito que está, lê como 'menino indígena genérico de fantasia', que é proibido.",
+   "correcao": "1) Trocar o tacape por machado de casco de jabuti: cabo curto e torto de madeira e lâmina oval em placa com g-jabuti vazado, filha da mão da frente. 2) Remover tira0 a tira9 e as pinturas de jenipapo, e pôr na cintura um cinto de fibra torcida (2 fios trançados). 3) Recortar em tufos e mechas de pelo (dente de serra irregular, pontas de 6 a 12 px) a borda de costas, ombros, antebraços e coxas, com vazado g-espinha no peito e nas costas. 4) Orelha grande, de uns 18 px, bem destacada no perfil. 5) Dentes verdes como peça escondida que aparece quando a boca abre.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Curupira: pés virados (legibilidade)",
+   "problema": "Os pés estão virados no desenho, mas não se leem no tamanho real (cerca de 45 px na captura de 1600). A tira amarela no tornozelo parece um sapato e os dedos são bolinhas pequenas. Sem zoom, o espectador vê um pé comum. É o traço essencial do personagem.",
+   "correcao": "Pé 1,4x mais comprido e mais alto. Calcanhar grande e arredondado, saliente para +x (a frente da marcha). Cinco dedos bem separados apontando para −x, com dedão maior, e unhas como furos de 1,5 px. Tirar a tira amarela do tornozelo e trocar por franja de pelo. Arco do pé vazado (uma fenda de luz sob a planta). Na entrada, manter 1 s de pose parada de perfil limpo com o pé suspenso, mostrando a sola.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Chão e pegadas (cenario.js:315, quadro.html:42, #pegada)",
+   "problema": "Os bonecos pisam em y 800 e as pegadas estão em y 805, mas o chão L2 começa em y 838. Bonecos e pegadas flutuam uns 35 px acima do chão. As pegadas são ovais compridos com 5 pontinhos soltos e parecem girinos ou notas musicais. E como o chão é escuro, nem daria para vê-las nele.",
+   "correcao": "Alinhar o chão: chao(r, -M, W+M, 806, ...) ou bonecos em y 836. Seguir a referência, com a clareira de chão CLARO e iluminada no centro e só uma borda irregular escura no rodapé, para as pegadas ficarem escuras sobre o claro. Outra opção elegante é fazer as pegadas como furos de luz num chão escuro. Redesenhar #pegada como sola real: calcanhar redondo, arco estreito, planta larga, dedão grande colado e 4 dedos menores em arco, proporção cerca de 1:2,6.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Moldura do biombo (palco.js:115-153)",
+   "problema": "A travessa superior com meandro quadrado contínuo, os montantes com degrau contínuo e os remates em cebola fazem o biombo parecer móvel chinês. A madeira é chapada e uniforme: a lamparina à direita não acende nenhuma aresta.",
+   "correcao": "Travessa superior: trocar a grega por veio de madeira com goivadas de faca irregulares e um friso de palha trançada (o mesmo g-trancado da base), ou por um entalhe de volutas e losangos concêntricos com quebras de simetria. Montantes: g-cobra ou g-losango em relevo raso, com o medalhão em losango mantido. Remates: toco lavrado com chanfro ou cabeça de carranca estilizada sem rosto (crina em mechas). Aplicar --madeira-luz em gradiente nas arestas do lado direito, crescente perto da lamparina.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Bonecos: linguagem plástica (bonecos.js, montagem das peças)",
+   "problema": "Os bonecos parecem vetor de jogo em Flash, não couro entalhado retroiluminado. O contorno é preto e grosso em toda peça, as cores são opacas e lamacentas, quase não há vazado visível, os membros são retângulos de largura constante (corpo de manequim) e as juntas são discos enormes com raios que parecem hélices ou parafusos de robô. Falta a translucidez colorida da referência.",
+   "correcao": "Contorno de 1,4 a 1,8 px na cor escura do próprio couro, não em preto puro. Membros afinando: cotovelo para pulso a 70%, joelho para tornozelo a 65%, com curvas de músculo. Juntas com raio 7 (hoje 11), da mesma cor da peça, sem anel escuro, e rebite de 2 px. Vazados visíveis em toda roupa, com furos de 4 px ou mais e escala de pelo menos 1,2 (o peito do Tião em g-losango hoje nem aparece). Cores mais claras e mais saturadas por baixo do multiply, como vitral (couro cru #D9AE72, anil #4A6AA8), para a luz atravessar. Reforçar as manchas do f-couro. Mãos com dedos recortados em silhueta.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Flora: árvores-pirulito em L3, L4 e L5 (cenario.js:136, 293, 302, 306)",
+   "problema": "A função arvore() gera troncos retos com copa em tufos de nuvem, que são as 'árvores-pirulito' proibidas. Nos painéis central e direito, as copas achatadas em tufos lembram acácia de savana ou árvore genérica de banco de imagem, não a mata brasileira.",
+   "correcao": "Substituir arvore() por espécies com silhueta que sobreviva ao desfoque. Embaúba: tronco fino anelado, galhos em candelabro e folhas palmadas em estrela de 7 a 9 lobos bem abertos. Samaúma distante: copa em guarda-chuva achatada e muito larga, com galhos horizontais longos visíveis. Touceira de açaí: 4 a 8 estipes finos inclinados com folhas pendentes. Em L4 e L5, a legibilidade vem do contorno grande, não do detalhe.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Flora: costela-de-adão L1 (cenario.js:217, 332-334)",
+   "problema": "As duas folhas da borda esquerda são amêndoas pretas com cortes em cunha e furos redondos. Flutuam sem pecíolo e leem como peixe, Pac-Man ou folha-bolha, não como costela-de-adão.",
+   "correcao": "Folha cordada (em coração), com seio na base. Fendas da margem até cerca de 2/3 do caminho à nervura, em lóbulos de largura variada. Furos ovais alongados numa fileira junto à nervura. Pecíolo longo e curvo saindo da borda do papel. Agrupar 3 ou 4 folhas de tamanhos diferentes e sobrepostas, com o pecíolo ligando cada uma a um caule.",
+   "prioridade": "alta"
+  },
+  {
+   "area": "Flora: helicônia L2 (cenario.js:189, 318)",
+   "problema": "São 4 folhas em espátula, simétricas, em hastes retas paralelas, com chevrons vazados. Parecem leque de penas ou lanças. A inflorescência é um zigue-zague de triângulos pretos minúsculos e ilegíveis, e a cena perde a única exceção de cor que o guia permite.",
+   "correcao": "Folhas de bananeira: oblongas, largas, com rasgos laterais e pecíolos arqueados de alturas diferentes. Uma inflorescência pendente em zigue-zague com 6 a 10 brácteas em forma de barco (30 a 40 px cada), em couro urucum com ponta açafrão, como cor translúcida. Nervura central em g-espinha fino só na maior folha.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Flora: samaúma L2 (cenario.js:147-159)",
+   "problema": "A base é uma saia lisa única, sem sapopemas em lâminas. O oco é um arco perfeito e claro, uma portinha de casa de hobbit ou lápide. Na casca, as fileiras de losangos com tracejado parecem enfeite de varal.",
+   "correcao": "Cinco sapopemas em lâminas finas e côncavas abrindo no chão (até 260 px de altura e 520 de base), com fendas de luz entre elas para dar a ideia de profundidade. Oco irregular e rasgado, menor e assimétrico, entre duas sapopemas, com borda de recorte de faca. Casca com g-losango 1,6x em 2 ou 3 faixas verticais estreitas e desalinhadas, no lugar dos losangos soltos com tracejado.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Flora: cipós (cenario.js:239, 247, 311-336)",
+   "problema": "O cipó L2 do painel direito é uma catenária lisa com folhinhas em intervalo regular: parece varal de bandeirinhas. O cipoPendente termina numa espiral perfeita de clip-art (canto superior direito do painel esquerdo).",
+   "correcao": "Espessura variável de 4 a 10 px, duas fibras torcidas uma na outra, trechos sem folha, folhas alternadas de tamanhos diferentes e um laço pendente. Na ponta, afinar até uma gavinha irregular de uma volta e meia, sem espiral geométrica.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Flora: frondes do topo (L1)",
+   "problema": "São as melhores silhuetas da cena, mas as duas que emolduram o painel central são quase espelhadas (mesmo comprimento, curva e número de folíolos), e a cópia aparece.",
+   "correcao": "Variar o comprimento em ±25%, a curvatura e o número de folíolos. Deixar 1 ou 2 folíolos rasgados ou faltando. Pendurar uma terceira fronde mais curta, atrás e parcial.",
+   "prioridade": "baixa"
+  },
+  {
+   "area": "Curupira: proporção e rosto",
+   "problema": "O corpo é fino e ereto como um palito, a cabeça é pequena e as pernas são retas. A revisão pede menino forte: cabeça grande, ombros largos, braços longos e pernas curtas e arqueadas. O olho é uma amêndoa branca sem pupila e parece cego ou fechado.",
+   "correcao": "Cabeça a 0,25H, ombros 30% mais largos, braços chegando à altura do joelho, pernas a 0,36H com joelho para fora (arqueadas) e tronco levemente inclinado à frente. Olho vazado com pupila de couro (ponte) e a elipse acafrao-claro atrás do furo em opacidade de 0,4 em repouso, para o olhar acender. Sorriso maroto com o canto da boca mais marcado.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Tião (bonecos.js:351-390)",
+   "problema": "A camisa couro-cru, sem gola, carcela ou punho, lê como peito nu. A calça anil saturada com barra dobrada é jeans moderno. Usa botas no lugar das alpercatas. A aba do chapéu é enorme e reta e a copa é um domo (sombrero). O rosto vazado vira uma máscara clara borrada. A espingarda é segurada como bastão e lê como vara torta.",
+   "correcao": "Colarinho, carcela com 3 botões vazados, manga dobrada no cotovelo e remendo anil visível no ombro. Calça em anil desbotado #3E5478 ou argila, com barra esfiapada (serra irregular) e canela à mostra. Alpercata de sola e tiras, com o pé aparecendo. Chapéu com aba 30% mais curta e levantada nas pontas, copa mais alta com amassado no topo. Rosto com furo maior e traços de 2 px bem separados (sobrancelha grisalha grossa, olho com pupila, nariz adunco, bigode caído). Espingarda com cano preto fino e comprido, coronha de curva clara e guarda-mato vazado, apoiada no ombro ou atravessada com a coronha no quadril.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Profundidade (camadas L5 a L1)",
+   "problema": "Do L4 muito desfocado salta-se direto para o L1 preto e nítido. O L3 quase não se lê, então faltam os planos intermediários que dão a riqueza da referência (4 ou 5 planos graduais). O centro inteiro fica num meio-tom uniforme.",
+   "correcao": "Reforçar o L3 (opacidade 0,48, desfoque de 2 px) com silhuetas botânicas legíveis nos painéis laterais e nas bordas do central. L5 mais claro e mais alto (horizonte de copas). Densidade alta nas bordas e baixa no centro. Um L2 lateral esquerdo (tronco ou touceira de açaí) para equilibrar o peso da samaúma à direita.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Luz e hotspot (palco.js, papel e vinheta)",
+   "problema": "O hotspot é fraco: o papel lê como cartolina sépia quase uniforme, longe da referência, que tem centro creme quase branco e queda forte para cantos marrom-escuros. Os três painéis não parecem folhas distintas.",
+   "correcao": "Segurar --papel-centro (#F6E4B8 a #FBEFD2) até 15 a 18% do raio, papel-meio a 45% e vinheta a 0,65. Aplicar o escurecimento próprio de cada painel nas bordas, rgba(0,0,0,.06 a .10), como manda o guia em 9.2. Um leve calor a mais no painel direito, perto da lamparina.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Textura do papel (f-papel)",
+   "problema": "Riscos curtos e retos espalhados por igual, de contraste alto, parecem película riscada, vidro sujo ou pelos, não papel de fibra de bananeira.",
+   "correcao": "Metade da densidade de fios, fios mais longos e curvos, contraste a 0,5x. Manchas de nuvem mais presentes (variação de espessura do papel, que na retroiluminação aparece como zonas mais claras e mais escuras) e poucas inclusões pontuais. A textura deve aparecer mais no centro iluminado e sumir nos cantos.",
+   "prioridade": "media"
+  },
+  {
+   "area": "Lamparina e toco (palco.js, camada 14)",
+   "problema": "A peça é bonita, mas o formato com alça em argola e faixa ondulada lê como lucerna greco-romana ou diya indiana. O toco é uma coluna cilíndrica lisa com friso em degrau, um pedestal e não um toco. A chama é grande e lisa demais.",
+   "correcao": "Candeia ou candeeiro de barro bojudo com bico e pavio de algodão, sem alça em argola (alça de cima ou nenhuma), com marcas de dedo no barro. Toco com casca rachada, topo irregular com anéis visíveis e uma raiz escorrendo. Chama de 46 para cerca de 34 px, com borda irregular, uma ponta que dança e um fio de fumaça.",
+   "prioridade": "baixa"
+  },
+  {
+   "area": "Travessa inferior de palha",
+   "problema": "A palha trançada lê como fita estampada plana (traços amarelos regulares), sem volume.",
+   "correcao": "Sombra inferior em cada fita para dar relevo, variação de tom entre as fitas (palha e palha-sombra) e 3 ou 4 fiapos soltos.",
+   "prioridade": "baixa"
+  }
+ ],
+ "o_que_manter": [
+  "O clima geral âmbar, com a lamparina à direita, o halo quente na sala e as brasas subindo da chama.",
+  "O tríptico com montantes e o cenário que continua por trás deles.",
+  "As frondes pinadas de palmeira que pendem do topo (L1), a melhor silhueta botânica da cena (só variar as cópias).",
+  "As varetas finas e meio translúcidas saindo por baixo, coerentes com a técnica.",
+  "O fundo em névoa com palmeiras desfocadas, que dá atmosfera.",
+  "As cores de fogo das mechas (gradiente urucum, açafrão e amarelo): mudar só a forma e o arranjo.",
+  "O chapéu de palha do Tião com g-trancado e fita urucum (só corrigir a proporção), o bornal em g-jabuti e a barba recortada.",
+  "A lamparina à frente do biombo, sobrepondo a travessa, como o braseiro da referência.",
+  "A página roda sem erros no console.",
+  "Capturas desta crítica: /Users/joaovitorborgesdasilvamatias/Documents/dev/folclore.em.sombras/curupira/producao/prototipo/critica/quadro_000000.png, quadro_0001.3.png e quadro_0003.7.png. Recortes de detalhe (temporários): /private/tmp/claude-501/-Users-joaovitorborgesdasilvamatias-Documents-dev-folclore-em-sombras/f16ab1ee-9c43-4e00-b49f-76432fbf3d14/scratchpad/c_*.png.",
+  "Aviso: sobrescrevi sem querer scratchpad/crop.py (agora tem 2 linhas). Se outro agente usava esse arquivo, ele precisa ser refeito."
+ ]
+}

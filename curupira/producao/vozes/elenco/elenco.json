@@ -1,0 +1,36 @@
+{
+ "descricao": "Vozes-semente (timbre de cada papel), desenhadas no Qwen3-TTS VoiceDesign e clonadas pelo Chatterbox pt-BR em tts.py. Para regerar: mx.random.seed(semente) e generate(texto, instruct=instrucao, lang_code='portuguese') no modelo abaixo.",
+ "modelo": "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-bf16 (mlx-audio 0.5.8)",
+ "papeis": {
+  "narrador": {
+   "arquivo": "narrador.wav",
+   "semente": 1,
+   "instrucao": "Male storyteller in his late fifties, native speaker of Brazilian Portuguese with a natural accent from the interior of Brazil. Deep, warm, resonant low voice; calm, unhurried pace with expressive pauses, like a grandfather telling a folk legend by lamplight at night. Intimate, captivating and slightly mysterious.",
+   "texto": "Boa noite, minha gente. Chegue mais perto da lamparina, que hoje eu vou contar uma história antiga, daquelas que o povo da mata conta bem baixinho."
+  },
+  "tiao": {
+   "arquivo": "tiao.wav",
+   "semente": 3,
+   "instrucao": "Older Brazilian backwoods hunter around sixty, native Brazilian Portuguese with a rural caipira accent. Rough, gravelly, hoarse and loud voice; gruff, impatient and blunt, speaking forcefully.",
+   "texto": "Anda logo, rapaz! Pega a espingarda e chama os cachorros, que hoje a gente só volta pra casa com caça grande."
+  },
+  "ze": {
+   "arquivo": "ze.wav",
+   "semente": 4,
+   "instrucao": "Young Brazilian man about twenty years old, native Brazilian Portuguese. Clear, bright tenor voice, slightly nervous and eager, natural lively pace.",
+   "texto": "Calma, seu Tião, eu tô indo! Mas o senhor não acha que a mata tá quieta demais hoje?"
+  },
+  "vo": {
+   "arquivo": "vo.wav",
+   "semente": 3,
+   "instrucao": "Elderly Brazilian grandmother around seventy-eight, a folk healer, native Brazilian Portuguese. Soft, sweet, slightly trembling aged voice but firm and authoritative; slow, wise, tender delivery.",
+   "texto": "Meu filho, escuta o que a vó tá dizendo: na mata a gente pede licença. Quem caça por maldade, o Curupira não perdoa."
+  },
+  "curupira": {
+   "arquivo": "curupira.wav",
+   "semente": 11,
+   "instrucao": "Ageless, enigmatic forest spirit with the small, clear voice of a young boy around ten, yet speaking slowly and calmly like a wise old man. Native speaker of Brazilian Portuguese. Soft but clear and well articulated, mysterious and serene, never whispering, never cartoonish.",
+   "texto": "Tá perdido, caçador? Segue o meu rastro, segue... que eu te levo lá pro fundo da mata!"
+  }
+ }
+}

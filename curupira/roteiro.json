@@ -1,0 +1,2310 @@
+{
+ "titulo": "Curupira, o guardião da mata",
+ "papeis": {
+  "narrador": "Contador de causos do interior, homem maduro, voz grave e quente, com um sorriso na voz. Fala devagar, como quem conta à beira do fogo, e baixa o tom no suspense. Sotaque brasileiro do interior, sem caricatura. Na citação de Anchieta, muda para tom de leitura, devagar e com respeito.",
+  "tiao": "Tião, caçador caboclo de uns sessenta anos. Voz rouca de fumo, arrastada, prosa e gananciosa; fala alto e ri fácil. À noite, o medo aparece por baixo da bravata e a voz falha.",
+  "ze": "Zé, rapaz de uns vinte anos, neto da benzedeira. Voz clara, rápida e afobada; começa exibido e termina humilde e sincero.",
+  "vo": "A Vó, senhora idosa e benzedeira, só em lembrança. Voz baixa, lenta e carinhosa, com autoridade mansa e leve reverberação de memória. Em rastros_09 a voz dela é imitada pelo Curupira: igual, mas levemente errada.",
+  "curupira": "O dono do mato. Voz pequena e antiga ao mesmo tempo, sem idade, entre menino e velho; parece vir de todo lado, próxima e distante. Enigmático, sem raiva e sem fofura, nunca caricato, com eco discreto de mata. Fala quatro vezes: o aviso, a cantiga meio cantada e as duas falas da despedida."
+ },
+ "credito": "Narrativa baseada na tradição tupi e no folclore brasileiro; fontes: Anchieta (1560), Couto de Magalhães (1876), Barbosa Rodrigues (1890), Câmara Cascudo",
+ "pronuncia": [
+  {
+   "palavra": "Curupira",
+   "silabas": "cu-ru-PI-ra",
+   "reserva_tts": "Curupíra"
+  },
+  {
+   "palavra": "corupira",
+   "silabas": "co-ru-PI-ra",
+   "reserva_tts": "corupíra"
+  },
+  {
+   "palavra": "curupiras",
+   "silabas": "cu-ru-PI-ras",
+   "reserva_tts": "curupíras"
+  },
+  {
+   "palavra": "Anchieta",
+   "silabas": "an-xi-É-ta",
+   "reserva_tts": "Anchiéta"
+  },
+  {
+   "palavra": "brasis",
+   "silabas": "bra-SIS",
+   "reserva_tts": "brasís"
+  },
+  {
+   "palavra": "sapopemas",
+   "silabas": "sa-po-PÊ-mas",
+   "reserva_tts": "sapopêmas"
+  },
+  {
+   "palavra": "embaúba",
+   "silabas": "em-ba-Ú-ba",
+   "reserva_tts": "embaúba"
+  },
+  {
+   "palavra": "inhambu",
+   "silabas": "i-nham-BU",
+   "reserva_tts": "inhambú"
+  },
+  {
+   "palavra": "urutau",
+   "silabas": "u-ru-TAU",
+   "reserva_tts": "urutáu"
+  },
+  {
+   "palavra": "queixada",
+   "silabas": "quei-XA-da",
+   "reserva_tts": "queixáda"
+  },
+  {
+   "palavra": "abanadores",
+   "silabas": "a-ba-na-DO-res",
+   "reserva_tts": "abanadôres"
+  },
+  {
+   "palavra": "Caipora",
+   "silabas": "cai-PO-ra",
+   "reserva_tts": "Caipóra"
+  },
+  {
+   "palavra": "pitar",
+   "silabas": "pi-TAR",
+   "reserva_tts": "pitár"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "abertura",
+   "capitulo": null,
+   "luz": "lamparina",
+   "ambiente": [
+    "lamparina_chama",
+    "grilos"
+   ],
+   "trilha": "Abre em silêncio total. Depois do fósforo, surdo grave em pulso de coração lento e bordão Ré-Lá de rabeca em nota longa; bem longe, a flauta de taquara toca só a primeira frase da cantiga do Curupira, Vou andando. Na capa do folheto, fórmula revelacao com gongo_sobe e tambor_grave. Na citação de Anchieta, a música recua para a rabeca em nota pedal e um maracá raro, e a voz fica quase nua. Em povos de língua tupi, entra um batuque distante e abafado de alfaia e atabaque, como se viesse do fundo da mata. Na palavra dono, tudo corta seco e fica só um assobio ao longe.",
+   "visual": "Biombo tríptico de papel, apagado, na moldura de madeira entalhada com palha trançada; a lamparina de barro à frente, à direita. O papel acende em âmbar do centro para as bordas, com poeira no feixe. Uma vareta sem boneco cruza a tela. A capa do folheto é uma prancha de xilogravura de cordel que baixa e assenta no painel do meio, sem selo e sem marca vermelha. Na carta, a serra recortada sobe em L4 e L5, com uma trilha estreita até o cume; no cume, em L2, surgem as oferendas: penas, flechas e um abanador trançado. Uma sombra pequena e desfocada cruza o fundo e some.",
+   "beats": [
+    {
+     "id": "abertura_01",
+     "tipo": "pausa",
+     "dur": 2.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "fosforo",
+       "em": "+0.3"
+      },
+      {
+       "som": "lamparina_chama",
+       "em": "+0.8"
+      },
+      {
+       "som": "gongo_sobe",
+       "em": "+1.6"
+      }
+     ],
+     "acao": "Escuro total. Um fósforo risca junto da lamparina, a chama pega e o papel do biombo acende devagar, do centro para as bordas, em âmbar. A poeira dança no feixe."
+    },
+    {
+     "id": "abertura_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Chega mais perto do fogo, que a história é velha. Mais velha que o avô do avô da gente.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "lamparina_chama",
+       "em": "inicio"
+      },
+      {
+       "som": "bloco_madeira",
+       "em": "fim"
+      }
+     ],
+     "acao": "A chama sobe quando a voz começa, e três brasas sobem pelo feixe. Uma vareta sozinha, sem boneco, cruza o papel devagar da esquerda para a direita; no bloco, ela desce e some."
+    },
+    {
+     "id": "abertura_03",
+     "tipo": "pausa",
+     "dur": 2.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "tambor_grave",
+       "em": "+0.4"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "+1.6"
+      }
+     ],
+     "acao": "A capa do folheto, uma prancha de xilogravura de cordel com CURUPIRA, O GUARDIÃO DA MATA, um sol de raios e um par de pegadas viradas, baixa devagar até o painel do meio e assenta na tela. Fica um instante e desliza para baixo."
+    },
+    {
+     "id": "abertura_04",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Em maio de mil quinhentos e sessenta, o padre José de Anchieta escreveu numa carta, em latim, estas palavras:",
+     "voz": "Tom de quem anuncia uma leitura; a entonação fica suspensa no fim, preparando a citação.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "maraca",
+       "em": "fim"
+      }
+     ],
+     "acao": "Desce pela tela a silhueta de uma folha de carta enrolada e de uma pena de escrever. Ao fundo, a serra recortada sobe em L4 e L5, com uma trilha estreita subindo pelas brenhas até o cume."
+    },
+    {
+     "id": "abertura_05",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "É coisa sabida, e pela boca de todos corre, que há certos demônios, a que os brasis chamam corupira.",
+     "voz": "Tom de leitura de documento antigo: devagar, com respeito, sem dramatizar.",
+     "pausa_depois": 0.6,
+     "sfx": [
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "A carta se abre. Na palavra corupira, uma sombra pequena e desfocada cruza o fundo em L4, rápida demais para ser vista, e some."
+    },
+    {
+     "id": "abertura_06",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Os indígenas deixavam penas, flechas e abanadores no alto da serra, pedindo aos curupiras que não fizessem mal.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "vento_folhas",
+       "em": "inicio"
+      },
+      {
+       "som": "caxixi",
+       "em": "+4.0"
+      }
+     ],
+     "acao": "A carta sobe e sai. No cume da serra aparecem, uma a uma, duas penas, três flechas e um abanador trançado. O vento balança as penas."
+    },
+    {
+     "id": "abertura_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Demônio foi a palavra do padre. Para os povos de língua tupi, ele era outra coisa.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "tambor_grave",
+       "em": "+3.0"
+      }
+     ],
+     "acao": "A serra desfoca e afunda devagar. As penas da oferenda se soltam e sobem pelo feixe de luz, como brasas."
+    },
+    {
+     "id": "abertura_08",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Era o dono. Era a mãe do mato.",
+     "voz": "Mais baixo e mais lento; peso na palavra dono.",
+     "pausa_depois": 1.0,
+     "sfx": [
+      {
+       "som": "assobio_curupira",
+       "em": "fim"
+      }
+     ],
+     "acao": "Na palavra dono, o batuque corta seco e a chama da lamparina se inclina, como se alguém tivesse passado ao lado dela. Depois do assobio distante, a lamparina baixa e o cenário da mata é trocado no escuro."
+    }
+   ]
+  },
+  {
+   "id": "mata",
+   "capitulo": "A mata acorda",
+   "luz": "amanhecer",
+   "ambiente": [
+    "mata_amanhecer",
+    "mata_dia",
+    "riacho",
+    "sabia",
+    "cigarras"
+   ],
+   "trilha": "Tema da Mata, em Ré mixolídio a oitenta: o pau-de-chuva abre, a viola caipira entra em ponteio, dois pífanos em terças cantam a melodia e a zabumba bate macia só no tempo forte, com caxixi. Cada bicho tem sua pontuação: agogô nas araras, rufo curto de caixa no ronco do bugio, caxixi miúdo no trote do tatu, surdo grave sob o esturro da onça ao longe. Na veada, a flauta de taquara canta sozinha, terna. Na frase da medida, a mata inteira respira num compasso de zabumba. Na última frase, a música e as cigarras se calam de uma vez e fica só um gongo grave.",
+   "visual": "O cenário sobe em camadas, de L5 a L1: horizonte de mata, buritis e açaizeiros em L3 e L4, a grande samaúma no centro, em L2, com sapopemas largas e um oco escuro entre elas, o riacho à esquerda, em L2, e costela-de-adão, helicônias, bromélias e capim em L1. Os bichos entram um por um: araras em arco, bugio no galho alto da samaúma, tatu no chão, onça na mata média, veada prenhe no riacho. Cor de foco: o vermelho das araras.",
+   "beats": [
+    {
+     "id": "mata_01",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "pau_de_chuva",
+       "em": "inicio"
+      },
+      {
+       "som": "sabia",
+       "em": "+0.8"
+      },
+      {
+       "som": "araras",
+       "em": "+1.6"
+      }
+     ],
+     "acao": "O sol nasce à esquerda. Pela mão do contra-regra, o cenário sobe em camadas, do horizonte para a frente, e a samaúma pousa por último, no centro."
+    },
+    {
+     "id": "mata_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Lá longe, onde o rio faz a curva, tinha uma mata. E que mata!",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "riacho",
+       "em": "inicio"
+      }
+     ],
+     "acao": "A luz passa de amanhecer para dia, a mata fica legível até o fundo e as folhas de L1 balançam."
+    },
+    {
+     "id": "mata_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "As araras cortavam o céu aos gritos, e os bugios roncavam no alto, como trovão manso.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "araras_revoada",
+       "em": "inicio"
+      },
+      {
+       "som": "agogo",
+       "em": "+0.5"
+      },
+      {
+       "som": "bugio",
+       "em": "+4.0"
+      }
+     ],
+     "acao": "Seis araras cruzam o alto do papel em arco. No galho da samaúma, um bugio sentado, de rabo enrolado, abre a boca no ronco."
+    },
+    {
+     "id": "mata_04",
+     "tipo": "pausa",
+     "dur": 2.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "passos_folhas",
+       "em": "inicio"
+      },
+      {
+       "som": "caxixi",
+       "em": "+0.3"
+      },
+      {
+       "som": "onca_esturro",
+       "em": "+1.6"
+      }
+     ],
+     "acao": "O tatu cruza o chão em trote ligeiro e some num buraco entre as raízes. Em L3, a onça atravessa a mata média sem pressa, ondulando os ombros, e some atrás dos buritis; o esturro dela vem de longe."
+    },
+    {
+     "id": "mata_05",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Na beira do riacho, uma veada de barriga redonda esperava filhote.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "riacho",
+       "em": "inicio"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "fim"
+      }
+     ],
+     "acao": "A veada prenhe entra devagar pela direita, baixa o pescoço longo e bebe. A luz esquenta sobre ela. As orelhas giram em alerta e depois relaxam."
+    },
+    {
+     "id": "mata_06",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Tudo ali tinha medida. Cada bicho tirava da mata só o que cabia na sua fome.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "cigarras",
+       "em": "inicio"
+      },
+      {
+       "som": "caxixi",
+       "em": "+3.0"
+      }
+     ],
+     "acao": "Os bichos que estão à vista, o bugio, as araras pousadas e a veada, respiram no mesmo compasso, como um só corpo."
+    },
+    {
+     "id": "mata_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Mas a mata tinha dono. E o dono vivia de orelha em pé.",
+     "pausa_depois": 0.8,
+     "sfx": [
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      },
+      {
+       "som": "folhagem_mexe",
+       "em": "fim"
+      }
+     ],
+     "acao": "A música e as cigarras cortam. No oco escuro entre as sapopemas, dois olhinhos se acendem e se apagam."
+    }
+   ]
+  },
+  {
+   "id": "guardiao",
+   "capitulo": "O dono da mata",
+   "luz": "dia",
+   "ambiente": [
+    "mata_dia",
+    "cigarras",
+    "vento_folhas"
+   ],
+   "trilha": "Na aparição, fórmula entrada_curupira: bloco acelerando, gongo agudo, agogô, caxixi e berimbau. Depois, o Tema do Curupira inteiro pela primeira vez, em Ré menor pentatônico com o Sol sustenido do pé virado, a cento e vinte: rabeca travessa com agogô, batuque miúdo de atabaque e alfaia, maraca e caxixi em contratempo, e a flauta de taquara respondendo com a pegada e o seu retrógrado. Bloco de madeira só nas poses-chave. Nos pés, fórmula pose: tudo congela, um bloco e silêncio. Nas batidas das sapopemas, a música para e só soam as pancadas, com um trovão distante respondendo. Na frase do castigo, só surdo grave e lento; a cena fecha com rabeca grave e gongo_desce em caminho de casa.",
+   "visual": "A mesma samaúma, mais perto, numa clareira com feixe de luz. O Curupira sai do oco: primeiro sombra grande e desfocada, longe da tela; depois pequeno e nítido, colado ao papel. Boneco de couro translúcido com os traços da tradição: corpo coberto de pelos longos, recortados em franjas; orelhas grandes; dentes verdes, que aparecem quando ele abre a boca; força desproporcional ao tamanho; pés virados para trás. O cabelo de fogo é escolha de palco, aceso pela lamparina. Na mão, uma machadinha de casco de jabuti. Sem pintura corporal, sem saiote, sem cachimbo e sem gorro, para não ser confundido com o Saci. Grafismos de casco de jabuti, espinha de peixe e losangos só como vazados geométricos no couro. A cada passo, pegadas invertidas ficam no chão de folhas.",
+   "beats": [
+    {
+     "id": "guardiao_01",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "gongo_sobe",
+       "em": "inicio"
+      },
+      {
+       "som": "folhagem_mexe",
+       "em": "+0.6"
+      },
+      {
+       "som": "bloco_acelera",
+       "em": "+1.4"
+      }
+     ],
+     "acao": "Do oco da samaúma, uma sombra grande e borrada encolhe e ganha nitidez até pousar colada à tela: o Curupira, de perfil, respirando."
+    },
+    {
+     "id": "guardiao_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O nome dele é Curupira. Em muitas terras, também o chamam de Caipora.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "flauta_chamado",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele estica o corpo, cheira o ar e gira as orelhas grandes para um lado e para o outro."
+    },
+    {
+     "id": "guardiao_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Pequenininho, coisa de quatro palmos. Mas com força de jogar caçador para o alto feito peteca.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "prato",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele se mede ao lado de uma bromélia quase da altura dele. Depois ergue sozinho um tronco caído três vezes maior que ele e o arremessa para fora do papel; o prato marca o impacto."
+    },
+    {
+     "id": "guardiao_04",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Uns dizem que é peludo, outros que tem dentes verdes.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "caxixi",
+       "em": "+1.5"
+      }
+     ],
+     "acao": "Ele sacode o corpo e os pelos longos se arrepiam como capim ao vento. Depois abre a boca, e os dentes verdes aparecem um instante contra a luz."
+    },
+    {
+     "id": "guardiao_05",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Nesta tela, é a lamparina que acende o cabelo dele, como brasa.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "lamparina_chama",
+       "em": "inicio"
+      }
+     ],
+     "acao": "A chama da lamparina sobe. As mechas do cabelo brilham mais e se agitam, e duas brasinhas sobem."
+    },
+    {
+     "id": "guardiao_06",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "bloco_madeira",
+       "em": "+0.4"
+      }
+     ],
+     "acao": "A música para. A luz fecha num círculo sobre os pés, e o boneco encosta na tela até os pés ficarem grandes e nítidos: calcanhar para a frente, dedos para trás. No bloco, um pezinho bate no chão e deixa a pegada."
+    },
+    {
+     "id": "guardiao_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Os pés dele são virados para trás.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "berimbau",
+       "em": "inicio"
+      },
+      {
+       "som": "passos_folhas",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele dá três passos devagar para a direita, pisando de calcanhar, e as pegadas que ficam no chão têm os dedos apontando para a esquerda."
+    },
+    {
+     "id": "guardiao_08",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Por isso, quem segue o seu rastro vai para longe dele.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "caxixi",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele sai saltitando para a direita. Um redemoinho de folhas segue as pegadas no sentido dos dedos e vai embora para a esquerda, o lado errado."
+    },
+    {
+     "id": "guardiao_09",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Antes da tempestade, ele bate nas sapopemas, uma, duas, três vezes, para ver se as árvores aguentam.",
+     "voz": "Pausa curta entre uma, duas e três, no ritmo das pancadas.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "batida_tronco",
+       "em": "+3.0"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "+3.6"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "+4.2"
+      },
+      {
+       "som": "trovao",
+       "em": "fim"
+      }
+     ],
+     "acao": "A música para. Ele encosta o ouvido na sapopema da samaúma e bate nela com a machadinha de casco de jabuti, uma pancada em cada número, com um som oco de ferro em tronco. A árvore inteira vibra. Um trovão bem longe responde, e ele acena com a cabeça: a árvore aguenta."
+    },
+    {
+     "id": "guardiao_10",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Quem caça para comer, ele deixa.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "inhambu",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele aponta para uma moita, de palma aberta, e um inhambu levanta voo."
+    },
+    {
+     "id": "guardiao_11",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Mas quem mata por gosto, derruba árvore à toa ou mexe com bicho prenhe ou com filhote, esse se perde.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "tambor_grave",
+       "em": "+2.5"
+      }
+     ],
+     "acao": "Ele crava a machadinha no chão e fica imóvel, de peito estufado. As mechas crescem e soltam três brasas, e a luz esfria um pouco."
+    },
+    {
+     "id": "guardiao_12",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E não acha mais o caminho de casa.",
+     "pausa_depois": 1.0,
+     "sfx": [
+      {
+       "som": "gongo_desce",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele gira sobre si mesmo e some num sopro de folhas. As pegadas se apagam uma a uma."
+    }
+   ]
+  },
+  {
+   "id": "cacadores",
+   "capitulo": "Caça de gula",
+   "luz": "dia",
+   "ambiente": [
+    "mata_dia",
+    "cigarras",
+    "riacho"
+   ],
+   "trilha": "Fórmula entrada_cacadores, com surdo, zabumba, alfaia, gongo e pratos, e o Tema dos Caçadores em Ré frígio a noventa: marcha pesada e arrastada de zabumba e caixa no passo do Tião, rabeca grave meio torta e berrante ao longe; o passo do Zé é um agogô mais ligeiro. A cada caça que entra no bornal, um baque seco de zabumba. Cada tiro leva prato e corta toda a música e a ambiência por um segundo e meio; depois a mata volta devagar. Depois do tiro nas araras, a rabeca canta um lamento curto sobre os gritos do bando. Os golpes de facão levam toques secos de caixa, e os gritos dos macacos explodem na queda da embaúba. As risadas e os gritos dos caçadores ficam na frente da mixagem. Quando a veada entra, a flauta de taquara volta frágil, ameaçada por um surdo em pulso de coração; na mira, um rufo de caixa cresce e corta em silêncio total.",
+   "visual": "Tião, Zé e o cachorro entram pela esquerda e andam no mesmo lugar enquanto o cenário desliza. Tião: chapéu de palha com fita vermelha, espingarda e um bornal que incha ao longo da cena com caça pendurada, só em silhueta e sem sangue. Zé: chapéu de palha e facão. Embaúba nova em L2, à direita; buritis em L3; riacho à esquerda. O Curupira aparece só como dois olhos acesos e uma sombra entre os buritis, em L3. Cor de foco: a fita vermelha do chapéu do Tião.",
+   "beats": [
+    {
+     "id": "cacadores_01",
+     "tipo": "pausa",
+     "dur": 1.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "passos_folhas",
+       "em": "+0.2"
+      },
+      {
+       "som": "cachorro_latido",
+       "em": "+1.2"
+      }
+     ],
+     "acao": "Tião, Zé e o cachorro entram pela esquerda. Tião anda pesado, Zé desengonçado, e o cachorro vai farejando o chão. O cenário desliza por trás deles."
+    },
+    {
+     "id": "cacadores_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Pois foi nessa mata que entrou o velho Tião, com mais bala no bornal do que juízo na cabeça.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "bloco_madeira",
+       "em": "fim"
+      }
+     ],
+     "acao": "Tião para no centro, apoia a espingarda no ombro e coça a barba, de peito estufado."
+    },
+    {
+     "id": "cacadores_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Atrás vinha o Zé, neto de benzedeira.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "agogo",
+       "em": "inicio"
+      },
+      {
+       "som": "facao_golpe",
+       "em": "+1.8"
+      },
+      {
+       "som": "cachorro_latido",
+       "em": "fim"
+      }
+     ],
+     "acao": "Zé passa à frente do Tião golpeando o mato à toa com o facão. O cachorro olha para a mata, depois para os donos, e solta um latido curto."
+    },
+    {
+     "id": "cacadores_04",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Antes do meio-dia, o bornal já dava para uma semana. Mas o Tião não parou.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "tambor_grave",
+       "em": "+1.0"
+      },
+      {
+       "som": "tambor_grave",
+       "em": "+2.2"
+      },
+      {
+       "som": "espingarda_engatilhar",
+       "em": "fim"
+      }
+     ],
+     "acao": "A cada baque de zabumba, mais uma silhueta de caça aparece pendurada no bornal. Na última frase, Tião ergue a espingarda para o céu."
+    },
+    {
+     "id": "cacadores_05",
+     "tipo": "pausa",
+     "dur": 2.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "tiro_espingarda",
+       "em": "+0.6"
+      },
+      {
+       "som": "prato",
+       "em": "+0.6"
+      },
+      {
+       "som": "araras_revoada",
+       "em": "+0.8"
+      },
+      {
+       "som": "risada_homem",
+       "em": "+1.6"
+      },
+      {
+       "som": "gongo_desce",
+       "em": "+2.4"
+      }
+     ],
+     "acao": "O estouro corta a música e a ambiência. O bando de araras se desfaz no céu e uma delas cai girando atrás das folhas. Tião ri alto, de cabeça para trás. Uma pena vermelha desce devagar pelo feixe de luz."
+    },
+    {
+     "id": "cacadores_06",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Uma caiu. As outras rodaram no céu, gritando por ela.",
+     "voz": "Mais lento, com pesar.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "araras",
+       "em": "inicio"
+      }
+     ],
+     "acao": "As araras que sobraram circulam no alto, em volta do ponto onde a outra caiu, e só então somem."
+    },
+    {
+     "id": "cacadores_07",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Arara não é de comer. Mas a pena fica bonita no chapéu.",
+     "voz": "Prosa, satisfeito consigo mesmo.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Tião apanha a pena no ar e a enfia na fita do chapéu."
+    },
+    {
+     "id": "cacadores_08",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E a mata ouviu.",
+     "voz": "Primeira vez do refrão: baixo, quase casual, como um aviso. Gravar tomada própria; nunca reaproveitar este áudio nas outras vezes.",
+     "pausa_depois": 0.6,
+     "sfx": [
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      },
+      {
+       "som": "folhagem_mexe",
+       "em": "fim"
+      }
+     ],
+     "acao": "Entre os buritis, em L3, dois olhos acesos se abrem. O cachorro se encolhe e fica olhando para o fundo."
+    },
+    {
+     "id": "cacadores_09",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Zé, para mostrar serviço, meteu o facão numa embaúba nova.",
+     "pausa_depois": 0.2,
+     "sfx": [],
+     "acao": "Zé cospe nas mãos, abre as pernas e mede a embaúba com o facão."
+    },
+    {
+     "id": "cacadores_10",
+     "tipo": "pausa",
+     "dur": 2.8,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "facao_golpe",
+       "em": "+0.2"
+      },
+      {
+       "som": "facao_golpe",
+       "em": "+0.8"
+      },
+      {
+       "som": "facao_golpe",
+       "em": "+1.4"
+      },
+      {
+       "som": "arvore_rangendo",
+       "em": "+1.8"
+      },
+      {
+       "som": "arvore_caindo",
+       "em": "+2.3"
+      },
+      {
+       "som": "macaco_gritos",
+       "em": "+2.5"
+      }
+     ],
+     "acao": "Três golpes de facão. A embaúba range e tomba de perfil, atravessando o papel. Folhas descem, e lá em cima os macacos gritam e pulam para outras árvores."
+    },
+    {
+     "id": "cacadores_11",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Derrubei! Viu só, Tião?",
+     "voz": "Exibido, rindo.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "bloco_madeira",
+       "em": "inicio"
+      },
+      {
+       "som": "risada_homem",
+       "em": "fim"
+      }
+     ],
+     "acao": "Zé põe o pé em cima do tronco caído, como um troféu. Tião bate palmas devagar e os dois riem."
+    },
+    {
+     "id": "cacadores_12",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E a mata ouviu.",
+     "voz": "Segunda vez do refrão: tomada nova, mais grave e mais lenta que a primeira.",
+     "pausa_depois": 0.6,
+     "sfx": [
+      {
+       "som": "bugio",
+       "em": "fim"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "Um bugio ronca alto e bravo. Os olhos em L3 chegam mais perto, e a sombra entre os buritis cresce."
+    },
+    {
+     "id": "cacadores_13",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "De tardinha, no riacho, apareceu a veada.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "riacho",
+       "em": "inicio"
+      },
+      {
+       "som": "coracao",
+       "em": "fim"
+      }
+     ],
+     "acao": "A luz passa para entardecer. A veada prenhe entra pela esquerda e bebe. Tião se agacha atrás de uma sapopema e leva a espingarda ao rosto, devagar."
+    },
+    {
+     "id": "cacadores_14",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Tião... ela tá prenhe. Deixa essa.",
+     "voz": "Sussurrado e aflito; a reticência é hesitação audível.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "coracao",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Zé põe a mão no ombro do Tião."
+    },
+    {
+     "id": "cacadores_15",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Melhor ainda. São dois de uma vez.",
+     "voz": "Frio, em voz baixa, com meio riso.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "espingarda_engatilhar",
+       "em": "fim"
+      }
+     ],
+     "acao": "Tião tira a mão do Zé do ombro com um tranco, encosta o rosto na coronha e mira. A música cai em silêncio total."
+    }
+   ]
+  },
+  {
+   "id": "aviso",
+   "capitulo": null,
+   "luz": "entardecer",
+   "ambiente": [
+    "vento_folhas",
+    "cigarras"
+   ],
+   "trilha": "Começa em silêncio absoluto, sem música e sem ambiência: só o coração. O assobio rasga o silêncio e fica vibrando como um gongo em glissando para baixo. Depois, fórmula suspense: gongo agudo em trêmulo, pau-de-chuva, berimbau tenso em pulso irregular e maracás em trêmulo. A voz do Curupira vem sem música, só com um bordão grave de rabeca e o pau-de-chuva, e termina num gongo_desce. Nas falas dos caçadores, só um surdo abafado, como passos de algo grande. O vento e as cigarras voltam muito baixo no fim.",
+   "visual": "A mesma beira de riacho tingida de laranja, com sombras compridas. A veada salta e foge em arcos longos. Atrás da samaúma, em L4, uma sombra pequena cresce até ficar enorme e desfocada: o Curupira está longe da tela, por isso a sombra é grande. O cachorro se encolhe atrás do Zé, e os caçadores giram procurando de onde veio a voz.",
+   "beats": [
+    {
+     "id": "aviso_01",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E a mata inteira se calou. Até as cigarras.",
+     "voz": "Baixo e devagar.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "lamparina_chama",
+       "em": "inicio"
+      }
+     ],
+     "acao": "As folhas param de balançar e as cigarras cortam no meio. Só a chama da lamparina se mexe. A veada levanta a cabeça."
+    },
+    {
+     "id": "aviso_02",
+     "tipo": "pausa",
+     "dur": 3.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "coracao",
+       "em": "inicio"
+      },
+      {
+       "som": "assobio_curupira",
+       "em": "+1.4"
+      },
+      {
+       "som": "veado_alarme",
+       "em": "+1.6"
+      },
+      {
+       "som": "tiro_espingarda",
+       "em": "+1.8"
+      },
+      {
+       "som": "prato",
+       "em": "+1.8"
+      },
+      {
+       "som": "galho_quebra",
+       "em": "+2.2"
+      },
+      {
+       "som": "gongo_desce",
+       "em": "+2.8"
+      }
+     ],
+     "acao": "Um segundo de silêncio, só com o coração. No instante do disparo, um assobio agudo corta o ar; a mão do Tião treme, o cano desvia e um galho despenca lá do alto. A veada foge para a direita em saltos longos."
+    },
+    {
+     "id": "aviso_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O assobio fez a mão do Tião tremer. E a veada sumiu com filhote e tudo.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "cachorro_ganido",
+       "em": "fim"
+      },
+      {
+       "som": "folhagem_mexe",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ao longe, em L3, a veada para um instante no alto do barranco, vira o pescoço para trás e some. O cachorro enfia o rabo entre as pernas e se esconde atrás do Zé. Toda a folhagem em volta se mexe ao mesmo tempo, sem vento."
+    },
+    {
+     "id": "aviso_04",
+     "tipo": "fala",
+     "papel": "curupira",
+     "texto": "Caça de fome, eu dou. Caça de gula, eu cobro. Quem mata por gosto perde o caminho de casa.",
+     "voz": "Próximo e de todo lado ao mesmo tempo. Sem raiva, firme e devagar, com pausa curta entre as frases e eco discreto de mata.",
+     "pausa_depois": 0.8,
+     "sfx": [
+      {
+       "som": "pau_de_chuva",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_desce",
+       "em": "fim"
+      }
+     ],
+     "acao": "Atrás da samaúma surge a sombra enorme e desfocada do Curupira, só a cabeça, as orelhas grandes e as mechas, cobrindo metade do papel. Ela some quando a fala termina."
+    },
+    {
+     "id": "aviso_05",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Quem falou isso, Tião?",
+     "voz": "Assustado, baixinho.",
+     "pausa_depois": 0.2,
+     "sfx": [],
+     "acao": "Zé recua, e o boneco se afasta da tela: fica maior, desfocado e tremendo."
+    },
+    {
+     "id": "aviso_06",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Foi o vento, menino. Vamos embora.",
+     "voz": "Fingindo calma, apressado.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "vento_folhas",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Tião dá as costas depressa, de ombros duros, e sai andando ligeiro demais para quem está calmo."
+    },
+    {
+     "id": "aviso_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Mas vento não assobia daquele jeito. E vento, que eu saiba, não fala.",
+     "pausa_depois": 0.6,
+     "sfx": [
+      {
+       "som": "assobio_curupira",
+       "em": "fim"
+      }
+     ],
+     "acao": "Um assobio curto responde lá do fundo, e os dois apertam o passo. Uma folha gigante de L0 passa na frente da luz e cobre a troca de cena."
+    }
+   ]
+  },
+  {
+   "id": "rastros",
+   "capitulo": "Os pés virados",
+   "luz": "entardecer",
+   "ambiente": [
+    "vento_folhas",
+    "mata_noite",
+    "grilos",
+    "sapos",
+    "urutau"
+   ],
+   "trilha": "Variação rastro do Tema do Curupira, o tema tocado de trás para a frente, enquanto os caçadores seguem as pegadas: caxixi e maracá num ostinato que não sai do lugar, rabeca numa frase que sempre volta à mesma nota, alfaia acelerando aos poucos. Quando eles se perdem, a marcha cai no Pé-de-vento, a perseguição, com a célula Ré, Sol sustenido, Lá. A flauta de taquara imita o pio do inhambu. Na voz que imita a Vó, a música some e a rabeca sobe num glissando estranho. Na vara de queixadas, explode o batuque de galope: alfaias, atabaques, caixa, agogô e ganzá, com os grunhidos, o estalar de dentes e os gritos dos homens por cima; corta seco num prato. O açoite do cachorro é só som no escuro, sem música.",
+   "visual": "Chão de folhas com pegadas pequenas invertidas. Os caçadores seguem para a direita, no sentido dos dedos, enquanto ao fundo, em L3, a sombrinha do Curupira saltita para a esquerda, pisando de calcanhar. A embaúba derrubada é o marco: o cenário desliza e ela volta ao centro mais de uma vez, cada vez mais escura. Um urutau num toco, parado como galho, de olhos âmbar. A vara de queixadas atravessa em profundidade, com poeira no feixe, e rodeia a samaúma onde os dois sobem nas sapopemas.",
+   "beats": [
+    {
+     "id": "rastros_01",
+     "tipo": "pausa",
+     "dur": 1.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "passos_folhas",
+       "em": "+0.3"
+      },
+      {
+       "som": "bloco_madeira",
+       "em": "+1.4"
+      }
+     ],
+     "acao": "Tião se agacha e lê o chão. As pegadas pequenas se acendem uma a uma, com os dedos apontando para a direita."
+    },
+    {
+     "id": "rastros_02",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Rastro de gente pequena. Vamos atrás, que dá em casa.",
+     "voz": "Aliviado, confiante demais.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Tião se levanta e aponta para a direita, para onde apontam os dedos das pegadas."
+    },
+    {
+     "id": "rastros_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Seguiram para onde os dedinhos apontavam. Mas quem tinha deixado aquele rastro tinha ido para o outro lado.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "caxixi",
+       "em": "fim"
+      }
+     ],
+     "acao": "Os dois partem para a direita, andando no mesmo lugar enquanto o cenário desliza. Ao fundo, em L3, a sombrinha do Curupira saltita para a esquerda, de calcanhar, e some."
+    },
+    {
+     "id": "rastros_04",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Andaram, andaram, e deram de cara com uma embaúba caída.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "passos_folhas",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "A embaúba derrubada entra deslizando e para no centro. Os dois param na frente dela."
+    },
+    {
+     "id": "rastros_05",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Essa é a embaúba que eu derrubei.",
+     "voz": "Devagar, gelado de medo.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Zé se agacha e passa a mão no corte do tronco."
+    },
+    {
+     "id": "rastros_06",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Andaram de novo. E, de novo, a mesma embaúba.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "bloco_acelera",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "+1.6"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "A cada volta, uma folha gigante passa na frente da luz, o cenário desliza e a embaúba volta ao centro, sempre um pouco mais escura. Tião arranca o chapéu e coça a cabeça."
+    },
+    {
+     "id": "rastros_07",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "mata_noite",
+       "em": "inicio"
+      },
+      {
+       "som": "urutau",
+       "em": "+0.8"
+      },
+      {
+       "som": "grilos",
+       "em": "+1.2"
+      }
+     ],
+     "acao": "A luz cai para noite. Num toco, o urutau, parado como galho, abre os olhos âmbar e chora com voz de gente. Zé se encolhe, de ombros erguidos."
+    },
+    {
+     "id": "rastros_08",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Do escuro piou um inhambu. Depois, veio uma voz conhecida.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "inhambu",
+       "em": "+0.4"
+      }
+     ],
+     "acao": "Os dois se viram para o pio, à direita. No fundo, em L4, aparece desfocada uma silhueta curvada de lenço na cabeça; o perfil não fecha direito, e o braço é comprido demais."
+    },
+    {
+     "id": "rastros_09",
+     "tipo": "fala",
+     "papel": "vo",
+     "texto": "Zé... ô, Zé... vem cá, meu filho.",
+     "voz": "É o Curupira imitando a Vó: a mesma voz, mas levemente errada, arrastada e um pouco aguda demais. Filtro de distância e eco longo de mata. As reticências são o arrasto do chamado.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "chamado_eco",
+       "em": "fim"
+      }
+     ],
+     "acao": "A silhueta de lenço acena devagar com o braço comprido demais."
+    },
+    {
+     "id": "rastros_10",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Vó? Vó, eu tô aqui!",
+     "voz": "Aflito e esperançoso, chamando alto.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "corrida_folhas",
+       "em": "fim"
+      }
+     ],
+     "acao": "Zé dá dois passos de corrida em direção à silhueta."
+    },
+    {
+     "id": "rastros_11",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Tua avó tá a três léguas daqui, menino. Isso não é gente.",
+     "voz": "Áspero e baixo, com medo por baixo.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "chamado_eco",
+       "em": "fim"
+      }
+     ],
+     "acao": "Tião agarra o braço do Zé. A falsa Vó se desfaz numa revoada de folhas, e o chamado ecoa mais longe."
+    },
+    {
+     "id": "rastros_12",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Aí veio o barulho que nenhum caçador quer ouvir. Dente batendo em dente.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "queixada_grunhido",
+       "em": "+2.0"
+      },
+      {
+       "som": "queixada_dentes",
+       "em": "fim"
+      }
+     ],
+     "acao": "O chão do papel começa a tremer e a poeira entra pela direita. Os dois se colam de costas contra a sapopema da samaúma. O cachorro levanta as orelhas."
+    },
+    {
+     "id": "rastros_13",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Olha a queixada! Sobe, Zé! Sobe!",
+     "voz": "Berrando, em pânico.",
+     "pausa_depois": 0.1,
+     "sfx": [
+      {
+       "som": "queixada_tropel",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Tião larga a espingarda no chão e escala a sapopema. Zé pula atrás dele."
+    },
+    {
+     "id": "rastros_14",
+     "tipo": "pausa",
+     "dur": 5.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "queixada_tropel",
+       "em": "inicio"
+      },
+      {
+       "som": "queixada_dentes",
+       "em": "+0.5"
+      },
+      {
+       "som": "queixada_grunhido",
+       "em": "+1.0"
+      },
+      {
+       "som": "grito_pavor",
+       "em": "+1.6"
+      },
+      {
+       "som": "queixada_dentes",
+       "em": "+2.4"
+      },
+      {
+       "som": "queixada_grunhido",
+       "em": "+3.0"
+      },
+      {
+       "som": "cachorro_latido",
+       "em": "+3.4"
+      },
+      {
+       "som": "cachorro_latido",
+       "em": "+4.0"
+      },
+      {
+       "som": "prato",
+       "em": "+4.6"
+      }
+     ],
+     "acao": "A vara de queixadas atravessa da direita para a esquerda, sete animais em profundidades diferentes, com poeira no feixe. Na segunda passagem, no meio da vara, vai montado um vulto pequeno e borrado. Os bichos rodeiam a samaúma batendo os dentes, e os dois ficam agarrados no alto da sapopema. O cachorro dispara latindo atrás da vara e some no fundo. No prato, o batuque corta seco e a poeira assenta: no chão, a espingarda do Tião aparece partida ao meio, entre pegadas de queixada."
+    },
+    {
+     "id": "rastros_15",
+     "tipo": "pausa",
+     "dur": 3.2,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "cachorro_latido",
+       "em": "+0.3"
+      },
+      {
+       "som": "cipo_chicote",
+       "em": "+1.2"
+      },
+      {
+       "som": "cachorro_ganido",
+       "em": "+1.4"
+      },
+      {
+       "som": "cipo_chicote",
+       "em": "+1.9"
+      },
+      {
+       "som": "cachorro_ganido",
+       "em": "+2.1"
+      },
+      {
+       "som": "risada_curupira",
+       "em": "+2.8"
+      }
+     ],
+     "acao": "Escuro no fundo, onde o cachorro sumiu. Ninguém aparece: só as folhas de L3 sacodem a cada estalo. Os dois homens se encolhem no alto da sapopema."
+    },
+    {
+     "id": "rastros_16",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O cachorro voltou ganindo, com o lombo riscado de cipó. Coisa do Curupira.",
+     "pausa_depois": 0.8,
+     "sfx": [
+      {
+       "som": "cachorro_ganido",
+       "em": "inicio"
+      },
+      {
+       "som": "corrida_folhas",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "O cachorro volta encolhido, com riscos claros vazados no lombo, e se esconde entre as pernas do Zé, que desce da sapopema para abraçá-lo. Uma folha gigante passa e cobre a troca de cena."
+    }
+   ]
+  },
+  {
+   "id": "noite",
+   "capitulo": "A noite que não acabava",
+   "luz": "noite",
+   "ambiente": [
+    "mata_noite",
+    "sapos",
+    "coruja",
+    "grilos",
+    "vento_folhas",
+    "chuva_mata",
+    "tempestade"
+   ],
+   "trilha": "Tema Noite e Tempestade, em Ré eólio e tempo livre: bordão Ré-Lá de rabeca em trêmulo, surdo distante e o aboio de rabeca. A flauta de taquara canta sozinha a cantiga do Curupira, uma melodia pentatônica e hipnótica que dobra a voz dele, sobre um maracá bem lento; ela corta no meio da frase, num silêncio que dói. As pancadas nas sapopemas viram o pulso da música, com surdo e alfaia cada vez mais perto, e um uivo longo vem antes do primeiro trovão. A tempestade é o ápice, em duas ondas: alfaias, atabaques e surdos em ritmo de trovoada, rufo de caixa, pratos, pífano em gritos agudos, rabeca aflita e um gongo_sobe a cada relâmpago. No relâmpago da revelação, corte total com um segundo de silêncio; no uivo do Curupira, prato e gongo grave juntos, e o grito do Zé por cima. No fim, a chuva continua e a música recua para uma rabeca sozinha, que leva à lembrança da Vó.",
+   "visual": "Noite azul de anil, com lua alta. Os vaga-lumes acendem um a um e formam uma fila que sobe até um galho alto da samaúma, onde o Curupira canta sentado, pequeno e nítido, balançando os pés virados. Os caçadores caminham como sonâmbulos atrás da luz. Na tempestade, as camadas balançam em fases diferentes, a chuva cruza a tela em diagonal e os relâmpagos estouram o papel em branco. No clarão, o Curupira aparece de pé no alto de uma sapopema, de perfil, com a machadinha erguida e os pés virados contra o céu; depois se afasta da tela e a sombra cresce até cobrir o tríptico. Tião, Zé e o cachorro se enfiam no oco da samaúma.",
+   "beats": [
+    {
+     "id": "noite_01",
+     "tipo": "pausa",
+     "dur": 1.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "sapos",
+       "em": "+0.3"
+      },
+      {
+       "som": "coruja",
+       "em": "+1.2"
+      }
+     ],
+     "acao": "Noite azul, com lua alta. Os dois descem da sapopema no escuro, com o cachorro. Tião ergue os dois pedaços da espingarda partida e os larga no chão."
+    },
+    {
+     "id": "noite_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "A noite caiu de uma vez, como um pano jogado sobre a lamparina.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "lamparina_chama",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Uma sombra de pano desce pelo topo do papel e cobre metade da luz; a chama da lamparina se encolhe."
+    },
+    {
+     "id": "noite_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E os vaga-lumes, que são os batedores do Curupira, acenderam um atrás do outro.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "caxixi",
+       "em": "fim"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "fim"
+      }
+     ],
+     "acao": "Os vaga-lumes acendem um a um e formam uma fila que sobe até um galho alto da samaúma. No fim da fila, o Curupira aparece sentado no galho, balançando os pés virados."
+    },
+    {
+     "id": "noite_04",
+     "tipo": "fala",
+     "papel": "curupira",
+     "texto": "Vou andando pelo meu caminho. Atrás de mim, venha andando, andando.",
+     "voz": "Meio cantado, em cantilena, doce e distante, com eco. A flauta de taquara dobra a melodia e entra meio segundo antes da voz.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "maraca",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Zé e Tião se levantam devagar e caminham na direção do galho, de braços soltos, como sonâmbulos. Os vaga-lumes piscam no ritmo da cantiga."
+    },
+    {
+     "id": "noite_05",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Quem escuta vai atrás sem querer. E quando a cantiga se cala, está perdido.",
+     "pausa_depois": 0.8,
+     "sfx": [
+      {
+       "som": "gongo_desce",
+       "em": "fim"
+      }
+     ],
+     "acao": "Os dois seguem a fila de vaga-lumes, que dá voltas entre as árvores. Na palavra cala, a flauta corta, os vaga-lumes se apagam de uma vez e o galho fica vazio. Os dois param no meio do nada."
+    },
+    {
+     "id": "noite_06",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Quarenta anos nesta mata... e eu não sei onde estou.",
+     "voz": "A bravata quebra e a voz falha; a reticência é hesitação audível.",
+     "pausa_depois": 0.6,
+     "sfx": [],
+     "acao": "Tião tira o chapéu com a pena de arara e o aperta contra o peito. Os ombros caem e as costas se curvam."
+    },
+    {
+     "id": "noite_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Então o vento mudou, e as pancadas nas sapopemas recomeçaram.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "vento_folhas",
+       "em": "inicio"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "+2.0"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "fim"
+      }
+     ],
+     "acao": "As nuvens cobrem a lua. A cada pancada uma árvore estremece: primeiro no horizonte, em L5, depois na mata média, em L3."
+    },
+    {
+     "id": "noite_08",
+     "tipo": "pausa",
+     "dur": 2.7,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "batida_tronco",
+       "em": "+0.2"
+      },
+      {
+       "som": "tambor_grave",
+       "em": "+0.2"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "+0.9"
+      },
+      {
+       "som": "tambor_grave",
+       "em": "+0.9"
+      },
+      {
+       "som": "uivo_curupira",
+       "em": "+1.5"
+      },
+      {
+       "som": "trovao",
+       "em": "+2.5"
+      }
+     ],
+     "acao": "Duas pancadas colado à samaúma deles, em L2, e o papel do biombo treme. Um uivo longo corta a mata. O primeiro clarão acende longe, no horizonte."
+    },
+    {
+     "id": "noite_09",
+     "tipo": "pausa",
+     "dur": 3.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "tempestade",
+       "em": "inicio"
+      },
+      {
+       "som": "chuva_mata",
+       "em": "+0.3"
+      },
+      {
+       "som": "rufar",
+       "em": "+0.8"
+      },
+      {
+       "som": "relampago_estalo",
+       "em": "+1.5"
+      },
+      {
+       "som": "gongo_sobe",
+       "em": "+1.5"
+      },
+      {
+       "som": "trovao",
+       "em": "+1.8"
+      },
+      {
+       "som": "arvore_rangendo",
+       "em": "+2.4"
+      }
+     ],
+     "acao": "A luz vira tempestade. A chuva cai em diagonal, as camadas balançam em fases diferentes e os chapéus dos dois voam. Tião e Zé se encolhem junto do cachorro."
+    },
+    {
+     "id": "noite_10",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Choveu como se o céu tivesse furado. O vento torcia as copas, e as árvores gemiam como gente.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "arvore_rangendo",
+       "em": "+3.0"
+      },
+      {
+       "som": "galho_quebra",
+       "em": "fim"
+      }
+     ],
+     "acao": "As copas se dobram. Um galho despenca perto dos caçadores."
+    },
+    {
+     "id": "noite_11",
+     "tipo": "pausa",
+     "dur": 3.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "relampago_estalo",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "inicio"
+      },
+      {
+       "som": "uivo_curupira",
+       "em": "+1.2"
+      },
+      {
+       "som": "prato",
+       "em": "+1.2"
+      },
+      {
+       "som": "grito_pavor",
+       "em": "+1.6"
+      },
+      {
+       "som": "trovao",
+       "em": "+2.5"
+      }
+     ],
+     "acao": "Relâmpago: o papel estoura em branco e mostra o Curupira de pé no alto de uma sapopema, de perfil, com a machadinha erguida e os pés virados contra o céu. O quadro congela por um segundo, a música corta e só a chuva continua. Depois ele uiva, se afasta da tela, e a sombra cresce até cobrir o tríptico inteiro, com as mechas soltando brasas. Zé grita."
+    },
+    {
+     "id": "noite_12",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Os dois se enfiaram no oco da samaúma, sem saber que era a casa do Curupira.",
+     "pausa_depois": 1.0,
+     "sfx": [
+      {
+       "som": "chuva_mata",
+       "em": "inicio"
+      },
+      {
+       "som": "trovao",
+       "em": "fim"
+      }
+     ],
+     "acao": "A sombra gigante some no escuro. Tião, Zé e o cachorro se enfiam no oco entre as sapopemas. Os relâmpagos ficam mais espaçados, e a luz se fecha sobre o Zé, encolhido, de cabeça baixa sobre os joelhos. A chuva fica abafada, como se viesse de longe."
+    }
+   ]
+  },
+  {
+   "id": "vo",
+   "capitulo": "O novelo da Vó",
+   "luz": "lamparina",
+   "ambiente": [
+    "lamparina_chama",
+    "grilos",
+    "pilao_batida",
+    "chuva_mata"
+   ],
+   "trilha": "Tema da Lembrança da Vó, em Sol maior pentatônico, a sessenta e em três por quatro: acalanto de flauta de taquara e viola caipira, sem batuque; a rabeca responde com ternura. A tempestade fica abafada ao longe, como ouvida debaixo d'água, e o pilão da Vó marca um pulso lento de casa. Um maracá suave acompanha os quatro tempos da benzedura. No fim, um fragmento do Tema da Mata em pífano brincalhão anuncia a ideia do Zé, e o trovão corta a lembrança.",
+   "visual": "Uma folha gigante de costela-de-adão passa colada à luz e troca o cenário. O rancho da Vó, de pau-a-pique e telhado de sapê, com a janela acesa por um candeeiro, um banquinho e um pilão de madeira. A Vó no banquinho da porta, de lenço anil na cabeça, cachimbo de barro soltando fumaça em volutas, terço de sementes e ramo de arruda. Nas mãos dela, um cipó vira novelo. As bordas do papel ficam desfocadas, como numa lembrança. Cor de foco: o anil do lenço.",
+   "beats": [
+    {
+     "id": "vo_01",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "pilao_batida",
+       "em": "+0.3"
+      },
+      {
+       "som": "pilao_batida",
+       "em": "+1.0"
+      },
+      {
+       "som": "cachimbo_baforada",
+       "em": "+1.5"
+      }
+     ],
+     "acao": "O rancho aparece em luz quente, com as bordas desfocadas. A Vó, no banquinho da porta, solta fumaça do cachimbo em volutas; ao lado dela, o pilão."
+    },
+    {
+     "id": "vo_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Zé lembrou da Vó, que sempre dizia:",
+     "voz": "A entonação fica suspensa no fim, anunciando a fala da Vó.",
+     "pausa_depois": 0.4,
+     "sfx": [],
+     "acao": "A Vó tira o cachimbo da boca e aponta com ele para a mata, lá fora."
+    },
+    {
+     "id": "vo_03",
+     "tipo": "fala",
+     "papel": "vo",
+     "texto": "A mata tem dono, meu filho. Pede licença, que ele empresta.",
+     "voz": "Baixo, devagar, carinhoso e firme.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "maraca",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ela levanta o dedo em advertência, com doçura."
+    },
+    {
+     "id": "vo_04",
+     "tipo": "fala",
+     "papel": "vo",
+     "texto": "Se o Curupira te encantar, não corre. Faz um novelo de cipó e esconde bem a ponta.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "cipo_torcendo",
+       "em": "+3.0"
+      }
+     ],
+     "acao": "As mãos dela enrolam um cipó em novelo e escondem a ponta lá dentro."
+    },
+    {
+     "id": "vo_05",
+     "tipo": "fala",
+     "papel": "vo",
+     "texto": "E deixa um fuminho do lado, que fumo adoça a raiva do dono.",
+     "voz": "Com um meio sorriso.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "cachimbo_baforada",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ela põe o novelo no chão e, do lado, um pedacinho de fumo de rolo. Dá uma baforada."
+    },
+    {
+     "id": "vo_06",
+     "tipo": "pausa",
+     "dur": 1.8,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "maraca",
+       "em": "inicio"
+      },
+      {
+       "som": "maraca",
+       "em": "+0.5"
+      },
+      {
+       "som": "maraca",
+       "em": "+1.0"
+      },
+      {
+       "som": "maraca",
+       "em": "+1.5"
+      }
+     ],
+     "acao": "A Vó benze o ar com o ramo de arruda numa cruz lenta, em quatro tempos, e o terço balança."
+    },
+    {
+     "id": "vo_07",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Perdido na chuva, conversa de avó vira a coisa mais séria do mundo.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "trovao",
+       "em": "fim"
+      }
+     ],
+     "acao": "O rancho desfoca e a lembrança se desfaz em fumaça. O trovão traz a noite de volta."
+    }
+   ]
+  },
+  {
+   "id": "novelo",
+   "capitulo": null,
+   "luz": "tempestade",
+   "ambiente": [
+    "chuva_mata",
+    "gotejar",
+    "sapos",
+    "grilos",
+    "mata_noite"
+   ],
+   "trilha": "O pau-de-chuva faz a chuva ir afinando. O berimbau marca o trabalho das mãos do Zé, com caxixi rápido num ritmo de trabalho que acelera; nas falas, só surdo abafado. Quando o Curupira aparece, fórmula travessura e o Tema do Curupira em versão miúda e curiosa, sussurrada: rabeca em pianíssimo, agogô leve e um caxixi a cada volta do novelo. A fuga na ponta dos pés tem pífano e matraca bem baixinhos, quase cômicos. No refrão final, a rabeca resolve numa nota maior pela primeira vez.",
+   "visual": "De volta às sapopemas, de noite e com chuva. Zé arranca um cipó pendurado e enrola o novelo; o rolo de fumo sai do bornal do Tião. O novelo, o fumo e a pena de arara ficam sobre uma folha larga de costela-de-adão, ao pé da samaúma. O Curupira sai de trás da samaúma, pequeno, nítido e perto da tela, sem cachimbo e sem gorro. Ele senta e desenrola, e o cipó se espalha em espirais pelo chão. Tião, Zé e o cachorro saem de mansinho para a esquerda.",
+   "beats": [
+    {
+     "id": "novelo_01",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Zé arrancou um cipó da sapopema e começou a enrolar.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "galho_quebra",
+       "em": "inicio"
+      },
+      {
+       "som": "cipo_torcendo",
+       "em": "+2.0"
+      }
+     ],
+     "acao": "Zé levanta a cabeça de repente, sai do oco e arranca um cipó pendurado."
+    },
+    {
+     "id": "novelo_02",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "berimbau",
+       "em": "inicio"
+      },
+      {
+       "som": "cipo_torcendo",
+       "em": "+0.3"
+      },
+      {
+       "som": "caxixi",
+       "em": "+0.6"
+      },
+      {
+       "som": "bloco_madeira",
+       "em": "+1.6"
+      }
+     ],
+     "acao": "As mãos do Zé enrolam volta sobre volta, cada vez mais rápido, e o novelo cresce. No bloco, ele enfia a ponta para dentro e ergue o novelo contra a luz, redondo e sem ponta à vista."
+    },
+    {
+     "id": "novelo_03",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Tião, você tem fumo aí?",
+     "voz": "Ligeiro, decidido.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Zé estende a mão aberta, sem tirar os olhos do novelo."
+    },
+    {
+     "id": "novelo_04",
+     "tipo": "fala",
+     "papel": "tiao",
+     "texto": "Fumo? Isso lá é hora de pitar, menino?",
+     "voz": "Encharcado, irritado, sem entender.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Tião, encharcado, recua o corpo e aperta o bornal contra o peito."
+    },
+    {
+     "id": "novelo_05",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Não é para mim. É para ele.",
+     "voz": "Baixo e firme.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "Zé aponta com o queixo para o escuro atrás da samaúma."
+    },
+    {
+     "id": "novelo_06",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Tião entendeu e entregou o último rolo de fumo.",
+     "pausa_depois": 0.3,
+     "sfx": [],
+     "acao": "Tião remexe o bornal e tira o rolo de fumo com a mão tremendo."
+    },
+    {
+     "id": "novelo_07",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Isso é para o senhor. E me desculpa pela embaúba.",
+     "voz": "Baixinho e sincero, falando para o escuro.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "folhagem_mexe",
+       "em": "fim"
+      }
+     ],
+     "acao": "Zé arruma o novelo e o fumo sobre a folha larga, ao pé da samaúma. Tira o chapéu e baixa a cabeça para o escuro."
+    },
+    {
+     "id": "novelo_08",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Tião, calado, deixou junto a pena de arara.",
+     "pausa_depois": 0.5,
+     "sfx": [],
+     "acao": "Tião tira a pena vermelha da fita do chapéu e a deposita ao lado do fumo. Os dois se escondem atrás de uma sapopema com o cachorro."
+    },
+    {
+     "id": "novelo_09",
+     "tipo": "pausa",
+     "dur": 2.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "pau_de_chuva",
+       "em": "inicio"
+      },
+      {
+       "som": "gotejar",
+       "em": "+0.6"
+      },
+      {
+       "som": "sapos",
+       "em": "+1.3"
+      }
+     ],
+     "acao": "A chuva afina até parar, e a luz passa de tempestade para noite. Gotas pingam das folhas. Um vaga-lume volta a acender, depois outro."
+    },
+    {
+     "id": "novelo_10",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E de trás da samaúma saiu ele, pisando de calcanhar.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "bloco_madeira",
+       "em": "fim"
+      }
+     ],
+     "acao": "O Curupira sai de trás da sapopema, nítido e perto da tela, e vai de calcanhar até a folha em três saltinhos."
+    },
+    {
+     "id": "novelo_11",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Cheirou o fumo, e a raiva amansou. Viu o novelo, e não resistiu.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "maraca",
+       "em": "+0.6"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "fim"
+      }
+     ],
+     "acao": "Ele cheira o fumo, as mechas baixam e param de soltar brasa, e ele guarda o rolo na cintura. Prende a pena de arara atrás da orelha. Depois pega o novelo, vira, revira e senta."
+    },
+    {
+     "id": "novelo_12",
+     "tipo": "pausa",
+     "dur": 2.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "cipo_torcendo",
+       "em": "inicio"
+      },
+      {
+       "som": "caxixi",
+       "em": "+0.6"
+      },
+      {
+       "som": "cipo_torcendo",
+       "em": "+1.4"
+      },
+      {
+       "som": "caxixi",
+       "em": "+1.8"
+      }
+     ],
+     "acao": "Ele gira o novelo e desenrola, e o cipó se espalha em espirais pelo chão. Ele bufa, coça a cabeça e recomeça. Atrás dele, Tião e Zé se levantam devagarinho."
+    },
+    {
+     "id": "novelo_13",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Enquanto ele caçava a ponta escondida, os dois saíram de mansinho.",
+     "pausa_depois": 0.3,
+     "sfx": [
+      {
+       "som": "passos_folhas",
+       "em": "+2.0"
+      }
+     ],
+     "acao": "Os dois atravessam para a esquerda na ponta dos pés, em passos exagerados, com o cachorro atrás. O Curupira não levanta a cabeça, mas mexe uma orelha."
+    },
+    {
+     "id": "novelo_14",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E a mata ouviu. Mas dessa vez, deixou passar.",
+     "voz": "Terceira vez do refrão: tomada nova, a mais grave e lenta na primeira frase; a segunda frase abre num meio sorriso.",
+     "pausa_depois": 0.8,
+     "sfx": [
+      {
+       "som": "gongo_grave",
+       "em": "fim"
+      }
+     ],
+     "acao": "Os dois saem de cena. O Curupira, sozinho com o novelo, inclina a cabeça de lado e balança os pés virados. A luz baixa."
+    }
+   ]
+  },
+  {
+   "id": "aurora",
+   "capitulo": "O caminho de casa",
+   "luz": "aurora",
+   "ambiente": [
+    "mata_amanhecer",
+    "gotejar",
+    "riacho",
+    "sabia",
+    "araras"
+   ],
+   "trilha": "Tema Amanhecer e Final: o pau-de-chuva abre, pífanos em terças, rabeca em heterofonia e viola; o Tema da Mata volta luminoso. Na passagem do Curupira, o batuque mais festivo do espetáculo: alfaias, zabumba e atabaque em tropel, com agogô, caxixi, ganzá e gongo_sobe, e os grunhidos e o estalar de dentes da vara misturados ao batuque. Tudo para quando ele olha para o Zé; no diálogo, só um bordão de rabeca. Na partida, o motivo da cantiga Vou andando vira marcha alegre de alfaia, zabumba, agogô e pífano, que se afasta junto com a vara até sumir. Na história do Tião, a viola volta sozinha, com humor. Na veada, só a flauta de taquara.",
+   "visual": "A aurora nasce baixa, atrás da samaúma. Ao lado, um ipê-amarelo florido em couro açafrão translúcido. Riacho à esquerda. No alto do barranco, em L3, o Curupira passa montado num queixada, com a vara inteira atrás e os últimos vaga-lumes à frente, como batedores; leva o cipó desmanchado pendurado no pescoço como um colar e a pena de arara atrás da orelha. É a imagem mais bonita do espetáculo. Depois, a porta do rancho e a beira da mata. No fim, o riacho com a veada e o filhote. Cor de foco: o amarelo do ipê.",
+   "beats": [
+    {
+     "id": "aurora_01",
+     "tipo": "pausa",
+     "dur": 1.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "pau_de_chuva",
+       "em": "inicio"
+      },
+      {
+       "som": "gotejar",
+       "em": "+0.4"
+      },
+      {
+       "som": "sabia",
+       "em": "+1.2"
+      }
+     ],
+     "acao": "O céu clareia de baixo para cima atrás da samaúma, e as flores do ipê se acendem uma a uma. Gotas ainda pingam das folhas."
+    },
+    {
+     "id": "aurora_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Quando o céu clareou, o Zé ouviu o riacho. E riacho sempre leva a algum lugar.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "riacho",
+       "em": "inicio"
+      },
+      {
+       "som": "ofego",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Zé e o cachorro chegam à beira do riacho, exaustos e enlameados. Atrás deles, Tião sacode a cabeça, dá as costas para a água e se mete sozinho no mato fechado, à direita."
+    },
+    {
+     "id": "aurora_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Foi aí que, no alto do barranco, passou ele, montado num queixada.",
+     "pausa_depois": 0.2,
+     "sfx": [
+      {
+       "som": "queixada_tropel",
+       "em": "+2.5"
+      }
+     ],
+     "acao": "Zé e o cachorro olham para o alto, à direita."
+    },
+    {
+     "id": "aurora_04",
+     "tipo": "pausa",
+     "dur": 3.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "queixada_tropel",
+       "em": "inicio"
+      },
+      {
+       "som": "gongo_sobe",
+       "em": "inicio"
+      },
+      {
+       "som": "queixada_grunhido",
+       "em": "+0.6"
+      },
+      {
+       "som": "queixada_dentes",
+       "em": "+1.2"
+      },
+      {
+       "som": "agogo",
+       "em": "+1.5"
+      },
+      {
+       "som": "caxixi",
+       "em": "+1.5"
+      },
+      {
+       "som": "araras_revoada",
+       "em": "+2.5"
+      },
+      {
+       "som": "bloco_madeira",
+       "em": "+3.4"
+      }
+     ],
+     "acao": "No alto do barranco passa o Curupira montado num queixada, de machadinha erguida, com as mechas brilhando contra a aurora, a pena de arara atrás da orelha e o cipó desmanchado pendurado no pescoço como um colar. Os últimos vaga-lumes vão à frente. A vara inteira vem atrás em tropel, com poeira dourada no feixe, e as araras levantam voo. No bloco, a música para: ele puxa o queixada e vira a cabeça para o Zé."
+    },
+    {
+     "id": "aurora_05",
+     "tipo": "fala",
+     "papel": "curupira",
+     "texto": "Meu neto. O que você veio buscar na minha mata?",
+     "voz": "Calmo, perto, enigmático, sem raiva nenhuma.",
+     "pausa_depois": 0.6,
+     "sfx": [],
+     "acao": "Os dois perfis frente a frente: o Curupira no alto do barranco, à direita, e o Zé lá embaixo, à esquerda."
+    },
+    {
+     "id": "aurora_06",
+     "tipo": "fala",
+     "papel": "ze",
+     "texto": "Vim buscar o de comer, meu avô. Mas levei mais do que precisava.",
+     "voz": "Embargado, sincero, baixinho.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "coracao",
+       "em": "inicio"
+      }
+     ],
+     "acao": "Zé tira o chapéu, aperta o chapéu contra o peito e baixa a cabeça."
+    },
+    {
+     "id": "aurora_07",
+     "tipo": "fala",
+     "papel": "curupira",
+     "texto": "Vai, meu neto. Leva só a tua fome.",
+     "voz": "Manso, quase um sorriso na voz.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "flauta_chamado",
+       "em": "fim"
+      }
+     ],
+     "acao": "O Curupira ergue o rolo de fumo da cintura num aceno curto."
+    },
+    {
+     "id": "aurora_08",
+     "tipo": "pausa",
+     "dur": 3.0,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "assobio_curupira",
+       "em": "inicio"
+      },
+      {
+       "som": "queixada_tropel",
+       "em": "+0.4"
+      },
+      {
+       "som": "agogo",
+       "em": "+0.8"
+      },
+      {
+       "som": "gongo_desce",
+       "em": "+2.4"
+      }
+     ],
+     "acao": "Um assobio longo. Ele gira o queixada e some do outro lado do barranco com a vara, e a marcha alegre se afasta junto. Os vaga-lumes se apagam, e as pegadas invertidas no alto do barranco se desfazem."
+    },
+    {
+     "id": "aurora_09",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "O Zé chegou em casa de manhã. O Tião, que teimou num atalho, só chegou dias depois, magro e sem espingarda.",
+     "pausa_depois": 0.4,
+     "sfx": [
+      {
+       "som": "cachorro_latido",
+       "em": "+1.5"
+      }
+     ],
+     "acao": "Uma folha passa e troca o cenário para a porta do rancho, com fumaça no telhado: Zé chega com o cachorro abanando o rabo. Outra folha passa: de dia, na beira da mata, Tião sai do mato cambaleando, de barba crescida e chapéu rasgado."
+    },
+    {
+     "id": "aurora_10",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E dizem que, até hoje, qualquer assobio no mato faz o Tião pular.",
+     "pausa_depois": 0.5,
+     "sfx": [
+      {
+       "som": "sabia",
+       "em": "fim"
+      }
+     ],
+     "acao": "Num galho, um sabiá assobia. Tião dá um pulo, gira para todos os lados e apressa o passo."
+    },
+    {
+     "id": "aurora_11",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "No riacho, a veada bebia outra vez. Ao lado, tremia um filhote de pernas bambas.",
+     "pausa_depois": 1.0,
+     "sfx": [
+      {
+       "som": "riacho",
+       "em": "inicio"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "+3.5"
+      }
+     ],
+     "acao": "Uma folha passa e volta o riacho. A veada bebe, e o filhote dá dois passos tortos e encosta nela. A luz dourada esquenta sobre os dois."
+    }
+   ]
+  },
+  {
+   "id": "encerramento",
+   "capitulo": null,
+   "luz": "lamparina",
+   "ambiente": [
+    "lamparina_chama",
+    "grilos"
+   ],
+   "trilha": "Volta o clima da abertura: surdo de coração lento e bordão Ré-Lá de rabeca em nota longa. A flauta de taquara toca a primeira frase da cantiga do Curupira e deixa a segunda sem resposta. Um batuque bem distante, só um atabaque, some aos poucos. Antes da última frase, silêncio total. No sopro que apaga a lamparina, um gongo grave reverbera até o fim, e um último assobio vem de muito longe.",
+   "visual": "A mata recua camada por camada, de L1 a L5, até a tela voltar a ser só papel âmbar. Um par de pegadas invertidas fica sozinho no centro do chão. No fim, a lamparina se apaga, as pegadas brilham um instante e o escuro fica total.",
+   "beats": [
+    {
+     "id": "encerramento_01",
+     "tipo": "pausa",
+     "dur": 1.6,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "lamparina_chama",
+       "em": "inicio"
+      },
+      {
+       "som": "flauta_chamado",
+       "em": "+0.4"
+      },
+      {
+       "som": "batida_tronco",
+       "em": "+1.4"
+      }
+     ],
+     "acao": "As camadas da mata sobem e saem, da frente para o fundo. Em L4, bem desfocada, uma sombrinha bate numa samaúma e some. O papel volta ao âmbar da lamparina."
+    },
+    {
+     "id": "encerramento_02",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Se um dia você ouvir um assobio bem fino na mata, não precisa correr, não.",
+     "pausa_depois": 0.6,
+     "sfx": [
+      {
+       "som": "assobio_curupira",
+       "em": "fim"
+      }
+     ],
+     "acao": "A chama da lamparina se inclina. No silêncio, um par de pegadas invertidas aparece no centro do chão."
+    },
+    {
+     "id": "encerramento_03",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Só pergunta para a sua barriga se aquilo é fome. Ou se é gula.",
+     "voz": "Tom de conversa com a plateia, sorrindo; pausa curta antes de ou se é gula.",
+     "pausa_depois": 0.7,
+     "sfx": [],
+     "acao": "A luz se fecha numa roda pequena em volta das pegadas."
+    },
+    {
+     "id": "encerramento_04",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "Porque a mata tem dono. E quem tira mais do que precisa se perde nela.",
+     "voz": "Quase sussurro, sem tom de lição, como quem conta um segredo.",
+     "pausa_depois": 0.8,
+     "sfx": [],
+     "acao": "As pegadas perdem a nitidez devagar."
+    },
+    {
+     "id": "encerramento_05",
+     "tipo": "fala",
+     "papel": "narrador",
+     "texto": "E a mata, essa, sempre ouve.",
+     "voz": "Sussurro na última palavra; tomada própria, diferente das do refrão.",
+     "pausa_depois": 0.5,
+     "sfx": [],
+     "acao": "A chama baixa até quase sumir."
+    },
+    {
+     "id": "encerramento_06",
+     "tipo": "pausa",
+     "dur": 3.5,
+     "pausa_depois": 0.0,
+     "sfx": [
+      {
+       "som": "sopro_apaga",
+       "em": "+0.4"
+      },
+      {
+       "som": "gongo_grave",
+       "em": "+0.5"
+      },
+      {
+       "som": "assobio_curupira",
+       "em": "+2.8"
+      }
+     ],
+     "acao": "Um sopro apaga a lamparina e o papel escurece da borda para o centro. As pegadas brilham um instante e somem. No escuro total, um último assobio, bem longe."
+    }
+   ]
+  }
+ ],
+ "sons_novos": [
+  {
+   "etiqueta": "facao_golpe",
+   "descricao": "Golpe de facão no mato e no tronco mole da embaúba: som seco, úmido e fibroso, com a lâmina vibrando. Os caçadores usam facão, não machado."
+  },
+  {
+   "etiqueta": "risada_homem",
+   "descricao": "Risada alta e fanfarrona de caçador, a voz da gula; contrasta com os gritos de pavor depois."
+  },
+  {
+   "etiqueta": "cipo_chicote",
+   "descricao": "Chicotada de cipó: assobio curto do ar seguido de estalo. Tradição: o Curupira açoita os cães de caça (Barbosa Rodrigues)."
+  },
+  {
+   "etiqueta": "uivo_curupira",
+   "descricao": "Grito longo e agudo que se perde na mata, nem de bicho nem de gente. Tradição: longos uivos que aterrorizam os mateiros (Barbosa Rodrigues); grito agudo antes do silêncio (Bates)."
+  },
+  {
+   "etiqueta": "pilao_batida",
+   "descricao": "Mão de pilão socando no pilão de madeira do rancho. Tradição: bater no pilão cala os assobios do Curupira (Rio Negro)."
+  },
+  {
+   "etiqueta": "cachimbo_baforada",
+   "descricao": "Tragada e sopro de cachimbo de barro, com estalo leve de fumo queimando. Só a Vó usa cachimbo."
+  },
+  {
+   "etiqueta": "gotejar",
+   "descricao": "Gotas caindo das folhas depois que a chuva para."
+  }
+ ]
+}

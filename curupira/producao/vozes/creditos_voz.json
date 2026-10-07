@@ -1,0 +1,10 @@
+{
+ "modelo": "Qwen3-TTS 1.7B (Qwen/Alibaba)",
+ "licenca": "Apache-2.0",
+ "url": "https://github.com/QwenLM/Qwen3-TTS",
+ "pesos": ["https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base", "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"],
+ "conversao_mlx": ["https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16", "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-bf16"],
+ "licenca_url": "https://www.apache.org/licenses/LICENSE-2.0",
+ "conferido": "license: apache-2.0 no cartão dos pesos baixados (Base e VoiceDesign, mlx-community)",
+ "uso": "vozes desenhadas no VoiceDesign (vozes/referencias/) e clonadas pelo Base em todas as falas"
+}

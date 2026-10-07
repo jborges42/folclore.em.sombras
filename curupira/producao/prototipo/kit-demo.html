@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de coreografia</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0D0906; overflow: hidden; }
+  #escala { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+</style>
+<script>
+  /* Demonstração do kit (js/cenas/comum.js) com três cenas curtas, montadas como no espetáculo.
+     ?t=SEG&pausa=1 congela; &de=SEG desenha antes esse instante (teste de seek: chegar ao mesmo t vindo de
+     antes ou de depois); &passo=SEG percorre de "de" até t quadro a quadro, como na reprodução. */
+  window.Sombras = { cenas: { construtores: {}, registrar(id, construtor) { this.construtores[id] = construtor; } } };
+  const pausa = id => ({ id, tipo: 'pausa', papel: null, texto: null, sfx: [] });
+  const fala = (id, texto) => ({ id, tipo: 'fala', papel: 'narrador', texto, sfx: [] });
+  window.LINHA_DO_TEMPO = { duracao: 38, creditos: { inicio: 37, fim: 38 }, cenas: [
+    { id: 'demo1', luz: 'entardecer', inicio: 0, fim: 14, cartela: null, beats: [
+      Object.assign(pausa('demo1_01'), { inicio: 0, fim: 1.5 }),
+      Object.assign(fala('demo1_02', 'O Curupira passa de calcanhar.'), { inicio: 1.5, fim: 6.2 }),
+      Object.assign(fala('demo1_03', 'O caçador segue as pegadas.'), { inicio: 6.6, fim: 10 }),
+      Object.assign(pausa('demo1_04'), { inicio: 10, fim: 14, sfx: [{ som: 'relampago_estalo', t: 10.4 }, { som: 'relampago_estalo', t: 12.2 }] }),
+    ] },
+    { id: 'demo2', luz: 'noite', inicio: 15.5, fim: 24.5, cartela: null, beats: [
+      Object.assign(pausa('demo2_01'), { inicio: 15.5, fim: 17.5 }),
+      Object.assign(fala('demo2_02', 'E volta, de noite, pelo outro lado.'), { inicio: 17.5, fim: 23 }),
+      Object.assign(pausa('demo2_03'), { inicio: 23, fim: 24.5 }),
+    ] },
+    { id: 'demo3', luz: 'dia', inicio: 26, fim: 36, cartela: null, beats: [
+      Object.assign(pausa('demo3_01'), { inicio: 26, fim: 27.5 }),
+      Object.assign(fala('demo3_02', 'Tião corre, pula a raiz e cai.'), { inicio: 27.5, fim: 33 }),
+      Object.assign(pausa('demo3_03'), { inicio: 33, fim: 36 }),
+    ] },
+  ] };
+</script>
+</head>
+<body>
+<div id="escala"></div>
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/grafismos.js"></script>
+<script src="../../js/palco.js"></script>
+<script src="../../js/cenario.js"></script>
+<script src="../../js/bonecos.js"></script>
+<script src="../../js/cenas/comum.js"></script>
+<script>
+const elenco = [];
+
+// Cena 1: entardecer. O Curupira entra pela esquerda e atravessa (pegadas invertidas); Tião entra atrás dele
+// seguindo o rastro (pegadas normais); a luz vira tempestade, chove, dois relâmpagos; o Curupira vira e some.
+Sombras.cenas.registrar('demo1', (tl, ctx) => {
+  const K = Sombras.kit, B = Sombras.bonecos, c = K.posse(tl, ctx, { saida: 'contrarregra' }), p = c.palco;
+  c.cenario(Sombras.cenario.mata({ semente: 7 }));
+  const tiao = c.boneco(B.tiao({ x: -300, y: K.CHAO, escala: 1.15 }), { respirar: 1.2 });
+  const cur = c.boneco(B.curupira({ x: -200, y: K.CHAO, escala: 1.55 }), { respirar: .6 });
+  elenco.push(tiao, cur);
+  K.entrar(tl, cur, { ate: 1180, t0: ctx.t('demo1_02'), t1: ctx.tf('demo1_02') });
+  K.entrar(tl, tiao, { ate: 640, t0: ctx.t('demo1_03'), t1: ctx.tf('demo1_03'), pegadas: true });
+  K.luz(tl, p, 'tempestade', ctx.t('demo1_03'), 3);
+  K.particulas(tl, p, 'chuva', ctx.t('demo1_03') + 1, ctx.tf('demo1_04') - .5, { entra: 1.5 });
+  const raios = ctx.sfx('relampago_estalo');
+  for (const t of raios) { K.relampago(tl, p, t); K.abalo(tl, p, t, .5, 5); }
+  K.tremer(tl, tiao, raios[0] + .05, .5);
+  K.virar(tl, cur, raios[0] + .6);
+  K.sumir(tl, cur, raios[1] + .4);
+});
+
+// Cena 2: noite. O contra-regra sobe a mata em camadas; vaga-lumes; o Curupira surge do desfoque e volta
+// para a esquerda; no fim a lamparina apaga (saída padrão) e a troca acontece no escuro.
+Sombras.cenas.registrar('demo2', (tl, ctx) => {
+  const K = Sombras.kit, B = Sombras.bonecos, c = K.posse(tl, ctx, { entrada: 'contrarregra' }), p = c.palco;
+  c.cenario(Sombras.cenario.mata({ semente: 12, samauma: 'esquerda' }));
+  const cur = c.boneco(B.curupira({ x: 1350, y: K.CHAO, escala: 1.55, dir: -1, z: 1, opacidade: 0 }), { respirar: .6 });
+  elenco.push(cur);
+  K.particulas(tl, p, 'vagalumes', 1, ctx.dur, { entra: 2 });
+  K.surgir(tl, cur, ctx.t('demo2_02') - 1.6);
+  K.caminhar(tl, cur, { ate: 520, t0: ctx.t('demo2_02'), t1: ctx.tf('demo2_02') - 1 });
+});
+
+// Cena 3: dia (a lamparina reacende). Tião corre com a câmera acompanhando (paralaxe), pula, cai de cara,
+// levanta e sai correndo pela direita; uma folha gigante cobre a troca no fim.
+Sombras.cenas.registrar('demo3', (tl, ctx) => {
+  const K = Sombras.kit, B = Sombras.bonecos, c = K.posse(tl, ctx, { saida: 'folha' }), p = c.palco;
+  c.cenario(Sombras.cenario.mata({ semente: 21 }));
+  const tiao = c.boneco(B.tiao({ x: 300, y: K.CHAO, escala: 1.15 }), { respirar: 1.2 });
+  elenco.push(tiao);
+  const t0 = ctx.t('demo3_02');
+  K.caminhar(tl, tiao, { ate: 1100, t0, t1: t0 + 3.5, correr: true, pegadas: true });
+  K.camera(tl, p, 200, t0, 3.5, 'none');
+  K.pular(tl, tiao, { altura: 70, t0: t0 + 1.1, t1: t0 + 1.8 });
+  K.cair(tl, tiao, t0 + 3.7, { para: 'frente' });
+  K.abalo(tl, p, t0 + 3.95, .35, 4);
+  K.anima(tl, tiao.pose, { rot: 0, dy: 0 }, t0 + 4.9, .5, 'power2.out');
+  K.sair(tl, tiao, { lado: 'direita', t0: t0 + 5.7, t1: t0 + 7.1, correr: true });
+});
+
+// Mini-player: monta as cenas como js/player.js (timeline local por cena, ctx com tempos relativos).
+(function () {
+  const L = LINHA_DO_TEMPO, q = new URLSearchParams(location.search), el = document.getElementById('escala');
+  const ajustar = () => {
+    const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+    el.style.transform = `translate(${(innerWidth - 1920 * k) / 2}px,${(innerHeight - 1080 * k) / 2}px) scale(${k})`;
+  };
+  ajustar();
+  addEventListener('resize', ajustar);
+  const palco = Sombras.palco.iniciar(el), mestre = gsap.timeline({ paused: true }), beats = new Map();
+  for (const c of L.cenas) for (const b of c.beats) beats.set(b.id, b);
+  const beat = id => { const b = beats.get(id); if (!b) throw new Error('beat desconhecido: ' + id); return b; };
+  for (const cena of L.cenas) {
+    const construtor = Sombras.cenas.construtores[cena.id];
+    if (!construtor) continue;
+    const ctx = { cena, dur: cena.fim - cena.inicio, beat, t: id => beat(id).inicio - cena.inicio, tf: id => beat(id).fim - cena.inicio,
+      sfx: som => cena.beats.flatMap(b => (b.sfx || []).filter(s => s.som === som).map(s => s.t - cena.inicio)) };
+    const tl = gsap.timeline();
+    try { construtor(tl, ctx); mestre.add(tl, cena.inicio); } catch (e) { tl.revert(); console.error(`cena "${cena.id}" descartada:`, e); }
+  }
+  mestre.set({}, {}, L.duracao);
+  const quadro = t => { mestre.time(t); palco.quadro(t); };
+  const t = parseFloat(q.get('t')) || 0;
+  if (q.get('pausa') === '1') {
+    if (q.has('de')) {
+      const de = +q.get('de'), passo = Math.abs(+q.get('passo') || 0), s = Math.sign(t - de);
+      if (passo) for (let x = de; s * (t - x) > passo; x += s * passo) quadro(x); else quadro(de);
+    }
+    quadro(t);
+    Promise.all(elenco.map(b => b.pronto)).then(() => quadro(t)); // peças de couro já em bitmap
+    return;
+  }
+  const ini = performance.now() / 1000 - t;
+  (function loop() { quadro((performance.now() / 1000 - ini) % L.duracao); requestAnimationFrame(loop); })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+[transformers] You are using a model of type `qwen3_tts` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+  Initialized encoder codebooks
+Loaded speech tokenizer from /Users/joaovitorborgesdasilvamatias/Documents/dev/folclore.em.sombras/curupira/producao/.modelos/hf/hub/models--mlx-community--Qwen3-TTS-12Hz-1.7B-Base-bf16/snapshots/a6eb4f68e4b056f1215157bb696209bc82a6db48/speech_tokenizer
+backend qwen3-tts-1.7b-base-clone:1 | 87 falas | saída /Users/joaovitorborgesdasilvamatias/Documents/dev/folclore.em.sombras/curupira/producao/vozes
+  abertura_02 t01 escore  99.3 | WER 0.00 fim 0+0 UTMOS 3.94 F0 11.34 st 2.51 p/s | aprovada <- escolhida
+  abertura_02 t02 escore  98.5 | WER 0.00 fim 0+0 UTMOS 4.04 F0 11.75 st 2.57 p/s | aprovada
+abertura_02 (narrador): t01 escore 99, aprovada, 2 tomadas, 0s
+  abertura_04 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.19 F0 6.86 st 2.46 p/s | aprovada <- escolhida
+  abertura_04 t02 escore  99.6 | WER 0.00 fim 0+0 UTMOS 3.99 F0 6.6 st 2.46 p/s | aprovada
+abertura_04 (narrador): t01 escore 100, aprovada, 2 tomadas, 0s
+  abertura_05 t01 escore  76.1 | WER 0.05 fim 1+0 UTMOS 3.85 F0 8.06 st 2.40 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  abertura_05 t02 escore  75.7 | WER 0.05 fim 1+0 UTMOS 3.95 F0 7.77 st 2.38 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  abertura_05 t03 escore  73.4 | WER 0.05 fim 1+0 UTMOS 3.66 F0 7.2 st 2.46 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  abertura_05 t04 escore  77.1 | WER 0.05 fim 1+0 UTMOS 3.96 F0 7.75 st 2.40 p/s | fim da frase: 1 das 2 últimas palavras erradas <- escolhida
+  abertura_05 t05 escore  76.3 | WER 0.05 fim 1+0 UTMOS 3.93 F0 7.22 st 2.50 p/s | fim da frase: 1 das 2 últimas palavras erradas
+abertura_05 (narrador): t04 escore 77, ABAIXO DO LIMIAR, 5 tomadas, 0s
+  abertura_06 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.02 F0 8.88 st 2.45 p/s | aprovada <- escolhida
+abertura_06 (narrador): t01 escore 100, aprovada, 1 tomadas, 0s
+  abertura_07 t01 escore  98.5 | WER 0.00 fim 0+0 UTMOS 3.87 F0 10.14 st 2.45 p/s | aprovada <- escolhida
+abertura_07 (narrador): t01 escore 98, aprovada, 1 tomadas, 0s
+  abertura_08 t01 escore  99.8 | WER 0.00 fim 0+0 UTMOS 3.98 F0 8.04 st 2.31 p/s | aprovada <- escolhida
+  abertura_08 t02 escore  96.1 | WER 0.00 fim 0+0 UTMOS 3.80 F0 5.91 st 2.36 p/s | aprovada
+abertura_08 (narrador): t01 escore 100, aprovada, 2 tomadas, 0s
+  mata_02 t01 escore  93.1 | WER 0.00 fim 0+0 UTMOS 3.70 F0 9.24 st 2.45 p/s | pausa interna anormal [0.25, 0.25, 1.05, 0.56]
+  mata_02 t02 escore  98.4 | WER 0.00 fim 0+0 UTMOS 4.33 F0 12.72 st 2.45 p/s | aprovada
+  mata_02 t03 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.39 F0 10.69 st 2.45 p/s | aprovada <- escolhida
+mata_02 (narrador): t03 escore 100, aprovada, 3 tomadas, 0s
+  mata_03 t01 escore  95.7 | WER 0.00 fim 0+0 UTMOS 3.64 F0 8.37 st 2.48 p/s | aprovada <- escolhida
+  mata_03 t02 escore  94.9 | WER 0.00 fim 0+0 UTMOS 3.70 F0 7.12 st 2.52 p/s | aprovada
+mata_03 (narrador): t01 escore 96, aprovada, 2 tomadas, 0s
+  mata_05 t01 escore  99.0 | WER 0.00 fim 0+0 UTMOS 3.91 F0 6.78 st 2.46 p/s | aprovada <- escolhida
+mata_05 (narrador): t01 escore 99, aprovada, 1 tomadas, 0s
+  mata_06 t01 escore  99.4 | WER 0.00 fim 0+0 UTMOS 4.23 F0 11.92 st 2.75 p/s | aprovada <- escolhida
+mata_06 (narrador): t01 escore 99, aprovada, 1 tomadas, 0s
+  mata_07 t01 escore  82.3 | WER 0.00 fim 0+0 UTMOS 3.13 F0 12.27 st 2.39 p/s | pausa interna anormal [0.81, 0.33, 1.11, 0.28]
+  mata_07 t02 escore  98.3 | WER 0.00 fim 0+0 UTMOS 4.21 F0 11.0 st 2.57 p/s | aprovada <- escolhida
+  mata_07 t03 escore  97.7 | WER 0.00 fim 0+0 UTMOS 4.28 F0 11.28 st 2.91 p/s | aprovada
+mata_07 (narrador): t02 escore 98, aprovada, 3 tomadas, 0s
+  guardiao_02 t01 escore  96.7 | WER 0.00 fim 0+0 UTMOS 4.09 F0 8.59 st 2.45 p/s | pausa interna anormal [0.96, 0.25, 0.43]
+  guardiao_02 t02 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.31 F0 8.81 st 2.45 p/s | aprovada <- escolhida
+guardiao_02 (narrador): t02 escore 100, aprovada, 2 tomadas, 0s
+  guardiao_03 t01 escore  99.3 | WER 0.00 fim 0+0 UTMOS 3.94 F0 10.8 st 2.45 p/s | aprovada <- escolhida
+guardiao_03 (narrador): t01 escore 99, aprovada, 1 tomadas, 0s
+  guardiao_04 t01 escore  86.4 | WER 0.10 fim 0+0 UTMOS 3.68 F0 11.37 st 2.69 p/s | aprovada <- escolhida
+guardiao_04 (narrador): t01 escore 86, aprovada, 1 tomadas, 0s
+  guardiao_05 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.13 F0 9.26 st 2.45 p/s | aprovada <- escolhida
+  guardiao_05 t02 escore  98.5 | WER 0.00 fim 0+0 UTMOS 4.03 F0 10.49 st 2.45 p/s | aprovada
+guardiao_05 (narrador): t01 escore 100, aprovada, 2 tomadas, 0s
+  guardiao_07 t01 escore  93.1 | WER 0.00 fim 0+0 UTMOS 3.58 F0 4.98 st 2.87 p/s | aprovada
+  guardiao_07 t02 escore  96.1 | WER 0.00 fim 0+0 UTMOS 3.79 F0 6.95 st 2.82 p/s | aprovada <- escolhida
+guardiao_07 (narrador): t02 escore 96, aprovada, 2 tomadas, 0s
+  guardiao_08 t01 escore  97.8 | WER 0.00 fim 0+0 UTMOS 4.11 F0 8.96 st 2.90 p/s | aprovada <- escolhida
+guardiao_08 (narrador): t01 escore 98, aprovada, 1 tomadas, 0s
+  guardiao_09 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.04 F0 10.54 st 2.45 p/s | aprovada <- escolhida
+  guardiao_09 t02 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.20 F0 10.56 st 2.45 p/s | aprovada
+guardiao_09 (narrador): t01 escore 100, aprovada, 2 tomadas, 0s
+  guardiao_10 t01 escore  98.9 | WER 0.00 fim 0+0 UTMOS 3.93 F0 9.09 st 2.46 p/s | aprovada <- escolhida
+guardiao_10 (narrador): t01 escore 99, aprovada, 1 tomadas, 0s
+  guardiao_11 t01 escore  89.6 | WER 0.10 fim 0+0 UTMOS 3.91 F0 5.87 st 2.75 p/s | aprovada <- escolhida
+guardiao_11 (narrador): t01 escore 90, aprovada, 1 tomadas, 0s
+  guardiao_12 t01 escore  92.8 | WER 0.00 fim 0+0 UTMOS 4.31 F0 10.37 st 3.56 p/s | velocidade 3.56 fora de 2.20-2.70 palavras/s
+  guardiao_12 t02 escore  86.7 | WER 0.00 fim 0+0 UTMOS 3.87 F0 13.39 st 3.48 p/s | velocidade 3.48 fora de 2.20-2.70 palavras/s
+  guardiao_12 t03 escore  93.6 | WER 0.00 fim 0+0 UTMOS 4.32 F0 11.02 st 3.28 p/s | velocidade 3.28 fora de 2.20-2.70 palavras/s <- escolhida
+  guardiao_12 t04 escore  93.3 | WER 0.00 fim 0+0 UTMOS 4.13 F0 11.26 st 3.48 p/s | velocidade 3.48 fora de 2.20-2.70 palavras/s
+  guardiao_12 t05 escore  93.2 | WER 0.00 fim 0+0 UTMOS 4.27 F0 8.91 st 3.70 p/s | velocidade 3.70 fora de 2.20-2.70 palavras/s
+guardiao_12 (narrador): t03 escore 94, ABAIXO DO LIMIAR, 5 tomadas, 0s
+  cacadores_02 t01 escore  96.5 | WER 0.00 fim 0+0 UTMOS 4.18 F0 7.02 st 3.01 p/s | velocidade 3.01 fora de 2.20-2.70 palavras/s
+  cacadores_02 t02 escore  94.8 | WER 0.00 fim 0+0 UTMOS 4.18 F0 8.48 st 3.03 p/s | velocidade 3.03 fora de 2.20-2.70 palavras/s
+  cacadores_02 t03 escore  97.8 | WER 0.00 fim 0+0 UTMOS 4.04 F0 6.69 st 2.90 p/s | aprovada <- escolhida
+cacadores_02 (narrador): t03 escore 98, aprovada, 3 tomadas, 0s
+  cacadores_03 t01 escore  99.6 | WER 0.00 fim 0+0 UTMOS 3.99 F0 7.19 st 2.46 p/s | aprovada <- escolhida
+cacadores_03 (narrador): t01 escore 100, aprovada, 1 tomadas, 0s
+  cacadores_04 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.09 F0 9.84 st 2.45 p/s | aprovada <- escolhida
+cacadores_04 (narrador): t01 escore 100, aprovada, 1 tomadas, 0s
+  cacadores_06 t01 escore  99.8 | WER 0.00 fim 0+0 UTMOS 3.98 F0 11.41 st 2.15 p/s | aprovada <- escolhida
+cacadores_06 (narrador): t01 escore 100, aprovada, 1 tomadas, 0s
+  cacadores_07 t01 escore  98.2 | WER 0.00 fim 0+0 UTMOS 3.93 F0 3.08 st 2.85 p/s | F0 monótona: faixa 3.1 < 3.5 semitons
+  cacadores_07 t02 escore  96.6 | WER 0.00 fim 0+0 UTMOS 4.05 F0 1.96 st 2.99 p/s | F0 monótona: faixa 2.0 < 3.5 semitons
+  cacadores_07 t03 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.23 F0 9.68 st 2.98 p/s | aprovada <- escolhida
+cacadores_07 (tiao): t03 escore 100, aprovada, 3 tomadas, 0s
+  cacadores_08 t01 escore  88.3 | WER 0.00 fim 0+0 UTMOS 3.90 F0 6.41 st 3.39 p/s | pico espectral 18.4 dB
+  cacadores_08 t02 escore  91.1 | WER 0.00 fim 0+0 UTMOS 3.96 F0 8.1 st 3.17 p/s | aprovada
+  cacadores_08 t03 escore  92.2 | WER 0.00 fim 0+0 UTMOS 3.88 F0 7.71 st 3.28 p/s | aprovada
+  cacadores_08 t04 escore  92.3 | WER 0.00 fim 0+0 UTMOS 4.00 F0 6.5 st 3.20 p/s | aprovada
+  cacadores_08 t05 escore  94.4 | WER 0.00 fim 0+0 UTMOS 3.88 F0 8.35 st 3.08 p/s | aprovada <- escolhida
+cacadores_08 (narrador): t05 escore 94, aprovada, 5 tomadas, 0s
+  cacadores_09 t01 escore  98.2 | WER 0.00 fim 0+0 UTMOS 3.85 F0 7.06 st 2.45 p/s | aprovada <- escolhida
+cacadores_09 (narrador): t01 escore 98, aprovada, 1 tomadas, 0s
+  cacadores_11 t01 escore  90.8 | WER 0.00 fim 0+0 UTMOS 3.79 F0 10.57 st 1.73 p/s | aprovada <- escolhida
+  cacadores_11 t02 escore  84.6 | WER 0.00 fim 0+0 UTMOS 3.81 F0 16.89 st 1.58 p/s | F0 exagerada: faixa 16.9 > 16.0 semitons
+  cacadores_11 t03 escore  79.7 | WER 0.00 fim 0+0 UTMOS 2.86 F0 10.63 st 1.99 p/s | UTMOS 2.86 < 3.0
+  cacadores_11 t04 escore  85.9 | WER 0.00 fim 0+0 UTMOS 3.38 F0 10.38 st 1.94 p/s | aprovada
+  cacadores_11 t05 escore  80.4 | WER 0.00 fim 0+0 UTMOS 3.36 F0 16.34 st 1.88 p/s | F0 exagerada: faixa 16.3 > 16.0 semitons
+cacadores_11 (ze): t01 escore 91, aprovada, 5 tomadas, 0s
+  cacadores_12 t01 escore  88.3 | WER 0.00 fim 0+0 UTMOS 3.90 F0 6.41 st 3.39 p/s | pico espectral 18.4 dB
+  cacadores_12 t02 escore  89.7 | WER 0.00 fim 0+0 UTMOS 3.96 F0 8.1 st 3.17 p/s | aprovada
+  cacadores_12 t03 escore  91.9 | WER 0.00 fim 0+0 UTMOS 3.88 F0 7.71 st 3.28 p/s | aprovada <- escolhida
+  cacadores_12 t04 escore  91.1 | WER 0.00 fim 0+0 UTMOS 4.00 F0 6.5 st 3.20 p/s | aprovada
+  cacadores_12 t05 escore  91.9 | WER 0.00 fim 0+0 UTMOS 3.88 F0 8.35 st 3.08 p/s | aprovada
+cacadores_12 (narrador): t03 escore 92, aprovada, 5 tomadas, 0s
+  cacadores_13 t01 escore  70.0 | WER 0.14 fim 1+0 UTMOS 4.04 F0 9.48 st 2.45 p/s | fim da frase: 1 das 2 últimas palavras erradas <- escolhida
+  cacadores_13 t02 escore  70.0 | WER 0.14 fim 1+0 UTMOS 4.04 F0 11.0 st 2.46 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  cacadores_13 t03 escore  70.0 | WER 0.14 fim 1+0 UTMOS 4.04 F0 10.29 st 2.44 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  cacadores_13 t04 escore  69.3 | WER 0.14 fim 1+0 UTMOS 3.95 F0 10.62 st 2.46 p/s | fim da frase: 1 das 2 últimas palavras erradas
+  cacadores_13 t05 escore  69.4 | WER 0.14 fim 1+0 UTMOS 3.95 F0 8.83 st 2.31 p/s | fim da frase: 1 das 2 últimas palavras erradas
+cacadores_13 (narrador): t01 escore 70, ABAIXO DO LIMIAR, 5 tomadas, 0s
+/Users/joaovitorborgesdasilvamatias/Documents/dev/folclore.em.sombras/curupira/producao/.venv-tts/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+  cacadores_14 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.17 F0 8.51 st 2.26 p/s | aprovada <- escolhida
+  cacadores_14 t02 escore  84.2 | WER 0.17 fim 0+0 UTMOS 3.90 F0 10.84 st 2.59 p/s | WER 0.17 > 0.15
+  cacadores_14 t03 escore  92.6 | WER 0.00 fim 0+0 UTMOS 3.89 F0 16.74 st 2.26 p/s | F0 exagerada: faixa 16.7 > 16.0 semitons
+  cacadores_14 t04 escore  93.3 | WER 0.00 fim 0+0 UTMOS 4.12 F0 22.69 st 2.33 p/s | F0 exagerada: faixa 22.7 > 16.0 semitons
+  cacadores_14 t05 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.17 F0 8.19 st 2.23 p/s | aprovada
+cacadores_14 (ze): t01 escore 100, aprovada, 5 tomadas, 33s
+  cacadores_15 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.10 F0 9.1 st 2.44 p/s | aprovada <- escolhida
+cacadores_15 (tiao): t01 escore 100, aprovada, 1 tomadas, 14s
+  aviso_01 t01 escore  99.3 | WER 0.00 fim 0+0 UTMOS 3.94 F0 8.28 st 2.15 p/s | aprovada <- escolhida
+aviso_01 (narrador): t01 escore 99, aprovada, 1 tomadas, 15s
+  aviso_03 t01 escore  73.2 | WER 0.12 fim 0+0 UTMOS 3.86 F0 10.48 st 2.45 p/s | pausa interna anormal [1.09, 0.54, 0.53]; corte abrupto no fim
+  aviso_03 t02 escore  82.0 | WER 0.19 fim 0+0 UTMOS 4.10 F0 8.5 st 2.57 p/s | WER 0.19 > 0.15
+  aviso_03 t03 escore  83.1 | WER 0.19 fim 0+0 UTMOS 3.96 F0 8.63 st 2.48 p/s | WER 0.19 > 0.15
+  aviso_03 t04 escore  81.9 | WER 0.19 fim 0+0 UTMOS 3.88 F0 9.57 st 2.48 p/s | WER 0.19 > 0.15
+  aviso_03 t05 escore  83.6 | WER 0.19 fim 0+0 UTMOS 4.16 F0 8.21 st 2.57 p/s | WER 0.19 > 0.15 <- escolhida
+aviso_03 (narrador): t05 escore 84, ABAIXO DO LIMIAR, 5 tomadas, 85s
+  aviso_04 t01 escore  96.3 | WER 0.00 fim 0+0 UTMOS 3.69 F0 7.25 st 1.91 p/s | aprovada <- escolhida
+  aviso_04 t02 escore  93.6 | WER 0.00 fim 0+0 UTMOS 3.47 F0 11.01 st 1.88 p/s | aprovada
+aviso_04 (curupira): t01 escore 96, aprovada, 2 tomadas, 13s
+  aviso_05 t01 escore  95.8 | WER 0.00 fim 0+0 UTMOS 4.02 F0 11.02 st 2.22 p/s | aprovada <- escolhida
+aviso_05 (ze): t01 escore 96, aprovada, 1 tomadas, 15s
+  aviso_06 t01 escore  98.2 | WER 0.00 fim 0+0 UTMOS 3.85 F0 6.15 st 2.32 p/s | aprovada <- escolhida
+aviso_06 (tiao): t01 escore 98, aprovada, 1 tomadas, 14s
+  aviso_07 t01 escore  97.2 | WER 0.00 fim 0+0 UTMOS 4.29 F0 13.24 st 2.46 p/s | aprovada <- escolhida
+aviso_07 (narrador): t01 escore 97, aprovada, 1 tomadas, 16s
+  rastros_02 t01 escore  99.3 | WER 0.00 fim 0+0 UTMOS 3.94 F0 4.17 st 2.42 p/s | aprovada <- escolhida
+rastros_02 (tiao): t01 escore 99, aprovada, 1 tomadas, 17s
+  rastros_03 t01 escore  96.7 | WER 0.00 fim 0+0 UTMOS 3.73 F0 10.09 st 2.45 p/s | aprovada <- escolhida
+rastros_03 (narrador): t01 escore 97, aprovada, 1 tomadas, 23s
+  rastros_04 t01 escore  99.7 | WER 0.00 fim 0+0 UTMOS 3.97 F0 7.91 st 2.46 p/s | aprovada <- escolhida
+rastros_04 (narrador): t01 escore 100, aprovada, 1 tomadas, 19s
+  rastros_05 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.06 F0 12.6 st 2.72 p/s | aprovada <- escolhida
+rastros_05 (ze): t01 escore 100, aprovada, 1 tomadas, 17s
+  rastros_06 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.19 F0 6.64 st 2.45 p/s | aprovada <- escolhida
+rastros_06 (narrador): t01 escore 100, aprovada, 1 tomadas, 19s
+  rastros_08 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.35 F0 11.37 st 2.68 p/s | aprovada <- escolhida
+rastros_08 (narrador): t01 escore 100, aprovada, 1 tomadas, 31s
+  rastros_09 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.25 F0 6.16 st 1.80 p/s | aprovada <- escolhida
+  rastros_09 t02 escore  87.5 | WER 0.14 fim 0+0 UTMOS 4.36 F0 8.22 st 2.14 p/s | aprovada
+rastros_09 (vo): t01 escore 100, aprovada, 2 tomadas, 16s
+  rastros_10 t01 escore  56.5 | WER 0.40 fim 0+0 UTMOS 3.77 F0 16.12 st 2.76 p/s | WER 0.40 > 0.15; F0 exagerada: faixa 16.1 > 16.0 semitons; escore 57 < 60
+  rastros_10 t02 escore  73.7 | WER 0.00 fim 0+0 UTMOS 2.54 F0 14.83 st 2.08 p/s | UTMOS 2.54 < 3.0
+  rastros_10 t03 escore  76.8 | WER 0.00 fim 0+0 UTMOS 2.72 F0 17.82 st 2.76 p/s | UTMOS 2.72 < 3.0; F0 exagerada: faixa 17.8 > 16.0 semitons
+  rastros_10 t04 escore  92.8 | WER 0.00 fim 0+0 UTMOS 3.71 F0 7.78 st 2.27 p/s | aprovada <- escolhida
+  rastros_10 t05 escore  66.0 | WER 0.20 fim 0+0 UTMOS 3.30 F0 17.51 st 2.54 p/s | WER 0.20 > 0.15; F0 exagerada: faixa 17.5 > 16.0 semitons
+rastros_10 (ze): t04 escore 93, aprovada, 5 tomadas, 78s
+  rastros_11 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.17 F0 8.19 st 2.68 p/s | aprovada <- escolhida
+rastros_11 (tiao): t01 escore 100, aprovada, 1 tomadas, 18s
+  rastros_12 t01 escore  92.5 | WER 0.08 fim 0+0 UTMOS 3.94 F0 10.32 st 2.46 p/s | aprovada <- escolhida
+rastros_12 (narrador): t01 escore 92, aprovada, 1 tomadas, 18s
+  rastros_13 t01 escore  57.9 | WER 0.75 fim 1+0 UTMOS 4.17 F0 None st 1.38 p/s | WER 0.75 > 0.15; fim da frase: 1 das 2 últimas palavras erradas; escore 58 < 60
+  rastros_13 t02 escore  71.5 | WER 0.25 fim 0+0 UTMOS 4.15 F0 9.12 st 1.21 p/s | WER 0.25 > 0.15 <- escolhida
+  rastros_13 t03 escore  68.5 | WER 0.25 fim 0+0 UTMOS 4.21 F0 2.15 st 1.34 p/s | WER 0.25 > 0.15; F0 monótona: faixa 2.1 < 3.5 semitons
+  rastros_13 t04 escore  71.5 | WER 0.25 fim 0+0 UTMOS 4.38 F0 4.99 st 1.29 p/s | WER 0.25 > 0.15
+  rastros_13 t05 escore  54.7 | WER 0.75 fim 1+0 UTMOS 4.33 F0 2.16 st 1.36 p/s | WER 0.75 > 0.15; fim da frase: 1 das 2 últimas palavras erradas; F0 monótona: faixa 2.2 < 3.5 semitons; escore 55 < 60
+rastros_13 (tiao): t02 escore 72, ABAIXO DO LIMIAR, 5 tomadas, 53s
+  rastros_16 t01 escore  96.9 | WER 0.00 fim 0+0 UTMOS 3.74 F0 7.05 st 2.45 p/s | aprovada <- escolhida
+rastros_16 (narrador): t01 escore 97, aprovada, 1 tomadas, 22s
+  noite_02 t01 escore  94.4 | WER 0.00 fim 0+0 UTMOS 3.72 F0 9.53 st 2.91 p/s | aprovada <- escolhida
+noite_02 (narrador): t01 escore 94, aprovada, 1 tomadas, 15s
+  noite_03 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.11 F0 8.39 st 2.45 p/s | aprovada <- escolhida
+noite_03 (narrador): t01 escore 100, aprovada, 1 tomadas, 18s
+  noite_04 t01 escore  86.5 | WER 0.09 fim 0+0 UTMOS 3.54 F0 10.83 st 2.26 p/s | aprovada
+  noite_04 t02 escore  91.3 | WER 0.09 fim 0+0 UTMOS 3.94 F0 11.81 st 2.07 p/s | aprovada <- escolhida
+noite_04 (curupira): t02 escore 91, aprovada, 2 tomadas, 13s
+  noite_05 t01 escore  99.9 | WER 0.00 fim 0+0 UTMOS 4.10 F0 12.04 st 2.47 p/s | aprovada <- escolhida
+noite_05 (narrador): t01 escore 100, aprovada, 1 tomadas, 21s
+  noite_06 t01 escore  98.5 | WER 0.00 fim 0+0 UTMOS 3.88 F0 11.55 st 2.73 p/s | aprovada <- escolhida
+noite_06 (tiao): t01 escore 98, aprovada, 1 tomadas, 20s
+  noite_07 t01 escore  98.2 | WER 0.00 fim 0+0 UTMOS 3.85 F0 7.65 st 2.46 p/s | aprovada <- escolhida
+noite_07 (narrador): t01 escore 98, aprovada, 1 tomadas, 19s
+  noite_10 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.21 F0 10.83 st 2.45 p/s | aprovada <- escolhida
+noite_10 (narrador): t01 escore 100, aprovada, 1 tomadas, 26s
+  noite_12 t01 escore  89.5 | WER 0.06 fim 0+0 UTMOS 3.81 F0 9.1 st 2.96 p/s | aprovada <- escolhida
+noite_12 (narrador): t01 escore 90, aprovada, 1 tomadas, 26s
+  vo_02 t01 escore  99.1 | WER 0.00 fim 0+0 UTMOS 3.92 F0 7.58 st 2.68 p/s | aprovada <- escolhida
+vo_02 (narrador): t01 escore 99, aprovada, 1 tomadas, 17s
+  vo_03 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.37 F0 10.21 st 1.89 p/s | aprovada <- escolhida
+  vo_03 t02 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.26 F0 9.47 st 1.89 p/s | aprovada
+vo_03 (vo): t01 escore 100, aprovada, 2 tomadas, 14s
+  vo_04 t01 escore  89.0 | WER 0.12 fim 0+0 UTMOS 3.94 F0 8.2 st 2.15 p/s | aprovada <- escolhida
+vo_04 (vo): t01 escore 89, aprovada, 1 tomadas, 73s
+  vo_05 t01 escore  75.6 | WER 0.23 fim 0+0 UTMOS 4.16 F0 8.82 st 2.82 p/s | WER 0.23 > 0.15; velocidade 2.82 fora de 1.80-2.50 palavras/s
+  vo_05 t02 escore  84.5 | WER 0.15 fim 0+0 UTMOS 4.32 F0 10.3 st 2.69 p/s | WER 0.15 > 0.15
+  vo_05 t03 escore  88.2 | WER 0.08 fim 0+0 UTMOS 4.27 F0 11.08 st 2.96 p/s | velocidade 2.96 fora de 1.80-2.50 palavras/s <- escolhida
+  vo_05 t04 escore  83.0 | WER 0.15 fim 0+0 UTMOS 3.89 F0 8.13 st 2.66 p/s | WER 0.15 > 0.15
+  vo_05 t05 escore  79.0 | WER 0.15 fim 0+0 UTMOS 3.72 F0 7.23 st 2.87 p/s | WER 0.15 > 0.15; velocidade 2.87 fora de 1.80-2.50 palavras/s
+vo_05 (vo): t03 escore 88, ABAIXO DO LIMIAR, 5 tomadas, 187s
+  vo_07 t01 escore  97.4 | WER 0.00 fim 0+0 UTMOS 3.79 F0 9.4 st 2.70 p/s | aprovada <- escolhida
+vo_07 (narrador): t01 escore 97, aprovada, 1 tomadas, 17s
+  novelo_01 t01 escore  92.3 | WER 0.00 fim 0+0 UTMOS 3.71 F0 5.6 st 3.07 p/s | velocidade 3.07 fora de 2.20-2.70 palavras/s
+  novelo_01 t02 escore  94.5 | WER 0.00 fim 0+0 UTMOS 4.04 F0 6.27 st 3.06 p/s | velocidade 3.06 fora de 2.20-2.70 palavras/s
+  novelo_01 t03 escore  97.9 | WER 0.00 fim 0+0 UTMOS 3.83 F0 8.13 st 2.64 p/s | aprovada <- escolhida
+novelo_01 (narrador): t03 escore 98, aprovada, 3 tomadas, 46s
+  novelo_03 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.03 F0 5.6 st 2.91 p/s | aprovada <- escolhida
+novelo_03 (ze): t01 escore 100, aprovada, 1 tomadas, 16s
+  novelo_04 t01 escore  99.1 | WER 0.00 fim 0+0 UTMOS 3.97 F0 9.61 st 2.57 p/s | aprovada <- escolhida
+  novelo_04 t02 escore  89.1 | WER 0.12 fim 0+0 UTMOS 4.14 F0 5.26 st 2.57 p/s | aprovada
+novelo_04 (tiao): t01 escore 99, aprovada, 2 tomadas, 12s
+  novelo_05 t01 escore  95.0 | WER 0.00 fim 0+0 UTMOS 4.18 F0 14.75 st 2.89 p/s | pausa interna anormal [0.34, 0.34]
+  novelo_05 t02 escore  98.6 | WER 0.00 fim 0+0 UTMOS 3.88 F0 5.23 st 3.21 p/s | aprovada <- escolhida
+  novelo_05 t03 escore  94.7 | WER 0.00 fim 0+0 UTMOS 3.56 F0 6.63 st 3.10 p/s | aprovada
+novelo_05 (ze): t02 escore 99, aprovada, 3 tomadas, 38s
+  novelo_06 t01 escore  96.0 | WER 0.00 fim 0+0 UTMOS 3.71 F0 9.31 st 2.74 p/s | aprovada <- escolhida
+novelo_06 (narrador): t01 escore 96, aprovada, 1 tomadas, 16s
+  novelo_07 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.23 F0 6.72 st 3.00 p/s | aprovada <- escolhida
+novelo_07 (ze): t01 escore 100, aprovada, 1 tomadas, 14s
+  novelo_08 t01 escore  97.5 | WER 0.00 fim 0+0 UTMOS 3.79 F0 10.62 st 2.45 p/s | aprovada <- escolhida
+novelo_08 (narrador): t01 escore 98, aprovada, 1 tomadas, 15s
+  novelo_10 t01 escore  82.4 | WER 0.20 fim 0+0 UTMOS 3.99 F0 6.39 st 2.51 p/s | WER 0.20 > 0.15
+  novelo_10 t02 escore  78.2 | WER 0.20 fim 0+0 UTMOS 3.77 F0 7.04 st 2.51 p/s | WER 0.20 > 0.15
+  novelo_10 t03 escore  81.6 | WER 0.20 fim 0+0 UTMOS 4.03 F0 5.73 st 2.54 p/s | WER 0.20 > 0.15
+  novelo_10 t04 escore  76.4 | WER 0.20 fim 0+0 UTMOS 3.61 F0 6.97 st 2.46 p/s | WER 0.20 > 0.15
+  novelo_10 t05 escore  98.3 | WER 0.00 fim 0+0 UTMOS 4.10 F0 8.34 st 2.48 p/s | aprovada <- escolhida
+novelo_10 (narrador): t05 escore 98, aprovada, 5 tomadas, 83s
+  novelo_11 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.06 F0 10.13 st 2.45 p/s | aprovada <- escolhida
+novelo_11 (narrador): t01 escore 100, aprovada, 1 tomadas, 30s
+  novelo_13 t01 escore  96.0 | WER 0.00 fim 0+0 UTMOS 4.23 F0 13.82 st 2.45 p/s | aprovada <- escolhida
+novelo_13 (narrador): t01 escore 96, aprovada, 1 tomadas, 56s
+  novelo_14 t01 escore  70.9 | WER 0.33 fim 0+0 UTMOS 4.29 F0 6.27 st 2.16 p/s | WER 0.33 > 0.15
+  novelo_14 t02 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.15 F0 5.32 st 2.15 p/s | aprovada <- escolhida
+  novelo_14 t03 escore  99.6 | WER 0.00 fim 0+0 UTMOS 4.27 F0 8.68 st 2.15 p/s | aprovada
+novelo_14 (narrador): t02 escore 100, aprovada, 3 tomadas, 140s
+  aurora_02 t01 escore  94.2 | WER 0.06 fim 0+0 UTMOS 3.97 F0 7.13 st 2.45 p/s | aprovada <- escolhida
+aurora_02 (narrador): t01 escore 94, aprovada, 1 tomadas, 80s
+  aurora_03 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.27 F0 5.77 st 2.46 p/s | aprovada <- escolhida
+aurora_03 (narrador): t01 escore 100, aprovada, 1 tomadas, 44s
+  aurora_05 t01 escore  98.0 | WER 0.00 fim 0+0 UTMOS 3.83 F0 8.41 st 2.33 p/s | aprovada <- escolhida
+aurora_05 (curupira): t01 escore 98, aprovada, 1 tomadas, 32s
+  aurora_06 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.26 F0 10.28 st 3.25 p/s | aprovada <- escolhida
+aurora_06 (ze): t01 escore 100, aprovada, 1 tomadas, 41s
+  aurora_07 t01 escore  99.9 | WER 0.00 fim 0+0 UTMOS 4.20 F0 10.74 st 2.46 p/s | aprovada <- escolhida
+aurora_07 (curupira): t01 escore 100, aprovada, 1 tomadas, 40s
+  aurora_09 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.11 F0 9.14 st 2.45 p/s | aprovada <- escolhida
+aurora_09 (narrador): t01 escore 100, aprovada, 1 tomadas, 63s
+  aurora_10 t01 escore  64.2 | WER 0.30 fim 2+0 UTMOS 4.11 F0 10.55 st 2.51 p/s | WER 0.30 > 0.15; fim da frase: 2 das 2 últimas palavras erradas
+  aurora_10 t02 escore  65.0 | WER 0.30 fim 2+0 UTMOS 4.25 F0 11.26 st 2.60 p/s | WER 0.30 > 0.15; fim da frase: 2 das 2 últimas palavras erradas <- escolhida
+  aurora_10 t03 escore  65.0 | WER 0.30 fim 2+0 UTMOS 4.15 F0 11.27 st 2.45 p/s | WER 0.30 > 0.15; fim da frase: 2 das 2 últimas palavras erradas
+  aurora_10 t04 escore  65.0 | WER 0.30 fim 2+0 UTMOS 4.00 F0 9.23 st 2.45 p/s | WER 0.30 > 0.15; fim da frase: 2 das 2 últimas palavras erradas
+  aurora_10 t05 escore  65.0 | WER 0.30 fim 2+0 UTMOS 4.33 F0 10.62 st 2.46 p/s | WER 0.30 > 0.15; fim da frase: 2 das 2 últimas palavras erradas
+aurora_10 (narrador): t02 escore 65, ABAIXO DO LIMIAR, 5 tomadas, 784s
+  aurora_11 t01 escore  94.1 | WER 0.07 fim 0+0 UTMOS 4.05 F0 9.42 st 2.45 p/s | aprovada <- escolhida
+aurora_11 (narrador): t01 escore 94, aprovada, 1 tomadas, 662s
+  encerramento_02 t01 escore 100.0 | WER 0.00 fim 0+0 UTMOS 4.21 F0 9.86 st 2.63 p/s | aprovada <- escolhida
+encerramento_02 (narrador): t01 escore 100, aprovada, 1 tomadas, 245s
+  encerramento_03 t01 escore  98.2 | WER 0.00 fim 0+0 UTMOS 3.85 F0 9.62 st 2.54 p/s | aprovada <- escolhida
+encerramento_03 (narrador): t01 escore 98, aprovada, 1 tomadas, 404s
+  encerramento_04 t01 escore  98.3 | WER 0.00 fim 0+0 UTMOS 3.86 F0 11.66 st 2.51 p/s | aprovada <- escolhida
+encerramento_04 (narrador): t01 escore 98, aprovada, 1 tomadas, 85s
+  encerramento_05 t01 escore  67.9 | WER 0.17 fim 1+0 UTMOS 4.32 F0 11.57 st 2.46 p/s | WER 0.17 > 0.15; fim da frase: 1 das 2 últimas palavras erradas <- escolhida
+  encerramento_05 t02 escore  67.9 | WER 0.17 fim 1+0 UTMOS 4.26 F0 11.43 st 2.47 p/s | WER 0.17 > 0.15; fim da frase: 1 das 2 últimas palavras erradas
+  encerramento_05 t03 escore  67.3 | WER 0.17 fim 1+0 UTMOS 4.35 F0 9.68 st 2.46 p/s | WER 0.17 > 0.15; fim da frase: 1 das 2 últimas palavras erradas
+  encerramento_05 t04 escore  67.9 | WER 0.17 fim 1+0 UTMOS 4.32 F0 7.97 st 2.45 p/s | WER 0.17 > 0.15; fim da frase: 1 das 2 últimas palavras erradas
+  encerramento_05 t05 escore  67.9 | WER 0.17 fim 1+0 UTMOS 4.13 F0 9.01 st 2.45 p/s | WER 0.17 > 0.15; fim da frase: 1 das 2 últimas palavras erradas
+encerramento_05 (narrador): t01 escore 68, ABAIXO DO LIMIAR, 5 tomadas, 907s

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cenários</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0D0906; overflow: hidden; }
+  #escala { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+</style>
+</head>
+<body>
+<div id="escala"></div>
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/grafismos.js"></script>
+<script src="../../js/palco.js"></script>
+<script src="../../js/cenario.js"></script>
+<script src="../../js/bonecos.js"></script>
+<script src="../../js/cenarios.js"></script>
+<script>
+/* Um cenário por vez: ?cena=mata (ids de Sombras.cenarios) &t=SEG &luz=noite &bonecos=1 (escala: Curupira e Tião)
+   &e=embauba.queda=1,samauma.olhos=1,ipe.flores=.5,x=-300 (estado das peças; couro usa a pose; sem peça = estado do cenário)
+   &sub=rancho|beira (cenários extras da aurora) &camera=PX (deslize) */
+(function () {
+  const q = new URLSearchParams(location.search);
+  if (q.get('teste') === '1') { // verificação: todos os cenários montam e nenhum número vira NaN com estados, tempos e câmera variados
+    const el = document.getElementById('escala'), palco = Sombras.palco.criar(el, { luz: 'dia' }), erros = [];
+    const ids = ['abertura', 'mata', 'guardiao', 'cacadores', 'aviso', 'rastros', 'noite', 'vo', 'novelo', 'aurora', 'encerramento'];
+    const cens = ids.map(id => { const c = Sombras.cenarios[id](palco); palco.adicionar(c); return c; });
+    cens.push(cens[9].rancho, cens[9].beira); cens.forEach(c => { palco.adicionar(c); c.estado.visivel = 1; });
+    const ruim = v => /NaN|Infinity|undefined/.test(v);
+    for (const c of cens) {
+      if (!c.pecas || !c.pontos || !Object.keys(c.pecas).length) erros.push(c.nome + ': sem peças');
+      JSON.stringify(c.pontos, (k, v) => { if (typeof v === 'number' && !isFinite(v)) erros.push(c.nome + ': ponto ' + k); return v; });
+      for (const [n, p] of Object.entries(c.pecas)) { const E = p.estado || p.pose; for (const k in E) if (typeof E[k] === 'number') E[k] = k === 'escala' ? 1.3 : k === 'o' || k === 'opacidade' ? 1 : E[k] + .37; }
+    }
+    for (const [t, cam] of [[0, 0], [1.3, -1300], [7.7, -3100], [12.1, 420]]) {
+      palco.camera.x = cam; palco.quadro(t);
+      for (const e of document.querySelectorAll('[data-cenario] *')) {
+        const st = e.style;
+        if (st && (ruim(st.transform) || ruim(st.opacity))) erros.push(e.closest('[data-cenario]').dataset.cenario + ' t=' + t + ': ' + st.transform + ' / ' + st.opacity);
+        for (const at of ['d', 'transform', 'cx', 'cy', 'r', 'opacity']) { const v = e.getAttribute && e.getAttribute(at); if (v && ruim(v)) erros.push(e.closest('[data-cenario]').dataset.cenario + ' t=' + t + ' ' + at); }
+      }
+    }
+    document.title = erros.length ? 'FALHOU' : 'teste ok';
+    console[erros.length ? 'error' : 'log'](erros.length ? [...new Set(erros)].slice(0, 20).join('\n') : 'teste ok: ' + cens.length + ' cenários');
+    return;
+  }
+  const t = parseFloat(q.get('t')) || 0, cena = q.get('cena') || 'mata';
+  const LUZ = { abertura: 'lamparina', mata: 'dia', guardiao: 'dia', cacadores: 'dia', aviso: 'entardecer', rastros: 'entardecer',
+    noite: 'noite', vo: 'lamparina', novelo: 'tempestade', aurora: 'aurora', encerramento: 'lamparina' };
+  // estados de demonstração: tudo o que a cena usa, visível
+  const DEMO = {
+    abertura: 'oferendas.o.flecha1=1,oferendas.o.flecha2=1,oferendas.o.flecha3=1,oferendas.o.abanador=1,penaA.opacidade=1,penaB.opacidade=1,carta.y=0,carta.abrir=.7,penaEscrever.y=0,vareta.o=1,vareta.x=420,sombrinha.o=1',
+    mata: 'samauma.olhos=1',
+    guardiao: 'machado.opacidade=1,redemoinho.p=.5',
+    cacadores: 'olhos.o=1,sombra.o=1,pena.opacidade=1',
+    aviso: 'sombraGigante.o=1,sombraGigante.escala=3.4,sombraGigante.y=380,galho.o=1,galho.y=300',
+    rastros: 'toco.o=1,rastroQueixada.o=1,coronha.opacidade=1,cano.opacidade=1,sombrinha.o=1,revoada.p=.4',
+    noite: 'vagalumes.acesos=1,nuvens.o=1,pano.y=-300,coronha.opacidade=1,cano.opacidade=1',
+    vo: 'novelo.o=1,novelo.enrolado=.7,fumo.opacidade=1',
+    novelo: 'novelo.o=1,novelo.enrolado=1,novelo.desenrolado=.6,fumo.opacidade=1,pena.opacidade=1,gotas.o=1',
+    aurora: 'ipe.flores=1',
+    encerramento: '',
+  };
+  const el = document.getElementById('escala');
+  const zoom = (q.get('zoom') || '').split(',').map(Number); // &zoom=x,y,k: lupa centrada em (x, y) do palco
+  const ajustar = () => {
+    const k = Math.min(innerWidth / 1920, innerHeight / 1080) * (zoom[2] || 1);
+    const cx = zoom[2] ? zoom[0] : 960, cy = zoom[2] ? zoom[1] : 540;
+    el.style.transform = `translate(${innerWidth / 2 - cx * k}px,${innerHeight / 2 - cy * k}px) scale(${k})`;
+  };
+  ajustar(); addEventListener('resize', ajustar);
+  const palco = Sombras.palco.criar(el, { luz: q.get('luz') || LUZ[cena] });
+  if (q.has('vagalumes')) palco.particulas.vagalumes = +q.get('vagalumes');
+  if (q.has('chuva')) palco.particulas.chuva = +q.get('chuva');
+  let c = Sombras.cenarios[cena](palco);
+  if (q.get('sub')) c = c[q.get('sub')];
+  c.estado.visivel = 1;
+  palco.adicionar(c);
+  palco.camera.x = +q.get('camera') || 0;
+  const pares = ((q.has('e') || q.get('sub') ? '' : DEMO[cena] || '') + ',' + (q.get('e') || '')).split(',').filter(Boolean);
+  for (const par of pares) {
+    const [k, v] = par.split('='), cam = k.split('.');
+    let alvo = c.estado;
+    if (cam.length > 1) { const p = c.pecas[cam.shift()]; alvo = p.estado || p.pose; }
+    while (cam.length > 1) alvo = alvo[cam.shift()];
+    alvo[cam[0]] = +v;
+  }
+  if (q.get('bonecos') === '1') {
+    const B = Sombras.bonecos;
+    palco.adicionar(B.tiao({ x: +q.get('tx') || 520, y: Sombras.cenarios.CHAO, escala: 1.15 }));
+    palco.adicionar(B.curupira({ x: +q.get('cx') || 900, y: Sombras.cenarios.CHAO, escala: 1.5 }));
+  }
+  palco.quadro(t);
+  if (q.get('pausa') !== '1' && q.get('vivo') === '1') { const ini = performance.now(); (function loop() { palco.quadro(t + (performance.now() - ini) / 1000); requestAnimationFrame(loop); })(); }
+  else setTimeout(() => palco.quadro(t), 300);
+})();
+</script>
+</body>
+</html>

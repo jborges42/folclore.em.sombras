@@ -1,0 +1,31 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+
+# ambientes e modelos (regeráveis, gigantes)
+curupira/producao/.venv*
+curupira/producao/.modelos*
+curupira/producao/bin/
+curupira/producao/.tmpcrit/
+
+# biblioteca bruta de sons: rebaixável pelos links em sons/*/fontes.json
+curupira/producao/sons/**/*.wav
+curupira/producao/sons/**/*.mp3
+curupira/producao/sons/**/*.ogg
+curupira/producao/sons/**/*.flac
+
+# áudio intermediário regerável (compor.py, mixar.py, demos)
+curupira/producao/trilha/master.wav
+curupira/producao/trilha/barramentos/
+curupira/producao/trilha/stems/
+curupira/producao/trilha/previas/
+curupira/producao/trilha/temas_demo/
+curupira/producao/trilha/sintese_demo/
+curupira/producao/trilha/teste/
+curupira/producao/trilha/analise/
+curupira/producao/vozes/tomadas/
+curupira/producao/vozes/escuta/
+
+# capturas de verificação
+curupira/producao/prototipo/**/*.png
